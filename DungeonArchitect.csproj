@@ -47,12 +47,14 @@
     <Analyzer Include="/Applications/Unity/Hub/Editor/6000.4.2f1/Unity.app/Contents/Resources/BuildPipeline/Unity.SourceGenerators/Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets/Scripts/Utils/RoomSpriteMapper.cs" />
     <Compile Include="Assets/Scripts/Systems/DungeonGrid/GridVisualizer.cs" />
     <Compile Include="Assets/Scripts/UI/HUD/MiniMapUI.cs" />
     <Compile Include="Assets/Scripts/Data/ClassData.cs" />
     <Compile Include="Assets/Scripts/Systems/EventSystem/EventManager.cs" />
     <Compile Include="Assets/Scripts/UI/Cards/RoomCardUI.cs" />
     <Compile Include="Assets/Scripts/Systems/DungeonGrid/DungeonGridManager.cs" />
+    <Compile Include="Assets/Scripts/Systems/DungeonGrid/RoomVisual.cs" />
     <Compile Include="Assets/Scripts/Systems/RoomResolver.cs" />
     <Compile Include="Assets/Scripts/Core/AudioManager.cs" />
     <Compile Include="Assets/Scripts/Systems/Deck/DeckManager.cs" />
@@ -514,6 +516,9 @@
     <Reference Include="Google.VersionHandler">
       <HintPath>/Users/sergio.navarro/proyectoIA/DungeonArchitect/Assets/MobileDependencyResolver/Editor/Google.VersionHandler.dll</HintPath>
     </Reference>
+    <Reference Include="Google.IOSResolver">
+      <HintPath>/Users/sergio.navarro/proyectoIA/DungeonArchitect/Assets/MobileDependencyResolver/Editor/1.2.185/Google.IOSResolver.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Collections.LowLevel.ILSupport">
       <HintPath>/Users/sergio.navarro/proyectoIA/DungeonArchitect/Library/PackageCache/com.unity.collections@05d86f76b771/Unity.Collections.LowLevel.ILSupport/Unity.Collections.LowLevel.ILSupport.dll</HintPath>
     </Reference>
@@ -531,6 +536,9 @@
     </Reference>
     <Reference Include="Unity.Plastic.Antlr3.Runtime">
       <HintPath>/Users/sergio.navarro/proyectoIA/DungeonArchitect/Library/PackageCache/com.unity.collab-proxy@0b1559bcd34e/Lib/Editor/Unity.Plastic.Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.JarResolver">
+      <HintPath>/Users/sergio.navarro/proyectoIA/DungeonArchitect/Assets/MobileDependencyResolver/Editor/1.2.185/Google.JarResolver.dll</HintPath>
     </Reference>
     <Reference Include="OnigwrapPlastic">
       <HintPath>/Users/sergio.navarro/proyectoIA/DungeonArchitect/Library/PackageCache/com.unity.collab-proxy@0b1559bcd34e/Lib/Editor/TextMateSharp/Onigwrap/OnigwrapPlastic.dll</HintPath>
@@ -567,6 +575,9 @@
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
       <HintPath>/Users/sergio.navarro/proyectoIA/DungeonArchitect/Library/PackageCache/com.unity.analytics@c9d14a6bdec6/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.PackageManagerResolver">
+      <HintPath>/Users/sergio.navarro/proyectoIA/DungeonArchitect/Assets/MobileDependencyResolver/Editor/1.2.185/Google.PackageManagerResolver.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>/Applications/Unity/Hub/Editor/6000.4.2f1/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>

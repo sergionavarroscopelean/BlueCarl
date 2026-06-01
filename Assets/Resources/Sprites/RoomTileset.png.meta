@@ -1,0 +1,1525 @@
+fileFormatVersion: 2
+guid: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 4096
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: RoomTileset_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 874
+        width: 135
+        height: 115
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d861db61fe4740f79cb3add7f2824d4
+      internalID: -690881011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomTileset_1
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 874
+        width: 135
+        height: 115
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfd28a5e3b9a3495fbfc766610720b66
+      internalID: -1512874440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomTileset_2
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 874
+        width: 135
+        height: 115
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 489bdf446a9bb487c97528feb698c7ed
+      internalID: 864744341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomTileset_3
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 874
+        width: 135
+        height: 115
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25872bb93daca4d8db04931b5e92dfdb
+      internalID: 1603339101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomTileset_4
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 874
+        width: 135
+        height: 115
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9fedc9262b514e8e98f92d6c71865f4
+      internalID: 692963408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomTileset_5
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 874
+        width: 135
+        height: 115
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2afae1c3be1224ad7b831bde8d0b1aa0
+      internalID: -264832390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomTileset_6
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 874
+        width: 135
+        height: 115
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c61cd7753b6f4611b358ec68de4fe2f
+      internalID: -549359159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomTileset_7
+      rect:
+        serializedVersion: 2
+        x: 1064
+        y: 874
+        width: 135
+        height: 115
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b6dfb7151fa24393905e5d5bc38eead
+      internalID: 1009661964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomTileset_8
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 874
+        width: 135
+        height: 115
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ff9e014c6aed4c85b87fbe0b4df3e12
+      internalID: 1918562243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomTileset_9
+      rect:
+        serializedVersion: 2
+        x: 1368
+        y: 874
+        width: 135
+        height: 115
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3541e9b32ec944649cfcbbd132b065e
+      internalID: 369383621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomTileset_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 719
+        width: 135
+        height: 115
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2866fb79a8c7b439fb3b7cfce48afdf2
+      internalID: -1519773587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomTileset_11
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 719
+        width: 135
+        height: 115
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57f28434619ca42bdbb786a292a1d146
+      internalID: 1759657575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomTileset_12
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 719
+        width: 135
+        height: 115
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 137e126f3cfca4e9ba17ca9835d55fe7
+      internalID: 855716858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomTileset_13
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 719
+        width: 135
+        height: 115
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8626382d40354f14b53ad2f1f2105c8
+      internalID: -1457517205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomTileset_14
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 719
+        width: 135
+        height: 115
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57873f494c57049cfa959a793df81779
+      internalID: -539472811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomTileset_15
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 719
+        width: 135
+        height: 115
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0007b7a75a8234e13aca99a7005c2ee3
+      internalID: 493518938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomTileset_16
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 719
+        width: 135
+        height: 115
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebd3fc32682a24545b0bc1ebf80fc7b0
+      internalID: -1837694434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomTileset_17
+      rect:
+        serializedVersion: 2
+        x: 1064
+        y: 719
+        width: 135
+        height: 115
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e64e33bd970642d79f38cb895116ecf
+      internalID: -688035677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomTileset_18
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 719
+        width: 135
+        height: 115
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d06106ddfe53944ce80a755e96ee8d0d
+      internalID: -630033687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomTileset_19
+      rect:
+        serializedVersion: 2
+        x: 1368
+        y: 719
+        width: 135
+        height: 115
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0e29836897ec47a1994752febe67c59
+      internalID: -1752167988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomTileset_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 564
+        width: 135
+        height: 115
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc4aba135bcd04e86b4e1534bf5a4ef1
+      internalID: 170736297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomTileset_21
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 564
+        width: 135
+        height: 115
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: defca76216dd64448b1349be3953c347
+      internalID: 67623203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomTileset_22
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 564
+        width: 135
+        height: 115
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 010dbce2e74564eb89975cef060dbf11
+      internalID: 523782294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomTileset_23
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 564
+        width: 135
+        height: 115
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f9aad081c44a48d7bc9dfb9585d0ccd
+      internalID: -640398543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomTileset_24
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 564
+        width: 135
+        height: 115
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03c65ccc3c326472cb66a18ab2a1ab8a
+      internalID: 191252612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomTileset_25
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 564
+        width: 135
+        height: 115
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 790acb87ee884412e80c730e65e860e1
+      internalID: -1397250027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomTileset_26
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 564
+        width: 135
+        height: 115
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f257d0c7c96624e929da01fdfd94e119
+      internalID: 1118224818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomTileset_27
+      rect:
+        serializedVersion: 2
+        x: 1064
+        y: 564
+        width: 135
+        height: 115
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 301b96c6c190544459d6bb1d5ffe2148
+      internalID: -547465321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomTileset_28
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 564
+        width: 135
+        height: 115
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49cb332bb94d24debb1961055dec8eeb
+      internalID: 1068911197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomTileset_29
+      rect:
+        serializedVersion: 2
+        x: 1368
+        y: 564
+        width: 135
+        height: 115
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1886013a5fc5419fa3386517f3c5e9c
+      internalID: 769714879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomTileset_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 409
+        width: 135
+        height: 115
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2065b54fd0dec490785ea591df18bb1d
+      internalID: -1708468287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomTileset_31
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 409
+        width: 135
+        height: 115
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2edd7435c3b447979f7b785a38cd22b
+      internalID: -2061257850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomTileset_32
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 409
+        width: 135
+        height: 115
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad92456597dd045d2880f8d977e65897
+      internalID: -2118036866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomTileset_33
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 409
+        width: 135
+        height: 115
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdb6413fe5b70445ca65b5d95784a87f
+      internalID: -1818156392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomTileset_34
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 409
+        width: 135
+        height: 115
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f78aa5059c02540c2880db4a489e761e
+      internalID: 741642036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomTileset_35
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 409
+        width: 135
+        height: 115
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4b684e21d56a4a5abea863df7d66dc8
+      internalID: 664055045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomTileset_36
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 409
+        width: 135
+        height: 115
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f387ebfe963f3433fbdceee48887c52e
+      internalID: -1119737407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomTileset_37
+      rect:
+        serializedVersion: 2
+        x: 1064
+        y: 409
+        width: 135
+        height: 115
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e45686de74d7e4a2bab7c6042d0b4a8d
+      internalID: -534236148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomTileset_38
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 409
+        width: 135
+        height: 115
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80e041475fd054afaa4f7f6c49dee962
+      internalID: -725054301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomTileset_39
+      rect:
+        serializedVersion: 2
+        x: 1368
+        y: 409
+        width: 135
+        height: 115
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3320b0206dbbb4fe39d6722170c977e4
+      internalID: -1233855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomTileset_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 254
+        width: 135
+        height: 115
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f76292905b39f42688b04464e46b4b14
+      internalID: -171391744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomTileset_41
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 254
+        width: 135
+        height: 115
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1b6f30a5101e4220a26cc8291d1e2dc
+      internalID: 1396836789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomTileset_42
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 254
+        width: 135
+        height: 115
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3be89d1a418db49fc85122b1b82db30f
+      internalID: 2119607972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomTileset_43
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 254
+        width: 135
+        height: 115
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5994762af969c4860a9969036e9a846d
+      internalID: -242701704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomTileset_44
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 254
+        width: 135
+        height: 115
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed5f4c459e1cd44b9910fd9da941f845
+      internalID: 217060648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomTileset_45
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 254
+        width: 135
+        height: 115
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 811facdfe6fdf46b494e2fd7f8c71314
+      internalID: -1267427379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomTileset_46
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 254
+        width: 135
+        height: 115
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1824cb10035a84347964fe325cb159b6
+      internalID: 514560883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomTileset_47
+      rect:
+        serializedVersion: 2
+        x: 1064
+        y: 254
+        width: 135
+        height: 115
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03a43cd01e9ac4e4eb763e9ea22f4580
+      internalID: -711985747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomTileset_48
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 254
+        width: 135
+        height: 115
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b29fe54114a3439e8898b8b3e6e5fb2
+      internalID: -1403312639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomTileset_49
+      rect:
+        serializedVersion: 2
+        x: 1368
+        y: 254
+        width: 135
+        height: 115
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5e7ed663e3d5439687519b53898286c
+      internalID: -466147775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomTileset_50
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 99
+        width: 135
+        height: 115
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9296313da90d407da47c4dce88a627a
+      internalID: 385452616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomTileset_51
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 99
+        width: 135
+        height: 115
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bdb03f0b36fd43c399a705ddd81e204
+      internalID: -2072540853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomTileset_52
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 99
+        width: 135
+        height: 115
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 974db6ee8b666418dbe7cca8a0ebae32
+      internalID: 1190433406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomTileset_53
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 99
+        width: 135
+        height: 115
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb92e0f5bede7426b8ff9a9b8b6ab6a7
+      internalID: 990751688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomTileset_54
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 99
+        width: 135
+        height: 115
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa56eb5f3bf0a46298a9e94e10897576
+      internalID: 1213895621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomTileset_55
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 99
+        width: 135
+        height: 115
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44c38754490954c8abb65b9123bf145d
+      internalID: -1932524000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomTileset_56
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 99
+        width: 135
+        height: 115
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ba0f64fc4f6541329e0121f84d0d78f
+      internalID: 115258148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomTileset_57
+      rect:
+        serializedVersion: 2
+        x: 1064
+        y: 99
+        width: 135
+        height: 115
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fc3d0bc1f06f404486cc066b561c82c
+      internalID: 1107462218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomTileset_58
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 99
+        width: 135
+        height: 115
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e7bbfed3f4764b528cda92cc296e2e5
+      internalID: 331529053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomTileset_59
+      rect:
+        serializedVersion: 2
+        x: 1368
+        y: 99
+        width: 135
+        height: 115
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fe149fdb6a514c1c99ab51b71304bab
+      internalID: 2113451355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 695cd0bd424484e5684f56d3af4da44c
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":135.0,"y":115.0},"gridSpriteOffset":{"x":0.0,"y":35.0},"gridSpritePadding":{"x":17.0,"y":40.0},"pivot":{"x":0.0,"y":1.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":1,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      RoomTileset_0: -690881011
+      RoomTileset_1: -1512874440
+      RoomTileset_10: -1519773587
+      RoomTileset_11: 1759657575
+      RoomTileset_12: 855716858
+      RoomTileset_13: -1457517205
+      RoomTileset_14: -539472811
+      RoomTileset_15: 493518938
+      RoomTileset_16: -1837694434
+      RoomTileset_17: -688035677
+      RoomTileset_18: -630033687
+      RoomTileset_19: -1752167988
+      RoomTileset_2: 864744341
+      RoomTileset_20: 170736297
+      RoomTileset_21: 67623203
+      RoomTileset_22: 523782294
+      RoomTileset_23: -640398543
+      RoomTileset_24: 191252612
+      RoomTileset_25: -1397250027
+      RoomTileset_26: 1118224818
+      RoomTileset_27: -547465321
+      RoomTileset_28: 1068911197
+      RoomTileset_29: 769714879
+      RoomTileset_3: 1603339101
+      RoomTileset_30: -1708468287
+      RoomTileset_31: -2061257850
+      RoomTileset_32: -2118036866
+      RoomTileset_33: -1818156392
+      RoomTileset_34: 741642036
+      RoomTileset_35: 664055045
+      RoomTileset_36: -1119737407
+      RoomTileset_37: -534236148
+      RoomTileset_38: -725054301
+      RoomTileset_39: -1233855
+      RoomTileset_4: 692963408
+      RoomTileset_40: -171391744
+      RoomTileset_41: 1396836789
+      RoomTileset_42: 2119607972
+      RoomTileset_43: -242701704
+      RoomTileset_44: 217060648
+      RoomTileset_45: -1267427379
+      RoomTileset_46: 514560883
+      RoomTileset_47: -711985747
+      RoomTileset_48: -1403312639
+      RoomTileset_49: -466147775
+      RoomTileset_5: -264832390
+      RoomTileset_50: 385452616
+      RoomTileset_51: -2072540853
+      RoomTileset_52: 1190433406
+      RoomTileset_53: 990751688
+      RoomTileset_54: 1213895621
+      RoomTileset_55: -1932524000
+      RoomTileset_56: 115258148
+      RoomTileset_57: 1107462218
+      RoomTileset_58: 331529053
+      RoomTileset_59: 2113451355
+      RoomTileset_6: -549359159
+      RoomTileset_7: 1009661964
+      RoomTileset_8: 1918562243
+      RoomTileset_9: 369383621
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

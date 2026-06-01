@@ -1,0 +1,195 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 774b24f4f1f04446fb5935e0657bce03, type: 3}
+  m_Name: RoomSpriteMapper
+  m_EditorClassIdentifier: DungeonArchitect::DungeonArchitect.Utils.RoomSpriteMapper
+  entries:
+  - roomId: 1
+    roomName: Escaleras de Entrada
+    sprite: {fileID: 0}
+  - roomId: 2
+    roomName: Escaleras de Descenso
+    sprite: {fileID: 0}
+  - roomId: 3
+    roomName: Santuario Antiguo
+    sprite: {fileID: 0}
+  - roomId: 4
+    roomName: Campamento Abandonado
+    sprite: {fileID: 0}
+  - roomId: 5
+    roomName: Portal Arcano
+    sprite: {fileID: 0}
+  - roomId: 6
+    roomName: Sala de Descanso
+    sprite: {fileID: 0}
+  - roomId: 7
+    roomName: Biblioteca Silenciosa
+    sprite: {fileID: 0}
+  - roomId: 8
+    roomName: Fuente Curativa
+    sprite: {fileID: 0}
+  - roomId: 9
+    roomName: Capilla Derruida
+    sprite: {fileID: 0}
+  - roomId: 10
+    roomName: Camara de Meditacion
+    sprite: {fileID: 0}
+  - roomId: 11
+    roomName: Jardin Subterraneo
+    sprite: {fileID: 0}
+  - roomId: 12
+    roomName: Refugio de Exploradores
+    sprite: {fileID: 0}
+  - roomId: 13
+    roomName: Cripta Consagrada
+    sprite: {fileID: 0}
+  - roomId: 14
+    roomName: Trono del Nigromante
+    sprite: {fileID: 0}
+  - roomId: 15
+    roomName: Guarida del Dragon
+    sprite: {fileID: 0}
+  - roomId: 16
+    roomName: Arena del Campeon
+    sprite: {fileID: 0}
+  - roomId: 17
+    roomName: Camara del Rey Rata
+    sprite: {fileID: 0}
+  - roomId: 18
+    roomName: Laboratorio del Liche
+    sprite: {fileID: 0}
+  - roomId: 19
+    roomName: Sala del Guardian de Piedra
+    sprite: {fileID: 0}
+  - roomId: 20
+    roomName: Camara del Tesoro
+    sprite: {fileID: 0}
+  - roomId: 21
+    roomName: Boveda Sellada
+    sprite: {fileID: 0}
+  - roomId: 22
+    roomName: Cofre Maldito
+    sprite: {fileID: 0}
+  - roomId: 23
+    roomName: Almacen Imperial
+    sprite: {fileID: 0}
+  - roomId: 24
+    roomName: Sala de Reliquias
+    sprite: {fileID: 0}
+  - roomId: 25
+    roomName: Camara del Botin Perdido
+    sprite: {fileID: 0}
+  - roomId: 26
+    roomName: Pasillo de Flechas
+    sprite: {fileID: 0}
+  - roomId: 27
+    roomName: Sala de Pinchos
+    sprite: {fileID: 0}
+  - roomId: 28
+    roomName: Foso Oculto
+    sprite: {fileID: 0}
+  - roomId: 29
+    roomName: Camara de Gas
+    sprite: {fileID: 0}
+  - roomId: 30
+    roomName: Corredor Giratorio
+    sprite: {fileID: 0}
+  - roomId: 31
+    roomName: Sala Inundada
+    sprite: {fileID: 0}
+  - roomId: 32
+    roomName: Camara de Llamas
+    sprite: {fileID: 0}
+  - roomId: 33
+    roomName: Laberinto de Espejos
+    sprite: {fileID: 0}
+  - roomId: 34
+    roomName: Nido de Murcielagos
+    sprite: {fileID: 0}
+  - roomId: 35
+    roomName: Madriguera Goblin
+    sprite: {fileID: 0}
+  - roomId: 36
+    roomName: Sala de Esqueletos
+    sprite: {fileID: 0}
+  - roomId: 37
+    roomName: Perreras Orcas
+    sprite: {fileID: 0}
+  - roomId: 38
+    roomName: Cripta Infestada
+    sprite: {fileID: 0}
+  - roomId: 39
+    roomName: Camara de Aranas
+    sprite: {fileID: 0}
+  - roomId: 40
+    roomName: Cuartel Derruido
+    sprite: {fileID: 0}
+  - roomId: 41
+    roomName: Altar Profano
+    sprite: {fileID: 0}
+  - roomId: 42
+    roomName: Sala de Hongos Gigantes
+    sprite: {fileID: 0}
+  - roomId: 43
+    roomName: Corral de Bestias
+    sprite: {fileID: 0}
+  - roomId: 44
+    roomName: Sala de Guerra
+    sprite: {fileID: 0}
+  - roomId: 45
+    roomName: Plaza Subterranea
+    sprite: {fileID: 0}
+  - roomId: 46
+    roomName: Tunel de Emboscada
+    sprite: {fileID: 0}
+  - roomId: 47
+    roomName: Camara de Cultistas
+    sprite: {fileID: 0}
+  - roomId: 48
+    roomName: Fundicion Infernal
+    sprite: {fileID: 0}
+  - roomId: 49
+    roomName: Sala de Invocacion
+    sprite: {fileID: 0}
+  - roomId: 50
+    roomName: Catacumbas Profundas
+    sprite: {fileID: 0}
+  - roomId: 51
+    roomName: Fortaleza Interior
+    sprite: {fileID: 0}
+  - roomId: 52
+    roomName: Mercader Misterioso
+    sprite: {fileID: 0}
+  - roomId: 53
+    roomName: Estatua Parlante
+    sprite: {fileID: 0}
+  - roomId: 54
+    roomName: Prision Antigua
+    sprite: {fileID: 0}
+  - roomId: 55
+    roomName: Camara de Acertijos
+    sprite: {fileID: 0}
+  - roomId: 56
+    roomName: Pozo de los Deseos
+    sprite: {fileID: 0}
+  - roomId: 57
+    roomName: Sala de Sacrificios
+    sprite: {fileID: 0}
+  - roomId: 58
+    roomName: Observatorio Arcano
+    sprite: {fileID: 0}
+  - roomId: 59
+    roomName: Sala del Oraculo
+    sprite: {fileID: 0}
+  - roomId: 60
+    roomName: Encrucijada de Runas
+    sprite: {fileID: 0}
