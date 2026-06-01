@@ -1,0 +1,21 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DungeonArchitect", "DungeonArchitect.csproj", "{ed507b09-6f4c-9572-820f-4585f7e49bc1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DungeonArchitect.Editor", "DungeonArchitect.Editor.csproj", "{f747ab90-67c7-4438-65bd-db86bfe4f7bb}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ed507b09-6f4c-9572-820f-4585f7e49bc1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ed507b09-6f4c-9572-820f-4585f7e49bc1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{f747ab90-67c7-4438-65bd-db86bfe4f7bb}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{f747ab90-67c7-4438-65bd-db86bfe4f7bb}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
