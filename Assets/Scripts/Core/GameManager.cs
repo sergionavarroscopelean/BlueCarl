@@ -27,6 +27,12 @@ namespace DungeonArchitect.Core
         [SerializeField] private int bossEveryXFloors = 3;
         [SerializeField] private int totalFloors = 8;
 
+        [Header("Debug")]
+        [SerializeField] private bool debugAutoStart = true;
+        [SerializeField] private RoomData debugStartingRoom;
+
+        private Vector2Int? pendingPlacementSlot;
+
         public GameState CurrentState => currentState;
         public int CurrentFloor => currentFloor;
         public int RoomsPlacedThisFloor => roomsPlacedThisFloor;
@@ -54,6 +60,20 @@ namespace DungeonArchitect.Core
             DontDestroyOnLoad(gameObject);
         }
 
+        private void Start()
+        {
+            if (!debugAutoStart) return;
+            StartNewRun(selectedClass, deckManager.sourceDeck);
+            if (debugStartingRoom != null)
+                gridManager.PlaceStartingRoom(debugStartingRoom);
+        }
+
+
+        public void OnClickStartRun()
+        {
+            StartNewRun(selectedClass, deckManager.sourceDeck);
+        }
+        
         public void StartNewRun(ClassData classData, DeckData deck)
         {
             selectedClass = classData;
@@ -126,10 +146,27 @@ namespace DungeonArchitect.Core
             draftManager.GenerateDraft();
         }
 
+        public void SetPendingPlacementSlot(Vector2Int gridPos)
+        {
+            pendingPlacementSlot = gridPos;
+        }
+
         public void OnRoomSelected(RoomData room)
         {
             if (currentState != GameState.RoomDraft) return;
-            ChangeState(GameState.RoomPlacement);
+
+            if (pendingPlacementSlot.HasValue)
+            {
+                gridManager.PlaceRoom(room, pendingPlacementSlot.Value);
+                gridManager.MovePlayerTo(pendingPlacementSlot.Value);
+                pendingPlacementSlot = null;
+                OnRoomPlaced();
+                OnRoomResolved();
+            }
+            else
+            {
+                ChangeState(GameState.RoomPlacement);
+            }
         }
 
         public void OnRoomResolved()

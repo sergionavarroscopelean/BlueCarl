@@ -38,6 +38,13 @@ namespace DungeonArchitect.Core
                 gridManager.OnPlayerMoved += OnPlayerMoved;
         }
 
+        public void SnapTo(Vector3 worldPos)
+        {
+            worldPos.z = transform.position.z;
+            transform.position = worldPos;
+            targetPosition = worldPos;
+        }
+
         private void Update()
         {
             HandleZoom();

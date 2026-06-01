@@ -95,6 +95,55 @@ namespace DungeonArchitect.EditorTools
             Selection.activeObject = mapper;
         }
 
+        [MenuItem("Dungeon Architect/Auto-Assign Tileset Sprites")]
+        public static void AutoAssignTilesetSprites()
+        {
+            var mapper = AssetDatabase.LoadAssetAtPath<RoomSpriteMapper>("Assets/ScriptableObjects/RoomSpriteMapper.asset");
+            if (mapper == null)
+            {
+                EditorUtility.DisplayDialog("Error", "RoomSpriteMapper.asset not found.\nRun 'Setup Room Sprite Mapper' first.", "OK");
+                return;
+            }
+
+            var allAssets = AssetDatabase.LoadAllAssetsAtPath("Assets/Resources/Sprites/RoomTileset.png");
+            var sprites = new System.Collections.Generic.List<Sprite>();
+            foreach (var asset in allAssets)
+            {
+                if (asset is Sprite s)
+                    sprites.Add(s);
+            }
+
+            if (sprites.Count == 0)
+            {
+                EditorUtility.DisplayDialog("Error", "No sprites found in RoomTileset.png.\nMake sure the texture is sliced (Sprite Mode: Multiple).", "OK");
+                return;
+            }
+
+            // Sort by the numeric suffix in the sprite name (e.g. RoomTileset_0, RoomTileset_12)
+            sprites.Sort((a, b) =>
+            {
+                int IndexOf(string name) => int.TryParse(name.Substring(name.LastIndexOf('_') + 1), out int n) ? n : 0;
+                return IndexOf(a.name).CompareTo(IndexOf(b.name));
+            });
+
+            // Sort entries by roomId so assignment is deterministic regardless of list order
+            var sorted = new System.Collections.Generic.List<RoomSpriteMapper.RoomSpriteEntry>(mapper.entries);
+            sorted.Sort((a, b) => a.roomId.CompareTo(b.roomId));
+
+            int assigned = 0;
+            for (int i = 0; i < sorted.Count && i < sprites.Count; i++)
+            {
+                sorted[i].sprite = sprites[i];
+                assigned++;
+            }
+
+            EditorUtility.SetDirty(mapper);
+            AssetDatabase.SaveAssets();
+
+            Debug.Log($"Auto-assigned {assigned} sprites to RoomSpriteMapper.");
+            Selection.activeObject = mapper;
+        }
+
         [MenuItem("Dungeon Architect/Help - Tileset Import Instructions")]
         public static void ShowImportHelp()
         {

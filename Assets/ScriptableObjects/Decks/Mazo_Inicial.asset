@@ -13,5 +13,35 @@ MonoBehaviour:
   m_Name: Mazo_Inicial
   m_EditorClassIdentifier: DungeonArchitect::DungeonArchitect.Data.DeckData
   deckName: Mazo Inicial
-  rooms: []
+  rooms:
+  - {fileID: 11400000, guid: 13d1cab7f15fd420aaf6ff3e220ec567, type: 2}
+  - {fileID: 11400000, guid: b491815b666a24ada961aa00bf033935, type: 2}
+  - {fileID: 11400000, guid: e98b93d45074047d691ac3c88e0cb0b4, type: 2}
+  - {fileID: 11400000, guid: d7eecb57e44004683878c3837d835dac, type: 2}
+  - {fileID: 11400000, guid: 02dbae9840a434dc680d029105bad12c, type: 2}
+  - {fileID: 11400000, guid: 6caee14e230a94c388296e55064d54e6, type: 2}
+  - {fileID: 11400000, guid: e20cba3c93fe3488bbbdb4feb9e56beb, type: 2}
+  - {fileID: 11400000, guid: de76f62b8ab0044b59ad562104691395, type: 2}
+  - {fileID: 11400000, guid: b3afa3ec4a3f040728cd462f4acd2ba5, type: 2}
+  - {fileID: 11400000, guid: 328e43c34e6274462b7d4da2e5d91cb2, type: 2}
+  - {fileID: 11400000, guid: 478903d5955f542b0bea1e7feb7039a9, type: 2}
+  - {fileID: 11400000, guid: 2de968c838ac1402c8d65818930b03e3, type: 2}
+  - {fileID: 11400000, guid: 93203d02c3e25450eb34c6ae507da08f, type: 2}
+  - {fileID: 11400000, guid: 4b919a95b0658436cab7646d7c3af741, type: 2}
+  - {fileID: 11400000, guid: 72cc34a8936f1436185e2ea02d6c8d87, type: 2}
+  - {fileID: 11400000, guid: 1004a69fbe75e4705a18443c59ff5d9c, type: 2}
+  - {fileID: 11400000, guid: 62ccc4109ecaf481cb9367d24071c7bf, type: 2}
+  - {fileID: 11400000, guid: 08b0c824e31d742278af58ccfbcbec4f, type: 2}
+  - {fileID: 11400000, guid: f0a92dd6c77ac4c578340e5a87a86232, type: 2}
+  - {fileID: 11400000, guid: 3bc4c68a5740240c38ee2e77450f7e37, type: 2}
+  - {fileID: 11400000, guid: a21e2ebaaecfb4dedb34c70c0edace0c, type: 2}
+  - {fileID: 11400000, guid: 9c25fe8c1ad464af68bee236469a03c5, type: 2}
+  - {fileID: 11400000, guid: dd108e49819b049888e330c731b3d82e, type: 2}
+  - {fileID: 11400000, guid: 710ff1adf341245dc85e0cfcfcd636e0, type: 2}
+  - {fileID: 11400000, guid: 958604bf62d814fabaa27cb5ba5bf859, type: 2}
+  - {fileID: 11400000, guid: 2fedafb5b002f45ba80c8fdb390eb5c3, type: 2}
+  - {fileID: 11400000, guid: 49e6bec462f5e4139b908b647d087c11, type: 2}
+  - {fileID: 11400000, guid: 964166002679a4ef5822ac923f49673f, type: 2}
+  - {fileID: 11400000, guid: 16955b917797345139ce6608242bd262, type: 2}
+  - {fileID: 11400000, guid: 41f2590bc3ef145ea9ed1b4d887efaf7, type: 2}
   description: Un mazo equilibrado de 30 salas para empezar.

@@ -1,0 +1,1150 @@
+Unity Editor version:    6000.4.2f1 (7a4c1aeef971)
+Branch:                  6000.4/staging
+Build type:              Release
+Batch mode:              YES
+macOS version:           Version 15.4 (Build 24E248)
+Darwin version:          24.4.0
+Architecture:            arm64
+Running under Rosetta:   NO
+Available memory:        65536 MB
+Date:                    2026-06-01T12:59:19Z
+[Licensing::Module] Trying to connect to existing licensing client channel...
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-isaac.obradors" at "2026-06-01T12:59:19.313485Z"
+
+COMMAND LINE ARGUMENTS:
+/Applications/Unity/Hub/Editor/6000.4.2f1/Unity.app/Contents/MacOS/Unity
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker1
+-projectPath
+/Users/isaac.obradors/Projects/BlueCarl
+-logFile
+Logs/AssetImportWorker1.log
+-srvPort
+60466
+-licensingIpc
+LicenseClient-isaac.obradors
+-force-metal
+-job-worker-count
+5
+-background-job-worker-count
+8
+-gc-helper-count
+1
+-name AssetImport
+Successfully changed project path to: /Users/isaac.obradors/Projects/BlueCarl
+/Users/isaac.obradors/Projects/BlueCarl
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-gfx=262144"
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+Player connection [8567409728]  Target information:
+
+Player connection [8567409728]  * "[IP] 10.62.22.22 [Port] 0 [Flags] 2 [Guid] 3031763134 [EditorId] 3031763134 [Version] 1048832 [Id] OSXEditor(0,BCN-01196-MAC) [Debug] 1 [PackageName] OSXEditor [ProjectName] Editor" 
+
+Player connection [8567409728]  * "[IP] 100.96.0.2 [Port] 0 [Flags] 2 [Guid] 3031763134 [EditorId] 3031763134 [Version] 1048832 [Id] OSXEditor(0,BCN-01196-MAC) [Debug] 1 [PackageName] OSXEditor [ProjectName] Editor" 
+
+Player connection [8567409728] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [8567409728] Host joined alternative multi-casting on [225.0.0.222:34997]...
+JobSystem: Creating JobQueue using job-worker-count value 5
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+Library Redirect Path: Library/
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+Initialize engine version: 6000.4.2f1 (7a4c1aeef971)
+[Subsystems] Discovering subsystems at path /Applications/Unity/Hub/Editor/6000.4.2f1/Unity.app/Contents/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path /Users/isaac.obradors/Projects/BlueCarl/Assets
+Forcing GfxDevice: Metal
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+ preferred device: Apple M2 Max (high power)
+Metal devices available: 1
+0: Apple M2 Max (high power)
+Using device Apple M2 Max (high power)
+Initializing Metal device caps: Apple M2 Max
+Mac GPU Family: 2
+Apple GPU Family: 8
+MSL Version: 3.0
+Has Float MSAA: 1
+Has Float Filtering: 1
+ReadWrite Texture Tier: 2
+Initialize mono
+Mono path[0] = '/Applications/Unity/Hub/Editor/6000.4.2f1/Unity.app/Contents/Resources/Scripting/Managed'
+Mono path[1] = '/Applications/Unity/Hub/Editor/6000.4.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityjit-macos'
+Mono config path = '/Applications/Unity/Hub/Editor/6000.4.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56597
+CodeReloadManager initialized
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: /Applications/Unity/Hub/Editor/6000.4.2f1/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
+[Licensing::Module] Licensing is not yet initialized.
+[Licensing::Client] Error: HandshakeResponse reported an error:
+	ResponseCode: 505
+	ResponseStatus: Unsupported protocol version '1.18.1'.
+[Licensing::Module] Error: Failed to handshake to channel: "LicenseClient-isaac.obradors"
+[Licensing::IpcConnector] LicenseClient-isaac.obradors channel disconnected successfully.
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-isaac.obradors-6000.4.2" at "2026-06-01T12:59:20.074265Z"
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.18.1+9fbee8e
+  Session Id:              c4a2b6c483134e9aaf87f19b027e848f
+  Correlation Id:          cd8fdcdeec67581aa6f5241cea138622
+  External correlation Id: 5915732388793635051
+  Machine Id:              m/sCrD3IZzCYBa1vPZZWhGemQQM=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-isaac.obradors-6000.4.2" (connect: 0.00s, validation: 0.00s, handshake: 0.70s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-isaac.obradors-6000.4.2-notifications" at "2026-06-01T12:59:20.77488Z"
+[Licensing::Module] Licensing Background thread has ended after 1.46s
+[Licensing::Module] Licensing is initialized (took 0.87s).
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: SC-BQNJ-HYV8-JENE-UPSH-XXXX
+  Product: Unity Pro
+  Type: ULF
+  Expiration: 2030-07-09T00:00:00Z
+[Licensing::Module] License group:
+  Id: 6872346395880-scopelyunitydesktopusers-UnityGamesPrXXXX
+  Product: Unity Enterprise
+  Type: Assigned
+  Expiration: 2030-07-03T00:00:00Z
+Register platform support module: /Applications/Unity/Hub/Editor/6000.4.2f1/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Registered in 0.868271 seconds.
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+Package Manager log level set to [2]
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.257 seconds
+Domain Reload Profiling: 1404ms
+	BeginReloadAssembly (55ms)
+	RebuildCommonClasses (27ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (902ms)
+	LoadAllAssembliesAndSetupDomain (151ms)
+		LoadAssemblies (55ms)
+		AnalyzeDomain (144ms)
+			TypeCache.Refresh (143ms)
+				TypeCache.ScanAssembly (133ms)
+	FinalizeReload (258ms)
+		SetupLoadedEditorAssemblies (0ms)
+			InitializePlatformSupportModulesInManaged (31ms)
+			BeforeProcessingInitializeOnLoad (65ms)
+			ProcessInitializeOnLoadAttributes (68ms)
+			ProcessInitializeOnLoadMethodAttributes (48ms)
+[CoreBusinessMetrics] Unexpected thread when updating session info.
+========================================================================
+Worker process is ready to serve import requests
+Import Worker Mode flag is 0x00
+Begin MonoManager ReloadAssembly
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: SC-BQNJ-HYV8-JENE-UPSH-XXXX
+  Product: Unity Pro
+  Type: ULF
+  Expiration: 2030-07-09T00:00:00Z
+[Licensing::Module] License group:
+  Id: 6872346395880-scopelyunitydesktopusers-UnityGamesPrXXXX
+  Product: Unity Enterprise
+  Type: Assigned
+  Expiration: 2030-07-03T00:00:00Z
+Assembly Assembly-CSharp-Editor-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor-firstpass.dll not valid. Loading of assembly skipped.
+Assembly Assembly-CSharp-Editor.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor.dll not valid. Loading of assembly skipped.
+Assembly Assembly-CSharp-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll not valid. Loading of assembly skipped.
+Assembly Assembly-CSharp.dll at Library/ScriptAssemblies/Assembly-CSharp.dll not valid. Loading of assembly skipped.
+Assembly DungeonArchitect.dll at Library/ScriptAssemblies/DungeonArchitect.dll not valid. Loading of assembly skipped.
+Assembly DungeonArchitect.Editor.dll at Library/ScriptAssemblies/DungeonArchitect.Editor.dll not valid. Loading of assembly skipped.
+Assembly Unity.Multiplayer.Center.Editor.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Multiplayer.Center.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Tests.dll not valid. Loading of assembly skipped.
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.254 seconds
+Domain Reload Profiling: 481ms
+	BeginReloadAssembly (97ms)
+		DisableScriptedObjects (3ms)
+		CreateAndSetChildDomain (25ms)
+	RebuildCommonClasses (28ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (18ms)
+	LoadAllAssembliesAndSetupDomain (74ms)
+		LoadAssemblies (99ms)
+		AnalyzeDomain (14ms)
+			TypeCache.Refresh (12ms)
+				TypeCache.ScanAssembly (7ms)
+	FinalizeReload (254ms)
+		SetupLoadedEditorAssemblies (0ms)
+			InitializePlatformSupportModulesInManaged (5ms)
+			BeforeProcessingInitializeOnLoad (63ms)
+			ProcessInitializeOnLoadAttributes (78ms)
+			ProcessInitializeOnLoadMethodAttributes (26ms)
+Launching external process: /Applications/Unity/Hub/Editor/6000.4.2f1/Unity.app/Contents/Helpers/UnityShaderCompiler
+Launched and connected shader compiler UnityShaderCompiler after 0.03 seconds
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 108 unused Assets / (26.6 KB). Loaded Objects now: 714.
+Memory consumption went from 60.2 MB to 60.2 MB.
+Total: 3.891334 ms (FindLiveObjects: 0.030125 ms CreateObjectMapping: 0.005791 ms MarkObjects: 3.751625 ms  DeleteObjects: 0.103250 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 34738.886222 seconds.
+  path: Assets/ScriptableObjects/Rooms/10_Camara_de_Meditacion.asset
+  importAddress: Guid(df3a2a51d61824001ae02f487d21afa0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/ScriptableObjects/Rooms/10_Camara_de_Meditacion.asset using Guid(df3a2a51d61824001ae02f487d21afa0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'e7d7b1fc31f78b51f7c050305b33da15') in 0.026849583 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=a835dee8c6949f84e72826e559d57cf4 DependenciesID=101a9482c187ba29ddc1ae05795d30cb StaticDependenciesID=d425977b63b35eb17c2ee12e9c67fbbf 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/ScriptableObjects/Rooms/22_Cofre_Maldito.asset
+  importAddress: Guid(958604bf62d814fabaa27cb5ba5bf859) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/ScriptableObjects/Rooms/22_Cofre_Maldito.asset using Guid(958604bf62d814fabaa27cb5ba5bf859) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'b51be7c20eae411cd2fc404fcc09e2cb') in 0.001181292 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=31059eeeb81fc7d4b1f2a9ad143f5364 DependenciesID=7c9e02f31889d22ca2ee13d24dd0112e StaticDependenciesID=03be3c3d39d778b7eb887a28e8b9856c 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/ScriptableObjects/Classes/Guerrero.asset
+  importAddress: Guid(c8262257e99924ec296933c2cf074d56) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/ScriptableObjects/Classes/Guerrero.asset using Guid(c8262257e99924ec296933c2cf074d56) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'd0d5dc26a2093825fbed962971a64c3b') in 0.000979041 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=f70f4ad4d967741db50bce3b389fd065 DependenciesID=cf67f45619b54e5e3a68f47889a8daaf StaticDependenciesID=12e440b3c11e5bd6245381d281e31aed 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/ScriptableObjects/Rooms/25_Camara_del_Botin_Perdido.asset
+  importAddress: Guid(44443ca234c244b32ae10cf58c773e76) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/ScriptableObjects/Rooms/25_Camara_del_Botin_Perdido.asset using Guid(44443ca234c244b32ae10cf58c773e76) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '4a49f40c9a3d5eff5e8560d521b970a1') in 0.000908791 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=b5eebff1c0577df20b6d52f8a1203573 DependenciesID=06d229e9e094aa0d1285d476e0cff85d StaticDependenciesID=823515c01adb27adf9417974a6762acc 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000063 seconds.
+  path: Assets/ScriptableObjects/Relics/Mapa_Antiguo.asset
+  importAddress: Guid(b62fe0f8b541f4fbfb82099a74cc7a6e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/ScriptableObjects/Relics/Mapa_Antiguo.asset using Guid(b62fe0f8b541f4fbfb82099a74cc7a6e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '28de3c9077b5ca1acbf686e1fe9a917c') in 0.000818958 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=77b36b9634924182b4aa11a86d72d4d4 DependenciesID=2dec4be2a63c56be4bf9181d64af642b StaticDependenciesID=dc2fe7caa66f7b211a84eb7d5b668ecc 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000061 seconds.
+  path: Assets/DefaultVolumeProfile.asset
+  importAddress: Guid(3f9215ea0144899419cfbc0957140d3f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/DefaultVolumeProfile.asset using Guid(3f9215ea0144899419cfbc0957140d3f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '3bdc3d751dc36fe3b937b7b9e52a38a0') in 0.000734417 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=4c5fde10f08bbad0ebcdc77b5861a56c DependenciesID=8caa7c33ad05855bcaa13431781cd521 StaticDependenciesID=8cd9e8976cb546c164aa5df4c75e5972 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/ScriptableObjects/Rooms/35_Madriguera_Goblin.asset
+  importAddress: Guid(b491815b666a24ada961aa00bf033935) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/ScriptableObjects/Rooms/35_Madriguera_Goblin.asset using Guid(b491815b666a24ada961aa00bf033935) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'cf9d7e68ecd7e252ca7b000317114f75') in 0.000939375 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=914645c6d37210750c7f3ceae2012ad4 DependenciesID=0fb25aeeaea31a9604a354eac8c1c013 StaticDependenciesID=478057d80db79a5733b85be7cbb4b1d1 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/ScriptableObjects/Rooms/24_Sala_de_Reliquias.asset
+  importAddress: Guid(92a37787ddc514176bc85b6bcccc7ff2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/ScriptableObjects/Rooms/24_Sala_de_Reliquias.asset using Guid(92a37787ddc514176bc85b6bcccc7ff2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '5ad8b2bd05297d2fb86b302643648804') in 0.000872625 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=4cda3899c3a7636785046ac19ce80e4a DependenciesID=2fd0c1dcede84b6f3298efddaa7f6b88 StaticDependenciesID=fe2d1edff9418139517d4e69328b25f7 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000069 seconds.
+  path: Assets/ScriptableObjects/Relics/Brujula_del_Explorador.asset
+  importAddress: Guid(06077b6b2e17c45b38d2aac5d81763ef) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/ScriptableObjects/Relics/Brujula_del_Explorador.asset using Guid(06077b6b2e17c45b38d2aac5d81763ef) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'a595e57cc058f71dab0d58942fadcab1') in 0.000831 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=a0ef7461a8a068b3f9eb2df9ab3fd389 DependenciesID=c58a27c6c7bb377056ac0161ccdaf359 StaticDependenciesID=5481b2a9cee2d461bf0aecc175bf4807 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/ScriptableObjects/Enemies/Esqueleto_Soldado.asset
+  importAddress: Guid(ca463938a35e84309814f2777dba9585) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/ScriptableObjects/Enemies/Esqueleto_Soldado.asset using Guid(ca463938a35e84309814f2777dba9585) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '68552032a7aca3c49a642c9062bfced6') in 0.000932583 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=284379065d2ea49fdcfc5190a8cfa1b2 DependenciesID=0b64761de19d9f1559639e53ffefb356 StaticDependenciesID=940c94f23ee659d93863c1a7579d8891 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000053 seconds.
+  path: Assets/Editor/SceneSetup.cs
+  importAddress: Guid(25d16f31a755f461094861936abbd181) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Editor/SceneSetup.cs using Guid(25d16f31a755f461094861936abbd181) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'b35d721c5dc007ee9e593370a18b8c21') in 0.015416583 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=cac2ae49d7c2e4772a0e013baab86efa DependenciesID=79fb99e0af83d1aa22b27942168701d8 StaticDependenciesID=06ace05e4ebcfc586378438115e8e15a 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000058 seconds.
+  path: Assets/ScriptableObjects/Enemies/Sacerdote_Cultista.asset
+  importAddress: Guid(fdff91a4428ff4176b25d4df6e8b1ff2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/ScriptableObjects/Enemies/Sacerdote_Cultista.asset using Guid(fdff91a4428ff4176b25d4df6e8b1ff2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '3d999063ee6f9c6605454015350fc88d') in 0.001025166 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=985c36cdee1dd7d9d79f69dddede14f9 DependenciesID=206ee557b87dc22f3ec3b4bbe0b3056c StaticDependenciesID=4164bb62ce8bb700024809eaa2b1688a 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/ScriptableObjects/Rooms/23_Almacen_Imperial.asset
+  importAddress: Guid(2fedafb5b002f45ba80c8fdb390eb5c3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/ScriptableObjects/Rooms/23_Almacen_Imperial.asset using Guid(2fedafb5b002f45ba80c8fdb390eb5c3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'f4f2cda111630c95cbbe5e2ac4b6b164') in 0.001068292 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=fd72d4c7d84470a087e97e7d16373f21 DependenciesID=254cbef91c87dcb543697dab6f373a1e StaticDependenciesID=e653a44c910623c8c45986f67cd64044 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000049 seconds.
+  path: Assets/ScriptableObjects/Rooms/33_Laberinto_de_Espejos.asset
+  importAddress: Guid(d4d0698d4dece475f8ebeb164030da12) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/ScriptableObjects/Rooms/33_Laberinto_de_Espejos.asset using Guid(d4d0698d4dece475f8ebeb164030da12) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '0c6b7e7605ad31a5d3e10e38246a08ae') in 0.001256 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=d51ca6b1906dc30c1db06dbc4ac5bc93 DependenciesID=74b1ff93511817352c9bf5f0da832025 StaticDependenciesID=a975a61bb5e738acce12d52a2a440bcf 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.326406 seconds.
+  path: Assets/ScriptableObjects/Rooms/46_Tunel_de_Emboscada.asset
+  importAddress: Guid(93203d02c3e25450eb34c6ae507da08f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/ScriptableObjects/Rooms/46_Tunel_de_Emboscada.asset using Guid(93203d02c3e25450eb34c6ae507da08f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '66398c4862eebba180cd536e81738f1d') in 0.001421083 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=4c4d83da5a0b4ae24815896cc559de70 DependenciesID=9dfef5e0f27cd3014c237fcbf8ed35be StaticDependenciesID=ac93027d44f26449c8f4e4c4ebd30f12 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000077 seconds.
+  path: Assets/MobileDependencyResolver/Editor/1.2.185/Google.VersionHandlerImpl.dll
+  importAddress: Guid(e2831157d94e4d15998dcb6ad1418057) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/MobileDependencyResolver/Editor/1.2.185/Google.VersionHandlerImpl.dll using Guid(e2831157d94e4d15998dcb6ad1418057) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'c8c3c27fda473c246d69f29cd36a52f7') in 0.011207625 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=448b7c1cd1eb986f0e3b05e75f35d836 DependenciesID=83283e69c7f51222024c45c9f7a24d74 StaticDependenciesID=94d2dc6df5645cc97fc86838b15186fb 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000080 seconds.
+  path: Assets/Scripts/Systems/DungeonGrid/RoomVisual.cs
+  importAddress: Guid(463a9b3cbbc284085957e7106b244e92) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Systems/DungeonGrid/RoomVisual.cs using Guid(463a9b3cbbc284085957e7106b244e92) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '0bd6859bb5b3c2d3db884d66075726cb') in 0.001125 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=e021f855116c3728619c7db051913919 DependenciesID=bd182cb140d0e2556377e59fb2541697 StaticDependenciesID=44d4ef334d639a77e8b5a027bb1d7c11 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/Scripts/Systems/Deck/DeckManager.cs
+  importAddress: Guid(bba031267bdae4032bf3ad7c21f44e37) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Systems/Deck/DeckManager.cs using Guid(bba031267bdae4032bf3ad7c21f44e37) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '560cb40ea1981a7d1f84ffa2e1f09dd0') in 0.001182041 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=3cb4fffa4098e4cefd3c68e499a3970d DependenciesID=610baea58f44773168c96f25aa002a72 StaticDependenciesID=5763f8ef8a4d27028e95afea93f9ef20 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000056 seconds.
+  path: Assets/ScriptableObjects/Rooms/49_Sala_de_Invocacion.asset
+  importAddress: Guid(e23964c1618a94ce18a3fe2f7ef8a7ba) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/ScriptableObjects/Rooms/49_Sala_de_Invocacion.asset using Guid(e23964c1618a94ce18a3fe2f7ef8a7ba) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '6cc8e5b2f0b5a9a4c0e4258bfa87afd9') in 0.001035 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=82e3b585ee406db0c33c040c3f33dc97 DependenciesID=048c3dae772212a1789477f2172b5b35 StaticDependenciesID=cfb4e23dfb4ea7c0db053172ddc6906a 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/ScriptableObjects/Rooms/56_Pozo_de_los_Deseos.asset
+  importAddress: Guid(bbdf10feea65a4d99b0007f629c02e01) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/ScriptableObjects/Rooms/56_Pozo_de_los_Deseos.asset using Guid(bbdf10feea65a4d99b0007f629c02e01) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'ea3b7e33294ed6b3167e9c3bf3861ffc') in 0.001008625 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=cb888550ca9f1a90005bbb2388e2613d DependenciesID=ac45bbbc863c503e0cc3ca085450a927 StaticDependenciesID=fa6b941958dc775fac254b54808d5275 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000047 seconds.
+  path: Assets/Scripts/Systems/DungeonGrid/GridVisualizer.cs
+  importAddress: Guid(a5eb3285103b549fc8865d79a57728a5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Systems/DungeonGrid/GridVisualizer.cs using Guid(a5eb3285103b549fc8865d79a57728a5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'c43f836694840b75b47ecfa1fdeea1fa') in 0.001121958 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=cd3bea9ccc8b00add1f1fcd414213fdf DependenciesID=5139b1af65b0a66b02e7d7281e0b9fee StaticDependenciesID=455a5cde619b9813f10ebc4a262e0c52 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000064 seconds.
+  path: Assets/Scripts/UI/Cards/CombatUI.cs
+  importAddress: Guid(cb041ed9238d5440a80dfd6795941344) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/UI/Cards/CombatUI.cs using Guid(cb041ed9238d5440a80dfd6795941344) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '685b2e583ca9c94bce4c57aba79215e5') in 0.001007333 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=864de03eae5befb9600399aad6813758 DependenciesID=6af03a63783462eb85071c4315322174 StaticDependenciesID=cb5bce541b72a527644f7f596dd2b125 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000094 seconds.
+  path: Assets/Scripts/Utils/Extensions.cs
+  importAddress: Guid(bc6124a5bb15f42398268230dd6915f3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Utils/Extensions.cs using Guid(bc6124a5bb15f42398268230dd6915f3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'e343f766a7b838c196731c4dcf394651') in 0.000946333 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=ecfc07afa2cea076329cb086abc1811b DependenciesID=49144d5c361057f10d6c56ab95c14483 StaticDependenciesID=cbdd836a3de3761ad968230e4f866658 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000067 seconds.
+  path: Assets/Scripts/Systems/DungeonGrid/DungeonGridManager.cs
+  importAddress: Guid(1668e703365344be2a629c732dbad62d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Systems/DungeonGrid/DungeonGridManager.cs using Guid(1668e703365344be2a629c732dbad62d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'd5d852faf45f7e413ba8d14ed3435f4b') in 0.001053667 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=39a51866425d147152a5ca6c87f8eccf DependenciesID=fb5c6f76190c56bc2123bb4c8149ee3b StaticDependenciesID=535463b21b64044337250e0a71297b41 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000087 seconds.
+  path: Assets/Scripts/Utils/RoomSpriteMapper.cs
+  importAddress: Guid(774b24f4f1f04446fb5935e0657bce03) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Utils/RoomSpriteMapper.cs using Guid(774b24f4f1f04446fb5935e0657bce03) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '411ee40f119f6c55db7115146595d613') in 0.000877167 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=1773f6e0aec615093e34b88756780066 DependenciesID=34cc1918c07e95dc4e24c6325812dca8 StaticDependenciesID=990c906db58782b516f11c5e6e1cb98c 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/MobileDependencyResolver/Editor/1.2.185/Google.JarResolver.dll
+  importAddress: Guid(459f2b4255ec498caed1c0aeb1bf03a0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/MobileDependencyResolver/Editor/1.2.185/Google.JarResolver.dll using Guid(459f2b4255ec498caed1c0aeb1bf03a0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'fe727e0fff866eee4a5c3151e3c7f8ad') in 0.003012666 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=e32cd763d1727b71ae08e695db1ae545 DependenciesID=46f22ed3efa486fa250595e6da922dbc StaticDependenciesID=77c892e7851d46b4918f553582e700e2 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000080 seconds.
+  path: Assets/Scripts/Data/EnemyData.cs
+  importAddress: Guid(3cd0ea3c3f52846d8a35bad24b205504) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Data/EnemyData.cs using Guid(3cd0ea3c3f52846d8a35bad24b205504) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'dbbac924cfda1bfbc636d04c504275b5') in 0.001050209 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=ea97350fe33b6d752858d22e23348213 DependenciesID=5f96172ecccc7f615375451aa8679ae9 StaticDependenciesID=e86dce06228f509f3719769561ae7f82 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000059 seconds.
+  path: Assets/ScriptableObjects/Rooms/52_Mercader_Misterioso.asset
+  importAddress: Guid(41f2590bc3ef145ea9ed1b4d887efaf7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/ScriptableObjects/Rooms/52_Mercader_Misterioso.asset using Guid(41f2590bc3ef145ea9ed1b4d887efaf7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'c493ddac5447e0aa9d45dfc962e70134') in 0.000922667 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=cfaef17cb42690aaa5f03b95ed9c1f54 DependenciesID=98bc829abd71b9d450b086908a1f1012 StaticDependenciesID=c4db25c399d00aa8bab1d51df85424bf 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000128 seconds.
+  path: Assets/ScriptableObjects/Rooms/51_Fortaleza_Interior.asset
+  importAddress: Guid(1fc1480478ee642c1a46a314afd424fc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/ScriptableObjects/Rooms/51_Fortaleza_Interior.asset using Guid(1fc1480478ee642c1a46a314afd424fc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '87202c32b2009d796c708c52e87b3390') in 0.000918375 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=9c075a603e8156bff0a0a04d8832b5b3 DependenciesID=f5f975be9d00caef6af3c1fa6b266f17 StaticDependenciesID=ad6fc08324cf62ead951da0f71d1e3e6 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/Scripts/UI/Menus/DeckBuildingUI.cs
+  importAddress: Guid(5ef8a8e4941be4a93839e2586478a39a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/UI/Menus/DeckBuildingUI.cs using Guid(5ef8a8e4941be4a93839e2586478a39a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '3dc5612a343bf563fefe556c7bb05e52') in 0.001240542 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=f8ecb0b345c90c990ed860b305b90f07 DependenciesID=5dc622477ad2e5d01a71ed6b0b4d0ee9 StaticDependenciesID=ed7a4e48c0fb2a3a58a1cc70734e38a5 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: SC-BQNJ-HYV8-JENE-UPSH-XXXX
+  Product: Unity Pro
+  Type: ULF
+  Expiration: 2030-07-09T00:00:00Z
+[Licensing::Module] License group:
+  Id: 6872346395880-scopelyunitydesktopusers-UnityGamesPrXXXX
+  Product: Unity Enterprise
+  Type: Assigned
+  Expiration: 2030-07-03T00:00:00Z
+Thread 0x3405e3000 may have been prematurely finalized
+Assembly Assembly-CSharp-Editor-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor-firstpass.dll not valid. Loading of assembly skipped.
+Assembly Assembly-CSharp-Editor.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor.dll not valid. Loading of assembly skipped.
+Assembly Assembly-CSharp-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll not valid. Loading of assembly skipped.
+Assembly Assembly-CSharp.dll at Library/ScriptAssemblies/Assembly-CSharp.dll not valid. Loading of assembly skipped.
+Assembly Unity.Multiplayer.Center.Editor.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Multiplayer.Center.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.TextMeshPro.Editor.Tests.dll at Library/ScriptAssemblies/Unity.TextMeshPro.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.TextMeshPro.Tests.dll at Library/ScriptAssemblies/Unity.TextMeshPro.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEditor.UI.Common.Tests.dll at Library/ScriptAssemblies/UnityEditor.UI.Common.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEditor.UI.EditorTests.dll at Library/ScriptAssemblies/UnityEditor.UI.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.UI.Tests.dll at Library/ScriptAssemblies/UnityEngine.UI.Tests.dll not valid. Loading of assembly skipped.
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.244 seconds
+Domain Reload Profiling: 468ms
+	BeginReloadAssembly (95ms)
+		DisableScriptedObjects (3ms)
+		CreateAndSetChildDomain (22ms)
+	RebuildCommonClasses (25ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (19ms)
+	LoadAllAssembliesAndSetupDomain (76ms)
+		LoadAssemblies (97ms)
+		AnalyzeDomain (14ms)
+			TypeCache.Refresh (8ms)
+				TypeCache.ScanAssembly (5ms)
+			BuildScriptInfoCaches (3ms)
+	FinalizeReload (244ms)
+		SetupLoadedEditorAssemblies (0ms)
+			InitializePlatformSupportModulesInManaged (4ms)
+			BeforeProcessingInitializeOnLoad (64ms)
+			ProcessInitializeOnLoadAttributes (75ms)
+			ProcessInitializeOnLoadMethodAttributes (26ms)
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 464 unused Assets / (60.6 KB). Loaded Objects now: 1073.
+Memory consumption went from 72.5 MB to 72.5 MB.
+Total: 3.257000 ms (FindLiveObjects: 0.043417 ms CreateObjectMapping: 0.015292 ms MarkObjects: 3.113250 ms  DeleteObjects: 0.084750 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: SC-BQNJ-HYV8-JENE-UPSH-XXXX
+  Product: Unity Pro
+  Type: ULF
+  Expiration: 2030-07-09T00:00:00Z
+[Licensing::Module] License group:
+  Id: 6872346395880-scopelyunitydesktopusers-UnityGamesPrXXXX
+  Product: Unity Enterprise
+  Type: Assigned
+  Expiration: 2030-07-03T00:00:00Z
+Thread 0x16afbf000 may have been prematurely finalized
+Assembly Assembly-CSharp-Editor-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor-firstpass.dll not valid. Loading of assembly skipped.
+Assembly Assembly-CSharp-Editor.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor.dll not valid. Loading of assembly skipped.
+Assembly Assembly-CSharp-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll not valid. Loading of assembly skipped.
+Assembly Assembly-CSharp.dll at Library/ScriptAssemblies/Assembly-CSharp.dll not valid. Loading of assembly skipped.
+Assembly Unity.Multiplayer.Center.Editor.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Multiplayer.Center.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.TextMeshPro.Editor.Tests.dll at Library/ScriptAssemblies/Unity.TextMeshPro.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.TextMeshPro.Tests.dll at Library/ScriptAssemblies/Unity.TextMeshPro.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEditor.UI.Common.Tests.dll at Library/ScriptAssemblies/UnityEditor.UI.Common.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEditor.UI.EditorTests.dll at Library/ScriptAssemblies/UnityEditor.UI.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.UI.Tests.dll at Library/ScriptAssemblies/UnityEngine.UI.Tests.dll not valid. Loading of assembly skipped.
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.244 seconds
+Domain Reload Profiling: 468ms
+	BeginReloadAssembly (89ms)
+		DisableScriptedObjects (3ms)
+		CreateAndSetChildDomain (22ms)
+	RebuildCommonClasses (27ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (17ms)
+	LoadAllAssembliesAndSetupDomain (80ms)
+		LoadAssemblies (99ms)
+		AnalyzeDomain (14ms)
+			TypeCache.Refresh (4ms)
+			BuildScriptInfoCaches (7ms)
+	FinalizeReload (244ms)
+		SetupLoadedEditorAssemblies (0ms)
+			InitializePlatformSupportModulesInManaged (4ms)
+			BeforeProcessingInitializeOnLoad (64ms)
+			ProcessInitializeOnLoadAttributes (72ms)
+			ProcessInitializeOnLoadMethodAttributes (23ms)
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 464 unused Assets / (65.7 KB). Loaded Objects now: 1073.
+Memory consumption went from 72.6 MB to 72.5 MB.
+Total: 3.019042 ms (FindLiveObjects: 0.039333 ms CreateObjectMapping: 0.014750 ms MarkObjects: 2.864041 ms  DeleteObjects: 0.100500 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: SC-BQNJ-HYV8-JENE-UPSH-XXXX
+  Product: Unity Pro
+  Type: ULF
+  Expiration: 2030-07-09T00:00:00Z
+[Licensing::Module] License group:
+  Id: 6872346395880-scopelyunitydesktopusers-UnityGamesPrXXXX
+  Product: Unity Enterprise
+  Type: Assigned
+  Expiration: 2030-07-03T00:00:00Z
+Thread 0x16afbf000 may have been prematurely finalized
+Assembly Assembly-CSharp-Editor-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor-firstpass.dll not valid. Loading of assembly skipped.
+Assembly Assembly-CSharp-Editor.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor.dll not valid. Loading of assembly skipped.
+Assembly Assembly-CSharp-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll not valid. Loading of assembly skipped.
+Assembly Assembly-CSharp.dll at Library/ScriptAssemblies/Assembly-CSharp.dll not valid. Loading of assembly skipped.
+Assembly Unity.Multiplayer.Center.Editor.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Multiplayer.Center.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.TextMeshPro.Editor.Tests.dll at Library/ScriptAssemblies/Unity.TextMeshPro.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.TextMeshPro.Tests.dll at Library/ScriptAssemblies/Unity.TextMeshPro.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEditor.UI.Common.Tests.dll at Library/ScriptAssemblies/UnityEditor.UI.Common.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEditor.UI.EditorTests.dll at Library/ScriptAssemblies/UnityEditor.UI.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.UI.Tests.dll at Library/ScriptAssemblies/UnityEngine.UI.Tests.dll not valid. Loading of assembly skipped.
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.281 seconds
+Domain Reload Profiling: 510ms
+	BeginReloadAssembly (91ms)
+		DisableScriptedObjects (3ms)
+		CreateAndSetChildDomain (22ms)
+	RebuildCommonClasses (26ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (19ms)
+	LoadAllAssembliesAndSetupDomain (82ms)
+		LoadAssemblies (101ms)
+		AnalyzeDomain (13ms)
+			TypeCache.Refresh (3ms)
+			BuildScriptInfoCaches (7ms)
+	FinalizeReload (282ms)
+		SetupLoadedEditorAssemblies (0ms)
+			InitializePlatformSupportModulesInManaged (5ms)
+			BeforeProcessingInitializeOnLoad (75ms)
+			ProcessInitializeOnLoadAttributes (86ms)
+			ProcessInitializeOnLoadMethodAttributes (30ms)
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 464 unused Assets / (55.2 KB). Loaded Objects now: 1073.
+Memory consumption went from 72.7 MB to 72.6 MB.
+Total: 3.665083 ms (FindLiveObjects: 0.040459 ms CreateObjectMapping: 0.013708 ms MarkObjects: 3.510667 ms  DeleteObjects: 0.099875 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 687.244312 seconds.
+  path: Assets/ScriptableObjects/Classes/Guerrero.asset
+  importAddress: Guid(c8262257e99924ec296933c2cf074d56) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/Classes/Guerrero.asset using Guid(c8262257e99924ec296933c2cf074d56) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'bde6190747879351dac27717da37026d') in 0.010874917 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=ff63f4dd978069cc9236a669113986cb DependenciesID=5682dfc9def8975a25c73d07e6918a8a StaticDependenciesID=311aae2dabf0475547764277e5695b8d 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/ScriptableObjects/Classes/Mago.asset
+  importAddress: Guid(b31e775f03edf4fb0a34ca17dbfe6c0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/Classes/Mago.asset using Guid(b31e775f03edf4fb0a34ca17dbfe6c0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'b4cb733ea123396d69ce77b3448d96d7') in 0.000481458 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=9e50d4940bbaa0fa5c6a890d00a9deb9 DependenciesID=693df4e8b61eaabfb14ba042b1111a0b StaticDependenciesID=3a8f80673ca222a3814248d163c9e988 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Thread 0x16afbf000 may have been prematurely finalized
+Assembly Assembly-CSharp-Editor-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor-firstpass.dll not valid. Loading of assembly skipped.
+Assembly Assembly-CSharp-Editor.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor.dll not valid. Loading of assembly skipped.
+Assembly Assembly-CSharp-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll not valid. Loading of assembly skipped.
+Assembly Assembly-CSharp.dll at Library/ScriptAssemblies/Assembly-CSharp.dll not valid. Loading of assembly skipped.
+Assembly Unity.Multiplayer.Center.Editor.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Multiplayer.Center.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.TextMeshPro.Editor.Tests.dll at Library/ScriptAssemblies/Unity.TextMeshPro.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.TextMeshPro.Tests.dll at Library/ScriptAssemblies/Unity.TextMeshPro.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEditor.UI.Common.Tests.dll at Library/ScriptAssemblies/UnityEditor.UI.Common.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEditor.UI.EditorTests.dll at Library/ScriptAssemblies/UnityEditor.UI.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.UI.Tests.dll at Library/ScriptAssemblies/UnityEngine.UI.Tests.dll not valid. Loading of assembly skipped.
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.257 seconds
+Domain Reload Profiling: 490ms
+	BeginReloadAssembly (93ms)
+		DisableScriptedObjects (3ms)
+		CreateAndSetChildDomain (23ms)
+	RebuildCommonClasses (28ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (19ms)
+	LoadAllAssembliesAndSetupDomain (83ms)
+		LoadAssemblies (103ms)
+		AnalyzeDomain (14ms)
+			TypeCache.Refresh (3ms)
+			BuildScriptInfoCaches (7ms)
+	FinalizeReload (257ms)
+		SetupLoadedEditorAssemblies (0ms)
+			InitializePlatformSupportModulesInManaged (4ms)
+			BeforeProcessingInitializeOnLoad (66ms)
+			ProcessInitializeOnLoadAttributes (76ms)
+			ProcessInitializeOnLoadMethodAttributes (25ms)
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 464 unused Assets / (57.4 KB). Loaded Objects now: 1074.
+Memory consumption went from 72.7 MB to 72.6 MB.
+Total: 3.402542 ms (FindLiveObjects: 0.034583 ms CreateObjectMapping: 0.013333 ms MarkObjects: 3.249584 ms  DeleteObjects: 0.104708 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 404.242428 seconds.
+  path: Assets/Prefabs/Rooms/RoomVisual.prefab
+  importAddress: Guid(daa793684e1c8463cbcf09999e20fcd5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Rooms/RoomVisual.prefab using Guid(daa793684e1c8463cbcf09999e20fcd5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '2af2f10ea55456fab3713a97233fabe0') in 0.232813416 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c920072a6f010fce8b3122f00da7b50b DependenciesID=4a8a2444b1553fda587f552b7cac8fa2 StaticDependenciesID=49ee89cf90231bb498c3e7836b84aba8 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 24
+
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: SC-BQNJ-HYV8-JENE-UPSH-XXXX
+  Product: Unity Pro
+  Type: ULF
+  Expiration: 2030-07-09T00:00:00Z
+[Licensing::Module] License group:
+  Id: 6872346395880-scopelyunitydesktopusers-UnityGamesPrXXXX
+  Product: Unity Enterprise
+  Type: Assigned
+  Expiration: 2030-07-03T00:00:00Z
+Thread 0x16afbf000 may have been prematurely finalized
+Assembly Assembly-CSharp-Editor-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor-firstpass.dll not valid. Loading of assembly skipped.
+Assembly Assembly-CSharp-Editor.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor.dll not valid. Loading of assembly skipped.
+Assembly Assembly-CSharp-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll not valid. Loading of assembly skipped.
+Assembly Assembly-CSharp.dll at Library/ScriptAssemblies/Assembly-CSharp.dll not valid. Loading of assembly skipped.
+Assembly Unity.Multiplayer.Center.Editor.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Multiplayer.Center.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.TextMeshPro.Editor.Tests.dll at Library/ScriptAssemblies/Unity.TextMeshPro.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.TextMeshPro.Tests.dll at Library/ScriptAssemblies/Unity.TextMeshPro.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEditor.UI.Common.Tests.dll at Library/ScriptAssemblies/UnityEditor.UI.Common.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEditor.UI.EditorTests.dll at Library/ScriptAssemblies/UnityEditor.UI.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.UI.Tests.dll at Library/ScriptAssemblies/UnityEngine.UI.Tests.dll not valid. Loading of assembly skipped.
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.269 seconds
+Domain Reload Profiling: 489ms
+	BeginReloadAssembly (91ms)
+		DisableScriptedObjects (3ms)
+		CreateAndSetChildDomain (23ms)
+	RebuildCommonClasses (26ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (17ms)
+	LoadAllAssembliesAndSetupDomain (77ms)
+		LoadAssemblies (97ms)
+		AnalyzeDomain (13ms)
+			TypeCache.Refresh (3ms)
+			BuildScriptInfoCaches (7ms)
+	FinalizeReload (269ms)
+		SetupLoadedEditorAssemblies (0ms)
+			InitializePlatformSupportModulesInManaged (4ms)
+			BeforeProcessingInitializeOnLoad (72ms)
+			ProcessInitializeOnLoadAttributes (83ms)
+			ProcessInitializeOnLoadMethodAttributes (30ms)
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 466 unused Assets / (59.2 KB). Loaded Objects now: 1080.
+Memory consumption went from 73.1 MB to 73.1 MB.
+Total: 3.720625 ms (FindLiveObjects: 0.038125 ms CreateObjectMapping: 0.012584 ms MarkObjects: 3.548666 ms  DeleteObjects: 0.120875 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: SC-BQNJ-HYV8-JENE-UPSH-XXXX
+  Product: Unity Pro
+  Type: ULF
+  Expiration: 2030-07-09T00:00:00Z
+[Licensing::Module] License group:
+  Id: 6872346395880-scopelyunitydesktopusers-UnityGamesPrXXXX
+  Product: Unity Enterprise
+  Type: Assigned
+  Expiration: 2030-07-03T00:00:00Z
+Thread 0x16b7f3000 may have been prematurely finalized
+Assembly Assembly-CSharp-Editor-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor-firstpass.dll not valid. Loading of assembly skipped.
+Assembly Assembly-CSharp-Editor.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor.dll not valid. Loading of assembly skipped.
+Assembly Assembly-CSharp-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll not valid. Loading of assembly skipped.
+Assembly Assembly-CSharp.dll at Library/ScriptAssemblies/Assembly-CSharp.dll not valid. Loading of assembly skipped.
+Assembly Unity.Multiplayer.Center.Editor.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Multiplayer.Center.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.TextMeshPro.Editor.Tests.dll at Library/ScriptAssemblies/Unity.TextMeshPro.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.TextMeshPro.Tests.dll at Library/ScriptAssemblies/Unity.TextMeshPro.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEditor.UI.Common.Tests.dll at Library/ScriptAssemblies/UnityEditor.UI.Common.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEditor.UI.EditorTests.dll at Library/ScriptAssemblies/UnityEditor.UI.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.UI.Tests.dll at Library/ScriptAssemblies/UnityEngine.UI.Tests.dll not valid. Loading of assembly skipped.
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.230 seconds
+Domain Reload Profiling: 450ms
+	BeginReloadAssembly (89ms)
+		DisableScriptedObjects (3ms)
+		CreateAndSetChildDomain (22ms)
+	RebuildCommonClasses (26ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (17ms)
+	LoadAllAssembliesAndSetupDomain (78ms)
+		LoadAssemblies (98ms)
+		AnalyzeDomain (13ms)
+			TypeCache.Refresh (4ms)
+			BuildScriptInfoCaches (6ms)
+	FinalizeReload (230ms)
+		SetupLoadedEditorAssemblies (0ms)
+			InitializePlatformSupportModulesInManaged (4ms)
+			BeforeProcessingInitializeOnLoad (61ms)
+			ProcessInitializeOnLoadAttributes (68ms)
+			ProcessInitializeOnLoadMethodAttributes (23ms)
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 464 unused Assets / (54.4 KB). Loaded Objects now: 1080.
+Memory consumption went from 73.1 MB to 73.0 MB.
+Total: 3.047125 ms (FindLiveObjects: 0.033500 ms CreateObjectMapping: 0.012583 ms MarkObjects: 2.912334 ms  DeleteObjects: 0.088416 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: SC-BQNJ-HYV8-JENE-UPSH-XXXX
+  Product: Unity Pro
+  Type: ULF
+  Expiration: 2030-07-09T00:00:00Z
+[Licensing::Module] License group:
+  Id: 6872346395880-scopelyunitydesktopusers-UnityGamesPrXXXX
+  Product: Unity Enterprise
+  Type: Assigned
+  Expiration: 2030-07-03T00:00:00Z
+Thread 0x16b7f3000 may have been prematurely finalized
+Assembly Assembly-CSharp-Editor-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor-firstpass.dll not valid. Loading of assembly skipped.
+Assembly Assembly-CSharp-Editor.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor.dll not valid. Loading of assembly skipped.
+Assembly Assembly-CSharp-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll not valid. Loading of assembly skipped.
+Assembly Assembly-CSharp.dll at Library/ScriptAssemblies/Assembly-CSharp.dll not valid. Loading of assembly skipped.
+Assembly Unity.Multiplayer.Center.Editor.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Multiplayer.Center.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.TextMeshPro.Editor.Tests.dll at Library/ScriptAssemblies/Unity.TextMeshPro.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.TextMeshPro.Tests.dll at Library/ScriptAssemblies/Unity.TextMeshPro.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEditor.UI.Common.Tests.dll at Library/ScriptAssemblies/UnityEditor.UI.Common.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEditor.UI.EditorTests.dll at Library/ScriptAssemblies/UnityEditor.UI.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.UI.Tests.dll at Library/ScriptAssemblies/UnityEngine.UI.Tests.dll not valid. Loading of assembly skipped.
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.242 seconds
+Domain Reload Profiling: 468ms
+	BeginReloadAssembly (93ms)
+		DisableScriptedObjects (3ms)
+		CreateAndSetChildDomain (24ms)
+	RebuildCommonClasses (27ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (18ms)
+	LoadAllAssembliesAndSetupDomain (77ms)
+		LoadAssemblies (97ms)
+		AnalyzeDomain (13ms)
+			TypeCache.Refresh (3ms)
+			BuildScriptInfoCaches (7ms)
+	FinalizeReload (243ms)
+		SetupLoadedEditorAssemblies (0ms)
+			InitializePlatformSupportModulesInManaged (4ms)
+			BeforeProcessingInitializeOnLoad (66ms)
+			ProcessInitializeOnLoadAttributes (70ms)
+			ProcessInitializeOnLoadMethodAttributes (23ms)
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 464 unused Assets / (65.6 KB). Loaded Objects now: 1080.
+Memory consumption went from 73.1 MB to 73.0 MB.
+Total: 3.315125 ms (FindLiveObjects: 0.050167 ms CreateObjectMapping: 0.014417 ms MarkObjects: 3.150208 ms  DeleteObjects: 0.099917 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 1685.465777 seconds.
+  path: Assets/ScriptableObjects/Rooms/02_Escaleras_de_Descenso.asset
+  importAddress: Guid(b4930eebd247a40d9b2dcb65167591c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/Rooms/02_Escaleras_de_Descenso.asset using Guid(b4930eebd247a40d9b2dcb65167591c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'feba189ccc11fa657f22d9f01f206a87') in 0.009156292 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=1cb84988bf0cb2c31a817bad0db12f6a DependenciesID=e4a3713ef0c553f5bc5c3ac581978a5f StaticDependenciesID=4330ba682898411767d2c597115ace38 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/ScriptableObjects/Rooms/07_Biblioteca_Silenciosa.asset
+  importAddress: Guid(9c25fe8c1ad464af68bee236469a03c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/Rooms/07_Biblioteca_Silenciosa.asset using Guid(9c25fe8c1ad464af68bee236469a03c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '9d907fb28e0808b22df323cd871c29d9') in 0.000345959 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=2d67df9f96598f30fc273f4da795a515 DependenciesID=4ce1c498055bf5f3611fb58b66f6a892 StaticDependenciesID=107f285b4d7b4f32d615b30651ba07d4 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/ScriptableObjects/Rooms/09_Capilla_Derruida.asset
+  importAddress: Guid(6e885ecb61df04ff0a29996288af6c4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/Rooms/09_Capilla_Derruida.asset using Guid(6e885ecb61df04ff0a29996288af6c4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '5ba2180750505199bae5c2170d218b3c') in 0.000262792 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=bfa45bd9230a513e46a20d0627ad5122 DependenciesID=db02ca81f0218f77f54d908214c941f3 StaticDependenciesID=135fffef0591d865008d9bc51d3bd25b 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/ScriptableObjects/Rooms/11_Jardin_Subterraneo.asset
+  importAddress: Guid(48fee1cf0248943358740faed8f3c2d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/Rooms/11_Jardin_Subterraneo.asset using Guid(48fee1cf0248943358740faed8f3c2d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'ac9f59973e5ce81da2531e52b6adb877') in 0.0002475 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=3ee49fd8f16860d9519164ee5fb3297b DependenciesID=de516112d33caaeaae7dec7993ca6c0c StaticDependenciesID=10e7e64bdeed8102399e4230a75fdceb 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/ScriptableObjects/Rooms/04_Campamento_Abandonado.asset
+  importAddress: Guid(08b0c824e31d742278af58ccfbcbec4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/Rooms/04_Campamento_Abandonado.asset using Guid(08b0c824e31d742278af58ccfbcbec4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '61aa30f319ea8b1e4d5b1c6603f3fbfd') in 0.000232 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=7aa96d00ce4b482b4e1ad93b2b3c99fa DependenciesID=fecd1d7beac13ffd109d84a1636b8021 StaticDependenciesID=6e0098768d648ed9c6046de27a69769c 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.006441 seconds.
+  path: Assets/ScriptableObjects/Rooms/14_Trono_del_Nigromante.asset
+  importAddress: Guid(7e7910af9b4ac4fa982201d1241ebf54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/Rooms/14_Trono_del_Nigromante.asset using Guid(7e7910af9b4ac4fa982201d1241ebf54) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'af44a2d93bf36d173b3e538e46025af3') in 0.000450792 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=7e23c3efc38b38c8397f27abe4ad7357 DependenciesID=2eef243daff87805598f2ec8fcb37d97 StaticDependenciesID=e957b0c70338ce12669973c98de14bd5 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000280 seconds.
+  path: Assets/ScriptableObjects/Rooms/16_Arena_del_Campeon.asset
+  importAddress: Guid(2fb37fb314b614301bd8f8d6c04f40ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/Rooms/16_Arena_del_Campeon.asset using Guid(2fb37fb314b614301bd8f8d6c04f40ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '405932ea0e0daac725f5b571e95a09c7') in 0.000262917 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=569d19f855a17f695eebd4136528d26b DependenciesID=3538411187b8321f9bee43465091b933 StaticDependenciesID=84d14474b67890fdf7f63d2bb79d36b6 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000618 seconds.
+  path: Assets/ScriptableObjects/Rooms/18_Laboratorio_del_Liche.asset
+  importAddress: Guid(ca855b7814222462a84efbffa02ccc63) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/Rooms/18_Laboratorio_del_Liche.asset using Guid(ca855b7814222462a84efbffa02ccc63) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'a320bd576da3ffce900f0248f513b256') in 0.000319458 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=baa5fd739a842871b18f11089d591efc DependenciesID=db07e7dc4f26ce54fa76570125038bb3 StaticDependenciesID=9d822190bed99cdd999c8e6b7e35763b 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000216 seconds.
+  path: Assets/ScriptableObjects/Rooms/20_Camara_del_Tesoro.asset
+  importAddress: Guid(dd108e49819b049888e330c731b3d82e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/Rooms/20_Camara_del_Tesoro.asset using Guid(dd108e49819b049888e330c731b3d82e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '39536162fbc885a3834a3d6a1258d791') in 0.000313583 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=9cd6e66a0cb5ac38ad413fbcce143c17 DependenciesID=d7d08dd896096a2aafec78c25c6c8d4d StaticDependenciesID=ac84557ab2d7f55096d2d2dea2779f6e 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000394 seconds.
+  path: Assets/ScriptableObjects/Rooms/22_Cofre_Maldito.asset
+  importAddress: Guid(958604bf62d814fabaa27cb5ba5bf859) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/Rooms/22_Cofre_Maldito.asset using Guid(958604bf62d814fabaa27cb5ba5bf859) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '866470c1aa30ae1d2fa0ada1725a34c4') in 0.000251042 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=1bd4b9b8d9c07f9e3ab6b7f258b60351 DependenciesID=883fc8a37005fc13bef2c2f0a2c69255 StaticDependenciesID=1a5214e91249de665bd695e7d776a396 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001932 seconds.
+  path: Assets/ScriptableObjects/Rooms/26_Pasillo_de_Flechas.asset
+  importAddress: Guid(72cc34a8936f1436185e2ea02d6c8d87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/Rooms/26_Pasillo_de_Flechas.asset using Guid(72cc34a8936f1436185e2ea02d6c8d87) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'fe36fbe271bcf84186295021a53fff5f') in 0.000294833 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=4095b3e8936a7186bf054711075eaaa7 DependenciesID=0dab29e2450b349b29bc29a14a91483b StaticDependenciesID=41c7a9167d539f8144171a0b23040b1c 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000170 seconds.
+  path: Assets/ScriptableObjects/Rooms/28_Foso_Oculto.asset
+  importAddress: Guid(62ccc4109ecaf481cb9367d24071c7bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/Rooms/28_Foso_Oculto.asset using Guid(62ccc4109ecaf481cb9367d24071c7bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'e46b02828c6c3428aecb363a4af1e4c4') in 0.000303416 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=b0890069267e631ba2bc028869ebffba DependenciesID=b8ca98dc0889ab655df9625aa38c7903 StaticDependenciesID=edf983e8e3144bdef5b64d35cbb69df8 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000435 seconds.
+  path: Assets/ScriptableObjects/Rooms/30_Corredor_Giratorio.asset
+  importAddress: Guid(946a9dfeedaac464883f54cc491cceac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/Rooms/30_Corredor_Giratorio.asset using Guid(946a9dfeedaac464883f54cc491cceac) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'f3f5751683de879c9b089b5be715435e') in 0.000233875 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=3ade4d98cc8c7c4f544f8c132bfcd409 DependenciesID=fb5bbafafa77c7b1f2577631d54022f5 StaticDependenciesID=5bf0137f8511bf489d1eed9fa1bc767f 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000214 seconds.
+  path: Assets/ScriptableObjects/Rooms/32_Camara_de_Llamas.asset
+  importAddress: Guid(cdec5ed7ffbdd494e9b5661f36dd33ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/Rooms/32_Camara_de_Llamas.asset using Guid(cdec5ed7ffbdd494e9b5661f36dd33ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'e66a48508f6b88cb07a1357982a5c37b') in 0.000258833 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=be5d91bbb8a3d1ab513ce1b8241a47b2 DependenciesID=89001f35d45cf961ae68ad3829a957b5 StaticDependenciesID=b045f0c05c4b5a717d2b37233b9ab723 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000671 seconds.
+  path: Assets/ScriptableObjects/Rooms/34_Nido_de_Murcielagos.asset
+  importAddress: Guid(13d1cab7f15fd420aaf6ff3e220ec567) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/Rooms/34_Nido_de_Murcielagos.asset using Guid(13d1cab7f15fd420aaf6ff3e220ec567) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '4e129942ed4282556488ee357066ad1e') in 0.00029625 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=a32bf07bb2c037a8532839e0fcaf4dc7 DependenciesID=bac32af33241562df924c089c079a32e StaticDependenciesID=532f448e62b193012397b62c05cc4fdc 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000259 seconds.
+  path: Assets/ScriptableObjects/Rooms/36_Sala_de_Esqueletos.asset
+  importAddress: Guid(e98b93d45074047d691ac3c88e0cb0b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/Rooms/36_Sala_de_Esqueletos.asset using Guid(e98b93d45074047d691ac3c88e0cb0b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'ae58533282b53c08b7f80d7ba1dfbefb') in 0.000271041 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=f79db74713aa81281062dfad30a9f58e DependenciesID=fbfe69e2078c135e54555e44de34e8c1 StaticDependenciesID=f4a586fe4352915f58b5b020f4008ffb 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000411 seconds.
+  path: Assets/ScriptableObjects/Rooms/38_Cripta_Infestada.asset
+  importAddress: Guid(02dbae9840a434dc680d029105bad12c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/Rooms/38_Cripta_Infestada.asset using Guid(02dbae9840a434dc680d029105bad12c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '72d0554c977d2e8f6f3c3cde4134408b') in 0.000247917 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c045e884f6bb5a62fe27612715ed7818 DependenciesID=dd2554dcae55c747dd0f09bf9459e3fe StaticDependenciesID=acdf24ecd9421ac33d3e131377b82fe9 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000189 seconds.
+  path: Assets/ScriptableObjects/Rooms/40_Cuartel_Derruido.asset
+  importAddress: Guid(e20cba3c93fe3488bbbdb4feb9e56beb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/Rooms/40_Cuartel_Derruido.asset using Guid(e20cba3c93fe3488bbbdb4feb9e56beb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'bcca3ca76cb32e587220a66423f0c463') in 0.000245875 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=9dbaf12e558c9a372ff7b2ba838017a5 DependenciesID=0a1e3b4a27542e322c30f5a6f9a003e6 StaticDependenciesID=35a03c41c3a410e5c78fa4dd534d9a61 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000479 seconds.
+  path: Assets/ScriptableObjects/Rooms/42_Sala_de_Hongos_Gigantes.asset
+  importAddress: Guid(b3afa3ec4a3f040728cd462f4acd2ba5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/Rooms/42_Sala_de_Hongos_Gigantes.asset using Guid(b3afa3ec4a3f040728cd462f4acd2ba5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'ff47f5d7e47698f87fdcfd23f1bd3d0b') in 0.001179417 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=cfb585437d180eea8c5c417cbd70a564 DependenciesID=b4894870fb0eaf184512f4ae0a6a1724 StaticDependenciesID=19f9373f1cf4a2cbe3a01ae92af44124 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/ScriptableObjects/Rooms/46_Tunel_de_Emboscada.asset
+  importAddress: Guid(93203d02c3e25450eb34c6ae507da08f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/Rooms/46_Tunel_de_Emboscada.asset using Guid(93203d02c3e25450eb34c6ae507da08f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '3c25499c38f51ebf22338825f0d0e7ff') in 0.000254916 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=9d919832498e995e11befd0ca8b916e9 DependenciesID=04d3e7a21eb9fd6760424087e8c6b5f2 StaticDependenciesID=6209285648542cfa5f97793140956ab1 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000828 seconds.
+  path: Assets/ScriptableObjects/Rooms/49_Sala_de_Invocacion.asset
+  importAddress: Guid(e23964c1618a94ce18a3fe2f7ef8a7ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/Rooms/49_Sala_de_Invocacion.asset using Guid(e23964c1618a94ce18a3fe2f7ef8a7ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'f34560492b5798f8c0477ab953d1f092') in 0.0002935 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=2b01ecdbbefbf6c24667efb5a7315dfa DependenciesID=e51c8ba63959d68920c61c5de0459d2b StaticDependenciesID=650039feda74a13abf3b6f70013c9955 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000187 seconds.
+  path: Assets/ScriptableObjects/Rooms/51_Fortaleza_Interior.asset
+  importAddress: Guid(1fc1480478ee642c1a46a314afd424fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/Rooms/51_Fortaleza_Interior.asset using Guid(1fc1480478ee642c1a46a314afd424fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '0705bada3726aa4bb91ba7fba6de1ac3') in 0.000256292 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=24b0cde5af3313895960a977e7ea0a3a DependenciesID=a35e8d3fda5f4fd7ef71f0e68a2a72ce StaticDependenciesID=2eaaf5dc8b0cff462d17bd5b11209471 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001175 seconds.
+  path: Assets/ScriptableObjects/Rooms/55_Camara_de_Acertijos.asset
+  importAddress: Guid(16955b917797345139ce6608242bd262) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/Rooms/55_Camara_de_Acertijos.asset using Guid(16955b917797345139ce6608242bd262) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'be96a04cdaa006f8f6ce6a3cd9c02a0a') in 0.000271375 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=7aec23c8580d43045aef28e4aab624e5 DependenciesID=c9a0fbbbeadbdbcf047ed6173bf640ea StaticDependenciesID=6e5961f36094e5beae8346b4b7c52d01 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000222 seconds.
+  path: Assets/ScriptableObjects/Rooms/57_Sala_de_Sacrificios.asset
+  importAddress: Guid(0987ecb53fb104a1795d9770a215cba6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/Rooms/57_Sala_de_Sacrificios.asset using Guid(0987ecb53fb104a1795d9770a215cba6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '95a2047aa9e962512c1358cbefe27f85') in 0.000286083 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=15c6fd3a4f7517ce019bf8f91e4bfdae DependenciesID=51865273a8f971e9e7eb155f05ce035a StaticDependenciesID=2e76d02dbe1a2d8ea91431d7a461e097 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000319 seconds.
+  path: Assets/ScriptableObjects/Rooms/59_Sala_del_Oraculo.asset
+  importAddress: Guid(889931a9da1354f0082499228e7c62c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/Rooms/59_Sala_del_Oraculo.asset using Guid(889931a9da1354f0082499228e7c62c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '38235e7ba3d8042f15944043d814b1df') in 0.000233542 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=d71f469a13599cb8f5afca21cba82435 DependenciesID=77c6748acf0fc1a5569793f08e498379 StaticDependenciesID=c1a0d74d62c9675122a3c7224ffa4778 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: SC-BQNJ-HYV8-JENE-UPSH-XXXX
+  Product: Unity Pro
+  Type: ULF
+  Expiration: 2030-07-09T00:00:00Z
+[Licensing::Module] License group:
+  Id: 6872346395880-scopelyunitydesktopusers-UnityGamesPrXXXX
+  Product: Unity Enterprise
+  Type: Assigned
+  Expiration: 2030-07-03T00:00:00Z
+Thread 0x16b7f3000 may have been prematurely finalized
+Assembly Assembly-CSharp-Editor-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor-firstpass.dll not valid. Loading of assembly skipped.
+Assembly Assembly-CSharp-Editor.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor.dll not valid. Loading of assembly skipped.
+Assembly Assembly-CSharp-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll not valid. Loading of assembly skipped.
+Assembly Assembly-CSharp.dll at Library/ScriptAssemblies/Assembly-CSharp.dll not valid. Loading of assembly skipped.
+Assembly Unity.Multiplayer.Center.Editor.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Multiplayer.Center.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.TextMeshPro.Editor.Tests.dll at Library/ScriptAssemblies/Unity.TextMeshPro.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.TextMeshPro.Tests.dll at Library/ScriptAssemblies/Unity.TextMeshPro.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEditor.UI.Common.Tests.dll at Library/ScriptAssemblies/UnityEditor.UI.Common.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEditor.UI.EditorTests.dll at Library/ScriptAssemblies/UnityEditor.UI.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.UI.Tests.dll at Library/ScriptAssemblies/UnityEngine.UI.Tests.dll not valid. Loading of assembly skipped.
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.265 seconds
+Domain Reload Profiling: 497ms
+	BeginReloadAssembly (96ms)
+		DisableScriptedObjects (3ms)
+		CreateAndSetChildDomain (27ms)
+	RebuildCommonClasses (27ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (18ms)
+	LoadAllAssembliesAndSetupDomain (81ms)
+		LoadAssemblies (100ms)
+		AnalyzeDomain (13ms)
+			TypeCache.Refresh (3ms)
+			BuildScriptInfoCaches (7ms)
+	FinalizeReload (265ms)
+		SetupLoadedEditorAssemblies (0ms)
+			InitializePlatformSupportModulesInManaged (4ms)
+			BeforeProcessingInitializeOnLoad (68ms)
+			ProcessInitializeOnLoadAttributes (76ms)
+			ProcessInitializeOnLoadMethodAttributes (28ms)
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 464 unused Assets / (52.1 KB). Loaded Objects now: 1080.
+Memory consumption went from 73.1 MB to 73.1 MB.
+Total: 3.686959 ms (FindLiveObjects: 0.045542 ms CreateObjectMapping: 0.016042 ms MarkObjects: 3.526958 ms  DeleteObjects: 0.098084 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting

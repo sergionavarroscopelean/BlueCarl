@@ -15,181 +15,181 @@ MonoBehaviour:
   entries:
   - roomId: 1
     roomName: Escaleras de Entrada
-    sprite: {fileID: 0}
+    sprite: {fileID: -690881011, guid: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6, type: 3}
   - roomId: 2
     roomName: Escaleras de Descenso
-    sprite: {fileID: 0}
+    sprite: {fileID: -1512874440, guid: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6, type: 3}
   - roomId: 3
     roomName: Santuario Antiguo
-    sprite: {fileID: 0}
+    sprite: {fileID: 864744341, guid: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6, type: 3}
   - roomId: 4
     roomName: Campamento Abandonado
-    sprite: {fileID: 0}
+    sprite: {fileID: 1603339101, guid: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6, type: 3}
   - roomId: 5
     roomName: Portal Arcano
-    sprite: {fileID: 0}
+    sprite: {fileID: 692963408, guid: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6, type: 3}
   - roomId: 6
     roomName: Sala de Descanso
-    sprite: {fileID: 0}
+    sprite: {fileID: -264832390, guid: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6, type: 3}
   - roomId: 7
     roomName: Biblioteca Silenciosa
-    sprite: {fileID: 0}
+    sprite: {fileID: -549359159, guid: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6, type: 3}
   - roomId: 8
     roomName: Fuente Curativa
-    sprite: {fileID: 0}
+    sprite: {fileID: 1009661964, guid: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6, type: 3}
   - roomId: 9
     roomName: Capilla Derruida
-    sprite: {fileID: 0}
+    sprite: {fileID: 1918562243, guid: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6, type: 3}
   - roomId: 10
     roomName: Camara de Meditacion
-    sprite: {fileID: 0}
+    sprite: {fileID: 369383621, guid: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6, type: 3}
   - roomId: 11
     roomName: Jardin Subterraneo
-    sprite: {fileID: 0}
+    sprite: {fileID: -1519773587, guid: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6, type: 3}
   - roomId: 12
     roomName: Refugio de Exploradores
-    sprite: {fileID: 0}
+    sprite: {fileID: 1759657575, guid: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6, type: 3}
   - roomId: 13
     roomName: Cripta Consagrada
-    sprite: {fileID: 0}
+    sprite: {fileID: 855716858, guid: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6, type: 3}
   - roomId: 14
     roomName: Trono del Nigromante
-    sprite: {fileID: 0}
+    sprite: {fileID: -1457517205, guid: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6, type: 3}
   - roomId: 15
     roomName: Guarida del Dragon
-    sprite: {fileID: 0}
+    sprite: {fileID: -539472811, guid: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6, type: 3}
   - roomId: 16
     roomName: Arena del Campeon
-    sprite: {fileID: 0}
+    sprite: {fileID: 493518938, guid: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6, type: 3}
   - roomId: 17
     roomName: Camara del Rey Rata
-    sprite: {fileID: 0}
+    sprite: {fileID: -1837694434, guid: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6, type: 3}
   - roomId: 18
     roomName: Laboratorio del Liche
-    sprite: {fileID: 0}
+    sprite: {fileID: -688035677, guid: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6, type: 3}
   - roomId: 19
     roomName: Sala del Guardian de Piedra
-    sprite: {fileID: 0}
+    sprite: {fileID: -630033687, guid: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6, type: 3}
   - roomId: 20
     roomName: Camara del Tesoro
-    sprite: {fileID: 0}
+    sprite: {fileID: -1752167988, guid: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6, type: 3}
   - roomId: 21
     roomName: Boveda Sellada
-    sprite: {fileID: 0}
+    sprite: {fileID: 170736297, guid: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6, type: 3}
   - roomId: 22
     roomName: Cofre Maldito
-    sprite: {fileID: 0}
+    sprite: {fileID: 67623203, guid: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6, type: 3}
   - roomId: 23
     roomName: Almacen Imperial
-    sprite: {fileID: 0}
+    sprite: {fileID: 523782294, guid: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6, type: 3}
   - roomId: 24
     roomName: Sala de Reliquias
-    sprite: {fileID: 0}
+    sprite: {fileID: -640398543, guid: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6, type: 3}
   - roomId: 25
     roomName: Camara del Botin Perdido
-    sprite: {fileID: 0}
+    sprite: {fileID: 191252612, guid: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6, type: 3}
   - roomId: 26
     roomName: Pasillo de Flechas
-    sprite: {fileID: 0}
+    sprite: {fileID: -1397250027, guid: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6, type: 3}
   - roomId: 27
     roomName: Sala de Pinchos
-    sprite: {fileID: 0}
+    sprite: {fileID: 1118224818, guid: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6, type: 3}
   - roomId: 28
     roomName: Foso Oculto
-    sprite: {fileID: 0}
+    sprite: {fileID: -547465321, guid: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6, type: 3}
   - roomId: 29
     roomName: Camara de Gas
-    sprite: {fileID: 0}
+    sprite: {fileID: 1068911197, guid: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6, type: 3}
   - roomId: 30
     roomName: Corredor Giratorio
-    sprite: {fileID: 0}
+    sprite: {fileID: 769714879, guid: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6, type: 3}
   - roomId: 31
     roomName: Sala Inundada
-    sprite: {fileID: 0}
+    sprite: {fileID: -1708468287, guid: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6, type: 3}
   - roomId: 32
     roomName: Camara de Llamas
-    sprite: {fileID: 0}
+    sprite: {fileID: -2061257850, guid: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6, type: 3}
   - roomId: 33
     roomName: Laberinto de Espejos
-    sprite: {fileID: 0}
+    sprite: {fileID: -2118036866, guid: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6, type: 3}
   - roomId: 34
     roomName: Nido de Murcielagos
-    sprite: {fileID: 0}
+    sprite: {fileID: -1818156392, guid: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6, type: 3}
   - roomId: 35
     roomName: Madriguera Goblin
-    sprite: {fileID: 0}
+    sprite: {fileID: 741642036, guid: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6, type: 3}
   - roomId: 36
     roomName: Sala de Esqueletos
-    sprite: {fileID: 0}
+    sprite: {fileID: 664055045, guid: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6, type: 3}
   - roomId: 37
     roomName: Perreras Orcas
-    sprite: {fileID: 0}
+    sprite: {fileID: -1119737407, guid: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6, type: 3}
   - roomId: 38
     roomName: Cripta Infestada
-    sprite: {fileID: 0}
+    sprite: {fileID: -534236148, guid: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6, type: 3}
   - roomId: 39
     roomName: Camara de Aranas
-    sprite: {fileID: 0}
+    sprite: {fileID: -725054301, guid: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6, type: 3}
   - roomId: 40
     roomName: Cuartel Derruido
-    sprite: {fileID: 0}
+    sprite: {fileID: -1233855, guid: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6, type: 3}
   - roomId: 41
     roomName: Altar Profano
-    sprite: {fileID: 0}
+    sprite: {fileID: -171391744, guid: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6, type: 3}
   - roomId: 42
     roomName: Sala de Hongos Gigantes
-    sprite: {fileID: 0}
+    sprite: {fileID: 1396836789, guid: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6, type: 3}
   - roomId: 43
     roomName: Corral de Bestias
-    sprite: {fileID: 0}
+    sprite: {fileID: 2119607972, guid: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6, type: 3}
   - roomId: 44
     roomName: Sala de Guerra
-    sprite: {fileID: 0}
+    sprite: {fileID: -242701704, guid: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6, type: 3}
   - roomId: 45
     roomName: Plaza Subterranea
-    sprite: {fileID: 0}
+    sprite: {fileID: 217060648, guid: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6, type: 3}
   - roomId: 46
     roomName: Tunel de Emboscada
-    sprite: {fileID: 0}
+    sprite: {fileID: -1267427379, guid: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6, type: 3}
   - roomId: 47
     roomName: Camara de Cultistas
-    sprite: {fileID: 0}
+    sprite: {fileID: 514560883, guid: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6, type: 3}
   - roomId: 48
     roomName: Fundicion Infernal
-    sprite: {fileID: 0}
+    sprite: {fileID: -711985747, guid: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6, type: 3}
   - roomId: 49
     roomName: Sala de Invocacion
-    sprite: {fileID: 0}
+    sprite: {fileID: -1403312639, guid: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6, type: 3}
   - roomId: 50
     roomName: Catacumbas Profundas
-    sprite: {fileID: 0}
+    sprite: {fileID: -466147775, guid: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6, type: 3}
   - roomId: 51
     roomName: Fortaleza Interior
-    sprite: {fileID: 0}
+    sprite: {fileID: 385452616, guid: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6, type: 3}
   - roomId: 52
     roomName: Mercader Misterioso
-    sprite: {fileID: 0}
+    sprite: {fileID: -2072540853, guid: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6, type: 3}
   - roomId: 53
     roomName: Estatua Parlante
-    sprite: {fileID: 0}
+    sprite: {fileID: 1190433406, guid: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6, type: 3}
   - roomId: 54
     roomName: Prision Antigua
-    sprite: {fileID: 0}
+    sprite: {fileID: 990751688, guid: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6, type: 3}
   - roomId: 55
     roomName: Camara de Acertijos
-    sprite: {fileID: 0}
+    sprite: {fileID: 1213895621, guid: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6, type: 3}
   - roomId: 56
     roomName: Pozo de los Deseos
-    sprite: {fileID: 0}
+    sprite: {fileID: -1932524000, guid: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6, type: 3}
   - roomId: 57
     roomName: Sala de Sacrificios
-    sprite: {fileID: 0}
+    sprite: {fileID: 115258148, guid: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6, type: 3}
   - roomId: 58
     roomName: Observatorio Arcano
-    sprite: {fileID: 0}
+    sprite: {fileID: 1107462218, guid: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6, type: 3}
   - roomId: 59
     roomName: Sala del Oraculo
-    sprite: {fileID: 0}
+    sprite: {fileID: 331529053, guid: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6, type: 3}
   - roomId: 60
     roomName: Encrucijada de Runas
-    sprite: {fileID: 0}
+    sprite: {fileID: 2113451355, guid: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6, type: 3}

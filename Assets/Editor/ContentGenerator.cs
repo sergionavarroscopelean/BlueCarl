@@ -415,6 +415,59 @@ namespace DungeonArchitect.EditorTools
             AssetDatabase.CreateAsset(deck, "Assets/ScriptableObjects/Decks/Mazo_Inicial.asset");
         }
 
+        [MenuItem("Dungeon Architect/Populate Starter Deck")]
+        public static void PopulateStarterDeck()
+        {
+            var deck = AssetDatabase.LoadAssetAtPath<DeckData>("Assets/ScriptableObjects/Decks/Mazo_Inicial.asset");
+            if (deck == null)
+            {
+                Debug.LogError("Mazo_Inicial.asset not found. Run 'Generate All Content' first.");
+                return;
+            }
+
+            // Load all room assets
+            var allGuids = AssetDatabase.FindAssets("t:RoomData", new[] { "Assets/ScriptableObjects/Rooms" });
+            var allRooms = new List<RoomData>();
+            foreach (var g in allGuids)
+                allRooms.Add(AssetDatabase.LoadAssetAtPath<RoomData>(AssetDatabase.GUIDToAssetPath(g)));
+
+            // Bucket by type
+            var byType = new System.Collections.Generic.Dictionary<RoomType, List<RoomData>>();
+            foreach (var r in allRooms)
+            {
+                if (!byType.ContainsKey(r.roomType)) byType[r.roomType] = new List<RoomData>();
+                byType[r.roomType].Add(r);
+            }
+
+            RoomData Pick(RoomType t, int idx)
+            {
+                if (!byType.ContainsKey(t) || byType[t].Count == 0) return null;
+                return byType[t][idx % byType[t].Count];
+            }
+
+            // Balanced 30-room starter deck:
+            // 10 Combat, 4 Elite, 3 Trap, 5 Rest/Shrine, 4 Treasure, 3 Event/Puzzle, 1 Shop
+            var selection = new List<RoomData>();
+            void Add(RoomType t, int count) { for (int i = 0; i < count; i++) { var r = Pick(t, i); if (r != null) selection.Add(r); } }
+
+            Add(RoomType.Combat,   10);
+            Add(RoomType.Elite,     4);
+            Add(RoomType.Trap,      3);
+            Add(RoomType.Rest,      3);
+            Add(RoomType.Shrine,    2);
+            Add(RoomType.Treasure,  4);
+            Add(RoomType.Event,     2);
+            Add(RoomType.Puzzle,    1);
+            Add(RoomType.Shop,      1);
+
+            deck.rooms = selection;
+            EditorUtility.SetDirty(deck);
+            AssetDatabase.SaveAssets();
+
+            Debug.Log($"Mazo_Inicial populated with {deck.rooms.Count} rooms.");
+            Selection.activeObject = deck;
+        }
+
         private class RoomDefinition
         {
             public int id;

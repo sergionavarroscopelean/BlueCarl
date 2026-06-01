@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using DungeonArchitect.Data;
+using DungeonArchitect.Utils;
 
 namespace DungeonArchitect.Systems
 {
@@ -15,6 +16,11 @@ namespace DungeonArchitect.Systems
         [SerializeField] private Transform gridParent;
         [SerializeField] private GameObject roomPrefab;
         [SerializeField] private GameObject validPlacementIndicator;
+        [SerializeField] private RoomSpriteMapper spriteMapper;
+
+        [Header("Debug")]
+        [SerializeField] private bool autoStartOnPlay = false;
+        [SerializeField] private RoomData debugStartRoom;
 
         private RoomInstance[,] grid;
         private Vector2Int playerPosition;
@@ -24,8 +30,20 @@ namespace DungeonArchitect.Systems
         public int GridWidth => gridWidth;
         public int GridHeight => gridHeight;
 
+        public IReadOnlyList<Vector2Int> ValidPlacements => validPlacements;
+
         public event System.Action<Vector2Int, RoomInstance> OnRoomPlaced;
         public event System.Action<Vector2Int> OnPlayerMoved;
+        public event System.Action<IReadOnlyList<Vector2Int>> OnValidPlacementsChanged;
+
+        private void Start()
+        {
+            if (autoStartOnPlay && debugStartRoom != null)
+            {
+                InitializeFloor();
+                PlaceStartingRoom(debugStartRoom);
+            }
+        }
 
         public void InitializeFloor()
         {
@@ -39,7 +57,7 @@ namespace DungeonArchitect.Systems
             var startPos = new Vector2Int(gridWidth / 2, gridHeight / 2);
             PlaceRoom(startRoomData, startPos);
             playerPosition = startPos;
-            UpdateValidPlacements();
+            OnPlayerMoved?.Invoke(startPos);
         }
 
         public bool CanPlaceRoom(RoomData room, Vector2Int position)
@@ -170,6 +188,8 @@ namespace DungeonArchitect.Systems
                         validPlacements.Add(pos);
                 }
             }
+
+            OnValidPlacementsChanged?.Invoke(validPlacements);
         }
 
         private void SpawnRoomVisual(RoomInstance instance)
@@ -180,6 +200,10 @@ namespace DungeonArchitect.Systems
             var go = Instantiate(roomPrefab, worldPos, Quaternion.identity, gridParent);
             go.name = $"Room_{instance.Data.roomName}_{instance.GridPosition}";
             instance.SetVisual(go);
+
+            var visual = go.GetComponent<RoomVisual>();
+            if (visual != null)
+                visual.Initialize(instance, spriteMapper);
         }
 
         private void ClearGrid()

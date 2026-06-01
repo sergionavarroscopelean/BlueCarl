@@ -2,7 +2,9 @@
     "name": "DungeonArchitect.Editor",
     "rootNamespace": "DungeonArchitect.EditorTools",
     "references": [
-        "DungeonArchitect"
+        "DungeonArchitect",
+        "UnityEngine.UI",
+        "Unity.TextMeshPro"
     ],
     "includePlatforms": [
         "Editor"

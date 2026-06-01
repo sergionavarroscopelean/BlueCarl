@@ -10,7 +10,8 @@ namespace DungeonArchitect.Systems
         [SerializeField] private List<RoomData> drawPile = new List<RoomData>();
         [SerializeField] private List<RoomData> discardPile = new List<RoomData>();
 
-        private DeckData sourceDeck;
+        
+        public DeckData sourceDeck;
 
         public int DrawPileCount => drawPile.Count;
         public int DiscardPileCount => discardPile.Count;
