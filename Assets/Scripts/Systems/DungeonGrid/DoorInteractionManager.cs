@@ -169,6 +169,13 @@ namespace DungeonArchitect.Systems
             if (validRooms.Count == 0)
                 validRooms = new List<RoomData>(draftManager.CurrentDraft);
 
+            var stairManager = GameManager.Instance.Stairs;
+            if (stairManager.StairSpawned && stairManager.StairRoomData != null)
+            {
+                if (!validRooms.Contains(stairManager.StairRoomData))
+                    validRooms.Add(stairManager.StairRoomData);
+            }
+
             ShowDraftPopup(fromRoomPos, dir, validRooms);
         }
 
@@ -227,7 +234,40 @@ namespace DungeonArchitect.Systems
             draftManager.ClearDraft();
 
             GameManager.Instance.OnRoomPlaced();
+
+            if (room.roomType == RoomType.Stair)
+            {
+                ShowFloorCompletePopup();
+                return;
+            }
+
             GameManager.Instance.ChangeState(GameState.Exploring);
+        }
+
+        private void ShowFloorCompletePopup()
+        {
+            ClearAllDoorIcons();
+            GameManager.Instance.ChangeState(GameState.FloorComplete);
+
+            var cam = mainCamera != null ? mainCamera : Camera.main;
+            var popupWorldPos = cam.transform.position + Vector3.forward * 11f;
+
+            var go = new GameObject("FloorCompletePopup");
+            var popup = go.AddComponent<FloorCompletePopupUI>();
+            popup.Initialize(
+                GameManager.Instance.CurrentFloor,
+                GameManager.Instance.RoomsPlacedThisFloor,
+                popupWorldPos,
+                cam,
+                OnFloorCompleteConfirmed
+            );
+            currentPopup = go;
+        }
+
+        private void OnFloorCompleteConfirmed()
+        {
+            DismissPopup();
+            GameManager.Instance.OnStairFound();
         }
 
         public void DismissPopup()

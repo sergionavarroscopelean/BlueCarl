@@ -10,7 +10,8 @@ namespace DungeonArchitect.Systems
         [Header("Grid Settings")]
         [SerializeField] private int gridWidth = 9;
         [SerializeField] private int gridHeight = 9;
-        [SerializeField] private float cellSize = 2f;
+        [SerializeField] private float cellWidth = 1.35f;
+        [SerializeField] private float cellHeight = 1.15f;
 
         [Header("Visuals")]
         [SerializeField] private Transform gridParent;
@@ -29,7 +30,8 @@ namespace DungeonArchitect.Systems
         public Vector2Int PlayerPosition => playerPosition;
         public int GridWidth => gridWidth;
         public int GridHeight => gridHeight;
-        public float CellSize => cellSize;
+        public float CellWidth => cellWidth;
+        public float CellHeight => cellHeight;
 
         public IReadOnlyList<Vector2Int> ValidPlacements => validPlacements;
 
@@ -134,11 +136,11 @@ namespace DungeonArchitect.Systems
 
         public Vector3 GridToWorld(Vector2Int gridPos)
         {
-            float offsetX = -(gridWidth * cellSize) / 2f;
-            float offsetY = -(gridHeight * cellSize) / 2f;
+            float offsetX = -(gridWidth * cellWidth) / 2f;
+            float offsetY = -(gridHeight * cellHeight) / 2f;
             return new Vector3(
-                gridPos.x * cellSize + offsetX,
-                gridPos.y * cellSize + offsetY,
+                gridPos.x * cellWidth + offsetX,
+                gridPos.y * cellHeight + offsetY,
                 0f
             );
         }

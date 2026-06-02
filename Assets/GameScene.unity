@@ -253,13 +253,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cb5f27b96bb14d52815dca8879dca78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: DungeonArchitect::DungeonArchitect.Systems.StairManager
-  baseMinDepth: 8
+  baseMinDepth: 10
   depthIncreasePerFloor: 2
-  chancePerRoomAfterMin: 0.05
+  chancePerRoomAfterMin: 0.15
   guaranteedSpawnRoom: 20
   currentMinDepth: 0
   stairSpawned: 0
   currentSpawnChance: 0
+  stairRoomData: {fileID: 11400000, guid: b4930eebd247a40d9b2dcb65167591c2, type: 2}
 --- !u!114 &241752170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -316,7 +317,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: DungeonArchitect::DungeonArchitect.Systems.DungeonGridManager
   gridWidth: 9
   gridHeight: 9
-  cellSize: 1.35
+  cellWidth: 1.35
+  cellHeight: 1.15
   gridParent: {fileID: 281298907}
   roomPrefab: {fileID: 1000000, guid: daa793684e1c8463cbcf09999e20fcd5, type: 3}
   validPlacementIndicator: {fileID: 1000000, guid: 1a8f7e5291e944d4abf7364ca3055631, type: 3}

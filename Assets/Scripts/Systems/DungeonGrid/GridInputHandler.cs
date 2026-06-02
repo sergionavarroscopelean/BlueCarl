@@ -104,12 +104,13 @@ namespace DungeonArchitect.Systems
             if (mainCamera == null) mainCamera = Camera.main;
 
             var worldPos = mainCamera.ScreenToWorldPoint(screenPos);
-            float cellSize = gridManager.CellSize;
-            float offsetX = -(gridManager.GridWidth * cellSize) / 2f;
-            float offsetY = -(gridManager.GridHeight * cellSize) / 2f;
+            float cw = gridManager.CellWidth;
+            float ch = gridManager.CellHeight;
+            float offsetX = -(gridManager.GridWidth * cw) / 2f;
+            float offsetY = -(gridManager.GridHeight * ch) / 2f;
 
-            int x = Mathf.RoundToInt((worldPos.x - offsetX) / cellSize);
-            int y = Mathf.RoundToInt((worldPos.y - offsetY) / cellSize);
+            int x = Mathf.RoundToInt((worldPos.x - offsetX) / cw);
+            int y = Mathf.RoundToInt((worldPos.y - offsetY) / ch);
 
             var gridPos = new Vector2Int(x, y);
             if (x >= 0 && x < gridManager.GridWidth && y >= 0 && y < gridManager.GridHeight)

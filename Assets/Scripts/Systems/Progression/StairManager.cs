@@ -6,10 +6,11 @@ namespace DungeonArchitect.Systems
     public class StairManager : MonoBehaviour
     {
         [Header("Stair Generation Settings")]
-        [SerializeField] private int baseMinDepth = 8;
+        [SerializeField] private int baseMinDepth = 10;
         [SerializeField] private int depthIncreasePerFloor = 2;
-        [SerializeField] private float chancePerRoomAfterMin = 0.05f;
+        [SerializeField] private float chancePerRoomAfterMin = 0.15f;
         [SerializeField] private int guaranteedSpawnRoom = 20;
+        [SerializeField] private RoomData stairRoomData;
 
         [Header("Current State")]
         [SerializeField] private int currentMinDepth;
@@ -20,6 +21,7 @@ namespace DungeonArchitect.Systems
 
         public bool StairSpawned => stairSpawned;
         public float CurrentSpawnChance => currentSpawnChance;
+        public RoomData StairRoomData => stairRoomData;
 
         public event System.Action OnStairAvailable;
 

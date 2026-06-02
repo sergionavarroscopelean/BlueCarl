@@ -48,21 +48,22 @@ namespace DungeonArchitect.Systems
             if (!showGridLines || gridManager == null) return;
 
             Gizmos.color = gridLineColor;
-            float cellSize = 2f;
-            float offsetX = -(gridManager.GridWidth * cellSize) / 2f;
-            float offsetY = -(gridManager.GridHeight * cellSize) / 2f;
+            float cw = gridManager.CellWidth;
+            float ch = gridManager.CellHeight;
+            float offsetX = -(gridManager.GridWidth * cw) / 2f;
+            float offsetY = -(gridManager.GridHeight * ch) / 2f;
 
             for (int x = 0; x <= gridManager.GridWidth; x++)
             {
-                var start = new Vector3(x * cellSize + offsetX, offsetY, 0f);
-                var end = new Vector3(x * cellSize + offsetX, gridManager.GridHeight * cellSize + offsetY, 0f);
+                var start = new Vector3(x * cw + offsetX, offsetY, 0f);
+                var end = new Vector3(x * cw + offsetX, gridManager.GridHeight * ch + offsetY, 0f);
                 Gizmos.DrawLine(start, end);
             }
 
             for (int y = 0; y <= gridManager.GridHeight; y++)
             {
-                var start = new Vector3(offsetX, y * cellSize + offsetY, 0f);
-                var end = new Vector3(gridManager.GridWidth * cellSize + offsetX, y * cellSize + offsetY, 0f);
+                var start = new Vector3(offsetX, y * ch + offsetY, 0f);
+                var end = new Vector3(gridManager.GridWidth * cw + offsetX, y * ch + offsetY, 0f);
                 Gizmos.DrawLine(start, end);
             }
         }
