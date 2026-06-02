@@ -12,6 +12,8 @@ namespace DungeonArchitect.Systems
         private SpriteRenderer spriteRenderer;
         private bool collected;
         private float bobTimer;
+        private float autoCollectTimer;
+        private bool autoCollectStarted;
 
         private static Sprite goldSprite;
         private static Sprite gemSprite;
@@ -33,9 +35,27 @@ namespace DungeonArchitect.Systems
             bobTimer = Random.Range(0f, Mathf.PI * 2f);
         }
 
+        public void StartAutoCollect(float delay)
+        {
+            autoCollectTimer = delay;
+            autoCollectStarted = true;
+        }
+
         private void Update()
         {
             if (collected) return;
+
+            if (autoCollectStarted)
+            {
+                autoCollectTimer -= Time.deltaTime;
+                if (autoCollectTimer <= 0f)
+                {
+                    collected = true;
+                    Collect();
+                    return;
+                }
+            }
+
             bobTimer += Time.deltaTime * 2.5f;
             float bob = Mathf.Sin(bobTimer) * 0.03f;
             transform.localPosition = new Vector3(
