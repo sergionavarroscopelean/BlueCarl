@@ -101,6 +101,9 @@ namespace DungeonArchitect.Systems
 
         private void OnRetryClicked()
         {
+            if (Core.GameManager.Instance != null)
+                Destroy(Core.GameManager.Instance.gameObject);
+
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
