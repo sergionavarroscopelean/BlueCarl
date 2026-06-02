@@ -269,6 +269,7 @@ namespace DungeonArchitect.Systems
             ClearCurrentRoomHighlight();
 
             gridManager.PlaceRoom(room, adjacentPos, selectedDoor);
+            gridManager.SpawnCorridor(selectedRoomPos, selectedDoor);
             gridManager.MovePlayerTo(adjacentPos);
 
             var instance = gridManager.GetRoomAt(adjacentPos);

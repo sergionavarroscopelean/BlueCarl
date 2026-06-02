@@ -19,6 +19,10 @@ namespace DungeonArchitect.Systems
         [SerializeField] private GameObject validPlacementIndicator;
         [SerializeField] private RoomSpriteMapper spriteMapper;
 
+        [Header("Corridors")]
+        [SerializeField] private Color corridorColor = new Color(0.35f, 0.3f, 0.25f, 1f);
+        [SerializeField] private float corridorWidth = 0.15f;
+
         [Header("Debug")]
         [SerializeField] private bool autoStartOnPlay = false;
         [SerializeField] private RoomData debugStartRoom;
@@ -268,6 +272,63 @@ namespace DungeonArchitect.Systems
                 _ => 0f
             };
             return Quaternion.Euler(0f, 0f, angle);
+        }
+
+        public void SpawnCorridor(Vector2Int fromPos, Direction worldDir)
+        {
+            if (gridParent == null) return;
+
+            var toPos = fromPos + DirectionToOffset(worldDir);
+            var fromWorld = GridToWorld(fromPos);
+            var toWorld = GridToWorld(toPos);
+            var midpoint = (fromWorld + toWorld) / 2f;
+
+            bool horizontal = worldDir == Direction.East || worldDir == Direction.West;
+            float length = horizontal ? cellWidth : cellHeight;
+            float spriteHalf = horizontal ? cellWidth * 0.5f : cellHeight * 0.5f;
+
+            var go = new GameObject($"Corridor_{fromPos}_{worldDir}");
+            go.transform.SetParent(gridParent, false);
+            go.transform.position = new Vector3(midpoint.x, midpoint.y, 0.1f);
+
+            var sr = go.AddComponent<SpriteRenderer>();
+            sr.sprite = GetCorridorSprite();
+            sr.color = corridorColor;
+            sr.sortingOrder = 1;
+
+            float scaleX = horizontal ? (length - spriteHalf) : corridorWidth;
+            float scaleY = horizontal ? corridorWidth : (length - spriteHalf);
+            go.transform.localScale = new Vector3(scaleX, scaleY, 1f);
+        }
+
+        private static Vector2Int DirectionToOffset(Direction dir)
+        {
+            return dir switch
+            {
+                Direction.North => Vector2Int.up,
+                Direction.South => Vector2Int.down,
+                Direction.East => Vector2Int.right,
+                Direction.West => Vector2Int.left,
+                _ => Vector2Int.zero
+            };
+        }
+
+        private static Sprite cachedCorridorSprite;
+
+        private static Sprite GetCorridorSprite()
+        {
+            if (cachedCorridorSprite != null) return cachedCorridorSprite;
+
+            int size = 8;
+            var tex = new Texture2D(size, size, TextureFormat.RGBA32, false);
+            tex.filterMode = FilterMode.Point;
+            for (int y = 0; y < size; y++)
+                for (int x = 0; x < size; x++)
+                    tex.SetPixel(x, y, Color.white);
+            tex.Apply();
+
+            cachedCorridorSprite = Sprite.Create(tex, new Rect(0, 0, size, size), new Vector2(0.5f, 0.5f), size);
+            return cachedCorridorSprite;
         }
 
         private void ClearGrid()
