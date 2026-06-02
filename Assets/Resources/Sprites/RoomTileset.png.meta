@@ -126,8 +126,8 @@ TextureImporter:
       name: RoomTileset_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 874
+        x: 11
+        y: 875
         width: 135
         height: 115
       alignment: 1
@@ -148,7 +148,7 @@ TextureImporter:
       name: RoomTileset_1
       rect:
         serializedVersion: 2
-        x: 152
+        x: 163
         y: 874
         width: 135
         height: 115
@@ -170,8 +170,8 @@ TextureImporter:
       name: RoomTileset_2
       rect:
         serializedVersion: 2
-        x: 304
-        y: 874
+        x: 312
+        y: 875
         width: 135
         height: 115
       alignment: 1
@@ -192,7 +192,7 @@ TextureImporter:
       name: RoomTileset_3
       rect:
         serializedVersion: 2
-        x: 456
+        x: 462
         y: 874
         width: 135
         height: 115
@@ -214,7 +214,7 @@ TextureImporter:
       name: RoomTileset_4
       rect:
         serializedVersion: 2
-        x: 608
+        x: 613
         y: 874
         width: 135
         height: 115
@@ -236,7 +236,7 @@ TextureImporter:
       name: RoomTileset_5
       rect:
         serializedVersion: 2
-        x: 760
+        x: 765
         y: 874
         width: 135
         height: 115
@@ -258,7 +258,7 @@ TextureImporter:
       name: RoomTileset_6
       rect:
         serializedVersion: 2
-        x: 912
+        x: 914
         y: 874
         width: 135
         height: 115
@@ -280,7 +280,7 @@ TextureImporter:
       name: RoomTileset_7
       rect:
         serializedVersion: 2
-        x: 1064
+        x: 1066
         y: 874
         width: 135
         height: 115
@@ -324,7 +324,7 @@ TextureImporter:
       name: RoomTileset_9
       rect:
         serializedVersion: 2
-        x: 1368
+        x: 1371
         y: 874
         width: 135
         height: 115
@@ -346,8 +346,8 @@ TextureImporter:
       name: RoomTileset_10
       rect:
         serializedVersion: 2
-        x: 0
-        y: 719
+        x: 11
+        y: 714
         width: 135
         height: 115
       alignment: 1
@@ -368,8 +368,8 @@ TextureImporter:
       name: RoomTileset_11
       rect:
         serializedVersion: 2
-        x: 152
-        y: 719
+        x: 164
+        y: 713
         width: 135
         height: 115
       alignment: 1
@@ -390,8 +390,8 @@ TextureImporter:
       name: RoomTileset_12
       rect:
         serializedVersion: 2
-        x: 304
-        y: 719
+        x: 313
+        y: 713
         width: 135
         height: 115
       alignment: 1
@@ -412,8 +412,8 @@ TextureImporter:
       name: RoomTileset_13
       rect:
         serializedVersion: 2
-        x: 456
-        y: 719
+        x: 459
+        y: 713
         width: 135
         height: 115
       alignment: 1
@@ -434,8 +434,8 @@ TextureImporter:
       name: RoomTileset_14
       rect:
         serializedVersion: 2
-        x: 608
-        y: 719
+        x: 614
+        y: 713
         width: 135
         height: 115
       alignment: 1
@@ -456,8 +456,8 @@ TextureImporter:
       name: RoomTileset_15
       rect:
         serializedVersion: 2
-        x: 760
-        y: 719
+        x: 766
+        y: 713
         width: 135
         height: 115
       alignment: 1
@@ -478,8 +478,8 @@ TextureImporter:
       name: RoomTileset_16
       rect:
         serializedVersion: 2
-        x: 912
-        y: 719
+        x: 916
+        y: 712
         width: 135
         height: 115
       alignment: 1
@@ -500,8 +500,8 @@ TextureImporter:
       name: RoomTileset_17
       rect:
         serializedVersion: 2
-        x: 1064
-        y: 719
+        x: 1068
+        y: 711
         width: 135
         height: 115
       alignment: 1
@@ -522,8 +522,8 @@ TextureImporter:
       name: RoomTileset_18
       rect:
         serializedVersion: 2
-        x: 1216
-        y: 719
+        x: 1217
+        y: 712
         width: 135
         height: 115
       alignment: 1
@@ -544,8 +544,8 @@ TextureImporter:
       name: RoomTileset_19
       rect:
         serializedVersion: 2
-        x: 1368
-        y: 719
+        x: 1370
+        y: 712
         width: 135
         height: 115
       alignment: 1
@@ -566,8 +566,8 @@ TextureImporter:
       name: RoomTileset_20
       rect:
         serializedVersion: 2
-        x: 0
-        y: 564
+        x: 10
+        y: 558
         width: 135
         height: 115
       alignment: 1
@@ -588,8 +588,8 @@ TextureImporter:
       name: RoomTileset_21
       rect:
         serializedVersion: 2
-        x: 152
-        y: 564
+        x: 163
+        y: 559
         width: 135
         height: 115
       alignment: 1
@@ -610,8 +610,8 @@ TextureImporter:
       name: RoomTileset_22
       rect:
         serializedVersion: 2
-        x: 304
-        y: 564
+        x: 313
+        y: 558
         width: 135
         height: 115
       alignment: 1
@@ -632,8 +632,8 @@ TextureImporter:
       name: RoomTileset_23
       rect:
         serializedVersion: 2
-        x: 456
-        y: 564
+        x: 463
+        y: 558
         width: 135
         height: 115
       alignment: 1
@@ -654,8 +654,8 @@ TextureImporter:
       name: RoomTileset_24
       rect:
         serializedVersion: 2
-        x: 608
-        y: 564
+        x: 613
+        y: 558
         width: 135
         height: 115
       alignment: 1
@@ -676,8 +676,8 @@ TextureImporter:
       name: RoomTileset_25
       rect:
         serializedVersion: 2
-        x: 760
-        y: 564
+        x: 766
+        y: 558
         width: 135
         height: 115
       alignment: 1
@@ -698,8 +698,8 @@ TextureImporter:
       name: RoomTileset_26
       rect:
         serializedVersion: 2
-        x: 912
-        y: 564
+        x: 917
+        y: 557
         width: 135
         height: 115
       alignment: 1
@@ -720,8 +720,8 @@ TextureImporter:
       name: RoomTileset_27
       rect:
         serializedVersion: 2
-        x: 1064
-        y: 564
+        x: 1069
+        y: 558
         width: 135
         height: 115
       alignment: 1
@@ -743,7 +743,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1216
-        y: 564
+        y: 558
         width: 135
         height: 115
       alignment: 1
@@ -764,8 +764,8 @@ TextureImporter:
       name: RoomTileset_29
       rect:
         serializedVersion: 2
-        x: 1368
-        y: 564
+        x: 1374
+        y: 558
         width: 135
         height: 115
       alignment: 1
@@ -786,8 +786,8 @@ TextureImporter:
       name: RoomTileset_30
       rect:
         serializedVersion: 2
-        x: 0
-        y: 409
+        x: 12
+        y: 405
         width: 135
         height: 115
       alignment: 1
@@ -808,8 +808,8 @@ TextureImporter:
       name: RoomTileset_31
       rect:
         serializedVersion: 2
-        x: 152
-        y: 409
+        x: 165
+        y: 406
         width: 135
         height: 115
       alignment: 1
@@ -830,8 +830,8 @@ TextureImporter:
       name: RoomTileset_32
       rect:
         serializedVersion: 2
-        x: 304
-        y: 409
+        x: 312
+        y: 406
         width: 135
         height: 115
       alignment: 1
@@ -852,8 +852,8 @@ TextureImporter:
       name: RoomTileset_33
       rect:
         serializedVersion: 2
-        x: 456
-        y: 409
+        x: 461
+        y: 406
         width: 135
         height: 115
       alignment: 1
@@ -874,8 +874,8 @@ TextureImporter:
       name: RoomTileset_34
       rect:
         serializedVersion: 2
-        x: 608
-        y: 409
+        x: 614
+        y: 405
         width: 135
         height: 115
       alignment: 1
@@ -896,8 +896,8 @@ TextureImporter:
       name: RoomTileset_35
       rect:
         serializedVersion: 2
-        x: 760
-        y: 409
+        x: 764
+        y: 405
         width: 135
         height: 115
       alignment: 1
@@ -918,8 +918,8 @@ TextureImporter:
       name: RoomTileset_36
       rect:
         serializedVersion: 2
-        x: 912
-        y: 409
+        x: 917
+        y: 406
         width: 135
         height: 115
       alignment: 1
@@ -940,8 +940,8 @@ TextureImporter:
       name: RoomTileset_37
       rect:
         serializedVersion: 2
-        x: 1064
-        y: 409
+        x: 1065
+        y: 406
         width: 135
         height: 115
       alignment: 1
@@ -963,7 +963,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1216
-        y: 409
+        y: 406
         width: 135
         height: 115
       alignment: 1
@@ -984,8 +984,8 @@ TextureImporter:
       name: RoomTileset_39
       rect:
         serializedVersion: 2
-        x: 1368
-        y: 409
+        x: 1371
+        y: 406
         width: 135
         height: 115
       alignment: 1
@@ -1006,8 +1006,8 @@ TextureImporter:
       name: RoomTileset_40
       rect:
         serializedVersion: 2
-        x: 0
-        y: 254
+        x: 11
+        y: 255
         width: 135
         height: 115
       alignment: 1
@@ -1028,8 +1028,8 @@ TextureImporter:
       name: RoomTileset_41
       rect:
         serializedVersion: 2
-        x: 152
-        y: 254
+        x: 164
+        y: 255
         width: 135
         height: 115
       alignment: 1
@@ -1050,8 +1050,8 @@ TextureImporter:
       name: RoomTileset_42
       rect:
         serializedVersion: 2
-        x: 304
-        y: 254
+        x: 311
+        y: 255
         width: 135
         height: 115
       alignment: 1
@@ -1072,8 +1072,8 @@ TextureImporter:
       name: RoomTileset_43
       rect:
         serializedVersion: 2
-        x: 456
-        y: 254
+        x: 460
+        y: 255
         width: 135
         height: 115
       alignment: 1
@@ -1094,8 +1094,8 @@ TextureImporter:
       name: RoomTileset_44
       rect:
         serializedVersion: 2
-        x: 608
-        y: 254
+        x: 615
+        y: 255
         width: 135
         height: 115
       alignment: 1
@@ -1116,8 +1116,8 @@ TextureImporter:
       name: RoomTileset_45
       rect:
         serializedVersion: 2
-        x: 760
-        y: 254
+        x: 763
+        y: 255
         width: 135
         height: 115
       alignment: 1
@@ -1138,8 +1138,8 @@ TextureImporter:
       name: RoomTileset_46
       rect:
         serializedVersion: 2
-        x: 912
-        y: 254
+        x: 914
+        y: 255
         width: 135
         height: 115
       alignment: 1
@@ -1160,8 +1160,8 @@ TextureImporter:
       name: RoomTileset_47
       rect:
         serializedVersion: 2
-        x: 1064
-        y: 254
+        x: 1067
+        y: 255
         width: 135
         height: 115
       alignment: 1
@@ -1183,7 +1183,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1216
-        y: 254
+        y: 255
         width: 135
         height: 115
       alignment: 1
@@ -1204,8 +1204,8 @@ TextureImporter:
       name: RoomTileset_49
       rect:
         serializedVersion: 2
-        x: 1368
-        y: 254
+        x: 1373
+        y: 255
         width: 135
         height: 115
       alignment: 1
@@ -1226,8 +1226,8 @@ TextureImporter:
       name: RoomTileset_50
       rect:
         serializedVersion: 2
-        x: 0
-        y: 99
+        x: 8
+        y: 103
         width: 135
         height: 115
       alignment: 1
@@ -1248,8 +1248,8 @@ TextureImporter:
       name: RoomTileset_51
       rect:
         serializedVersion: 2
-        x: 152
-        y: 99
+        x: 164
+        y: 104
         width: 135
         height: 115
       alignment: 1
@@ -1270,8 +1270,8 @@ TextureImporter:
       name: RoomTileset_52
       rect:
         serializedVersion: 2
-        x: 304
-        y: 99
+        x: 313
+        y: 104
         width: 135
         height: 115
       alignment: 1
@@ -1292,8 +1292,8 @@ TextureImporter:
       name: RoomTileset_53
       rect:
         serializedVersion: 2
-        x: 456
-        y: 99
+        x: 461
+        y: 104
         width: 135
         height: 115
       alignment: 1
@@ -1314,8 +1314,8 @@ TextureImporter:
       name: RoomTileset_54
       rect:
         serializedVersion: 2
-        x: 608
-        y: 99
+        x: 612
+        y: 104
         width: 135
         height: 115
       alignment: 1
@@ -1336,8 +1336,8 @@ TextureImporter:
       name: RoomTileset_55
       rect:
         serializedVersion: 2
-        x: 760
-        y: 99
+        x: 765
+        y: 104
         width: 135
         height: 115
       alignment: 1
@@ -1358,8 +1358,8 @@ TextureImporter:
       name: RoomTileset_56
       rect:
         serializedVersion: 2
-        x: 912
-        y: 99
+        x: 915
+        y: 105
         width: 135
         height: 115
       alignment: 1
@@ -1380,8 +1380,8 @@ TextureImporter:
       name: RoomTileset_57
       rect:
         serializedVersion: 2
-        x: 1064
-        y: 99
+        x: 1067
+        y: 105
         width: 135
         height: 115
       alignment: 1
@@ -1402,8 +1402,8 @@ TextureImporter:
       name: RoomTileset_58
       rect:
         serializedVersion: 2
-        x: 1216
-        y: 99
+        x: 1213
+        y: 105
         width: 135
         height: 115
       alignment: 1
@@ -1424,8 +1424,8 @@ TextureImporter:
       name: RoomTileset_59
       rect:
         serializedVersion: 2
-        x: 1368
-        y: 99
+        x: 1372
+        y: 105
         width: 135
         height: 115
       alignment: 1
