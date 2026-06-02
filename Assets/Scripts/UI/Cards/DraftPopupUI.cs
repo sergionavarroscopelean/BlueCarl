@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using TMPro;
 using System.Collections.Generic;
 using DungeonArchitect.Data;
+using DungeonArchitect.Utils;
 
 namespace DungeonArchitect.Systems
 {
@@ -11,10 +12,14 @@ namespace DungeonArchitect.Systems
         private Canvas canvas;
         private System.Action<RoomData> onRoomChosen;
         private List<GameObject> cardObjects = new List<GameObject>();
+        private RoomSpriteMapper spriteMapper;
 
         public void Initialize(IReadOnlyList<RoomData> rooms, Vector3 worldPos, Camera cam, System.Action<RoomData> callback)
         {
             onRoomChosen = callback;
+            spriteMapper = UnityEngine.Resources.FindObjectsOfTypeAll<RoomSpriteMapper>().Length > 0
+                ? UnityEngine.Resources.FindObjectsOfTypeAll<RoomSpriteMapper>()[0]
+                : null;
             CreatePopupCanvas(worldPos, cam);
             CreateRoomCards(rooms);
         }
@@ -29,7 +34,7 @@ namespace DungeonArchitect.Systems
 
             var rt = canvasGO.GetComponent<RectTransform>();
             rt.position = worldPos + Vector3.back * 0.1f;
-            rt.sizeDelta = new Vector2(600, 200);
+            rt.sizeDelta = new Vector2(620, 280);
             rt.localScale = Vector3.one * 0.01f;
 
             canvasGO.AddComponent<CanvasScaler>();
@@ -51,6 +56,7 @@ namespace DungeonArchitect.Systems
         {
             var canvasRT = canvas.GetComponent<RectTransform>();
             float cardWidth = 180f;
+            float cardHeight = 260f;
             float spacing = 15f;
             float totalWidth = rooms.Count * cardWidth + (rooms.Count - 1) * spacing;
             float startX = -totalWidth / 2f + cardWidth / 2f;
@@ -61,7 +67,7 @@ namespace DungeonArchitect.Systems
                 var cardGO = CreateCard(room, canvasRT.transform);
                 var cardRT = cardGO.GetComponent<RectTransform>();
                 cardRT.anchoredPosition = new Vector2(startX + i * (cardWidth + spacing), 0);
-                cardRT.sizeDelta = new Vector2(cardWidth, 180f);
+                cardRT.sizeDelta = new Vector2(cardWidth, cardHeight);
                 cardObjects.Add(cardGO);
             }
         }
@@ -87,16 +93,32 @@ namespace DungeonArchitect.Systems
             var capturedRoom = room;
             btn.onClick.AddListener(() => OnCardClick(capturedRoom));
 
+            var iconGO = new GameObject("RoomImage");
+            iconGO.transform.SetParent(cardGO.transform, false);
+            var iconRT = iconGO.AddComponent<RectTransform>();
+            iconRT.anchorMin = new Vector2(0.1f, 0.45f);
+            iconRT.anchorMax = new Vector2(0.9f, 0.95f);
+            iconRT.offsetMin = iconRT.offsetMax = Vector2.zero;
+            iconGO.AddComponent<CanvasRenderer>();
+            var iconImg = iconGO.AddComponent<Image>();
+            iconImg.preserveAspect = true;
+            iconImg.raycastTarget = false;
+            var roomSprite = GetRoomSprite(room);
+            if (roomSprite != null)
+                iconImg.sprite = roomSprite;
+            else
+                iconImg.color = new Color(0.2f, 0.2f, 0.3f, 0.5f);
+
             var nameGO = new GameObject("Name");
             nameGO.transform.SetParent(cardGO.transform, false);
             var nameRT = nameGO.AddComponent<RectTransform>();
-            nameRT.anchorMin = new Vector2(0.05f, 0.6f);
-            nameRT.anchorMax = new Vector2(0.95f, 0.95f);
+            nameRT.anchorMin = new Vector2(0.05f, 0.25f);
+            nameRT.anchorMax = new Vector2(0.95f, 0.45f);
             nameRT.offsetMin = nameRT.offsetMax = Vector2.zero;
             nameGO.AddComponent<CanvasRenderer>();
             var nameTMP = nameGO.AddComponent<TextMeshProUGUI>();
             nameTMP.text = room.roomName;
-            nameTMP.fontSize = 14;
+            nameTMP.fontSize = 12;
             nameTMP.color = Color.white;
             nameTMP.alignment = TextAlignmentOptions.Center;
             nameTMP.enableWordWrapping = true;
@@ -104,26 +126,26 @@ namespace DungeonArchitect.Systems
             var typeGO = new GameObject("Type");
             typeGO.transform.SetParent(cardGO.transform, false);
             var typeRT = typeGO.AddComponent<RectTransform>();
-            typeRT.anchorMin = new Vector2(0.05f, 0.35f);
-            typeRT.anchorMax = new Vector2(0.95f, 0.6f);
+            typeRT.anchorMin = new Vector2(0.05f, 0.13f);
+            typeRT.anchorMax = new Vector2(0.95f, 0.26f);
             typeRT.offsetMin = typeRT.offsetMax = Vector2.zero;
             typeGO.AddComponent<CanvasRenderer>();
             var typeTMP = typeGO.AddComponent<TextMeshProUGUI>();
             typeTMP.text = room.roomType.ToString();
-            typeTMP.fontSize = 11;
+            typeTMP.fontSize = 10;
             typeTMP.color = new Color(0.8f, 0.8f, 0.8f);
             typeTMP.alignment = TextAlignmentOptions.Center;
 
             var doorsGO = new GameObject("Doors");
             doorsGO.transform.SetParent(cardGO.transform, false);
             var doorsRT = doorsGO.AddComponent<RectTransform>();
-            doorsRT.anchorMin = new Vector2(0.05f, 0.05f);
-            doorsRT.anchorMax = new Vector2(0.95f, 0.35f);
+            doorsRT.anchorMin = new Vector2(0.05f, 0.02f);
+            doorsRT.anchorMax = new Vector2(0.95f, 0.14f);
             doorsRT.offsetMin = doorsRT.offsetMax = Vector2.zero;
             doorsGO.AddComponent<CanvasRenderer>();
             var doorsTMP = doorsGO.AddComponent<TextMeshProUGUI>();
             doorsTMP.text = GetDoorsLabel(room);
-            doorsTMP.fontSize = 11;
+            doorsTMP.fontSize = 10;
             doorsTMP.color = new Color(0.9f, 0.9f, 0.5f);
             doorsTMP.alignment = TextAlignmentOptions.Center;
 
@@ -133,6 +155,21 @@ namespace DungeonArchitect.Systems
         private void OnCardClick(RoomData room)
         {
             onRoomChosen?.Invoke(room);
+        }
+
+        private Sprite GetRoomSprite(RoomData room)
+        {
+            if (room.roomSprite != null)
+                return room.roomSprite;
+
+            if (spriteMapper != null && !string.IsNullOrEmpty(room.roomId))
+            {
+                var idStr = room.roomId.Replace("room_", "");
+                if (int.TryParse(idStr, out int id))
+                    return spriteMapper.GetSprite(id);
+            }
+
+            return room.cardSprite;
         }
 
         private string GetDoorsLabel(RoomData room)

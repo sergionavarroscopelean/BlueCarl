@@ -38,7 +38,7 @@ namespace DungeonArchitect.Systems
                     spriteRenderer.sprite = sprite;
             }
 
-            spriteRenderer.color = GetTypeColor(instance.Data.roomType);
+            spriteRenderer.color = Color.white;
             SetupDoorIndicators(instance.Data);
             SetRevealed(false);
         }
@@ -48,9 +48,7 @@ namespace DungeonArchitect.Systems
             isRevealed = revealed;
             if (fogOverlay != null)
                 fogOverlay.SetActive(!revealed);
-            spriteRenderer.color = revealed
-                ? GetTypeColor(roomInstance.Data.roomType)
-                : new Color(0.3f, 0.3f, 0.3f, 0.8f);
+            spriteRenderer.color = revealed ? Color.white : new Color(0.3f, 0.3f, 0.3f, 0.8f);
         }
 
         public void SetHighlighted(bool highlighted)
@@ -62,15 +60,15 @@ namespace DungeonArchitect.Systems
         public void SetAsCurrentRoom(bool isCurrent)
         {
             SetRevealed(true);
-            SetHighlighted(isCurrent);
+            SetHighlighted(false);
         }
 
         private void SetupDoorIndicators(RoomData data)
         {
-            if (doorIndicatorN != null) doorIndicatorN.gameObject.SetActive(data.HasDoor(Direction.North));
-            if (doorIndicatorS != null) doorIndicatorS.gameObject.SetActive(data.HasDoor(Direction.South));
-            if (doorIndicatorE != null) doorIndicatorE.gameObject.SetActive(data.HasDoor(Direction.East));
-            if (doorIndicatorW != null) doorIndicatorW.gameObject.SetActive(data.HasDoor(Direction.West));
+            if (doorIndicatorN != null) doorIndicatorN.gameObject.SetActive(false);
+            if (doorIndicatorS != null) doorIndicatorS.gameObject.SetActive(false);
+            if (doorIndicatorE != null) doorIndicatorE.gameObject.SetActive(false);
+            if (doorIndicatorW != null) doorIndicatorW.gameObject.SetActive(false);
         }
 
         private Color GetTypeColor(RoomType type)

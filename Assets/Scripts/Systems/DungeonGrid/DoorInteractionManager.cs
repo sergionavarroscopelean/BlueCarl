@@ -175,6 +175,7 @@ namespace DungeonArchitect.Systems
         private void ShowDraftPopup(Vector2Int fromRoomPos, Direction dir, List<RoomData> rooms)
         {
             DismissPopup();
+            SetAllDoorIconsVisible(false);
 
             var worldPos = gridManager.GridToWorld(fromRoomPos);
             var roomVisual = gridManager.GetRoomAt(fromRoomPos)?.Visual;
@@ -235,6 +236,19 @@ namespace DungeonArchitect.Systems
             {
                 Destroy(currentPopup);
                 currentPopup = null;
+                SetAllDoorIconsVisible(true);
+            }
+        }
+
+        private void SetAllDoorIconsVisible(bool visible)
+        {
+            foreach (var kvp in roomDoorIcons)
+            {
+                foreach (var icon in kvp.Value)
+                {
+                    if (icon != null)
+                        icon.SetActive(visible);
+                }
             }
         }
 

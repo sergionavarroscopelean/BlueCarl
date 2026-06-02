@@ -1141,7 +1141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: DungeonArchitect::DungeonArchitect.Systems.DungeonGridManager
   gridWidth: 9
   gridHeight: 9
-  cellSize: 2
+  cellSize: 1.35
   gridParent: {fileID: 448593338}
   roomPrefab: {fileID: 1000000, guid: daa793684e1c8463cbcf09999e20fcd5, type: 3}
   validPlacementIndicator: {fileID: 0}

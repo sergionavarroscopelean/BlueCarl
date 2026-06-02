@@ -104,7 +104,7 @@ namespace DungeonArchitect.Systems
             if (mainCamera == null) mainCamera = Camera.main;
 
             var worldPos = mainCamera.ScreenToWorldPoint(screenPos);
-            float cellSize = 2f;
+            float cellSize = gridManager.CellSize;
             float offsetX = -(gridManager.GridWidth * cellSize) / 2f;
             float offsetY = -(gridManager.GridHeight * cellSize) / 2f;
 
