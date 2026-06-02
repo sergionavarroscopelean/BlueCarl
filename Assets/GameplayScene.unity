@@ -515,8 +515,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3291cecf93e34fc08653be80839d71c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: DungeonArchitect::DungeonArchitect.Core.AudioManager
-  musicSource: {fileID: 0}
-  sfxSource: {fileID: 0}
+  musicSource: {fileID: 1137868931}
+  sfxSource: {fileID: 1137868930}
   menuMusic: {fileID: 0}
   explorationMusic: {fileID: 0}
   combatMusic: {fileID: 0}
@@ -761,7 +761,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1629482238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -966,6 +966,7 @@ GameObject:
   - component: {fileID: 2001803839}
   - component: {fileID: 2001803838}
   - component: {fileID: 2001803860}
+  - component: {fileID: 2001803870}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1194,6 +1195,26 @@ MonoBehaviour:
   totalFloors: 8
   debugAutoStart: 1
   debugStartingRoom: {fileID: 11400000, guid: 1532733b96a8a42068156dd7aa6c3bd2, type: 2}
+  menuCanvas: {fileID: 1629482237}
+--- !u!114 &2001803870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2001803837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7a7547f363040aa8f224d93fb92b3a5, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: DungeonArchitect::DungeonArchitect.Systems.DoorInteractionManager
+  gridManager: {fileID: 2001803848}
+  draftManager: {fileID: 2001803847}
+  mainCamera: {fileID: 1043737364}
+  doorIconSprite: {fileID: 0}
+  doorIconColor: {r: 0.2, g: 0.9, b: 0.4, a: 1}
+  doorIconSize: 0.2
+  draftPopupPrefab: {fileID: 0}
 --- !u!4 &2001803851
 Transform:
   m_ObjectHideFlags: 0

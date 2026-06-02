@@ -29,6 +29,7 @@ namespace DungeonArchitect.Systems
         public Vector2Int PlayerPosition => playerPosition;
         public int GridWidth => gridWidth;
         public int GridHeight => gridHeight;
+        public float CellSize => cellSize;
 
         public IReadOnlyList<Vector2Int> ValidPlacements => validPlacements;
 
@@ -57,6 +58,16 @@ namespace DungeonArchitect.Systems
             var startPos = new Vector2Int(gridWidth / 2, gridHeight / 2);
             PlaceRoom(startRoomData, startPos);
             playerPosition = startPos;
+
+            var instance = grid[startPos.x, startPos.y];
+            if (instance != null)
+            {
+                instance.Explore();
+                var visual = instance.Visual?.GetComponent<RoomVisual>();
+                if (visual != null)
+                    visual.SetAsCurrentRoom(true);
+            }
+
             OnPlayerMoved?.Invoke(startPos);
         }
 

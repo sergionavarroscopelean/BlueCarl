@@ -22,6 +22,9 @@ namespace DungeonArchitect.Core
         [SerializeField] private StairManager stairManager;
         [SerializeField] private ProgressionManager progressionManager;
 
+        [Header("UI")]
+        [SerializeField] private GameObject menuCanvas;
+
         [Header("Configuration")]
         [SerializeField] private ClassData selectedClass;
         [SerializeField] private int bossEveryXFloors = 3;
@@ -71,7 +74,12 @@ namespace DungeonArchitect.Core
 
         public void OnClickStartRun()
         {
+            if (menuCanvas != null)
+                menuCanvas.SetActive(false);
+
             StartNewRun(selectedClass, deckManager.sourceDeck);
+            if (debugStartingRoom != null)
+                gridManager.PlaceStartingRoom(debugStartingRoom);
         }
         
         public void StartNewRun(ClassData classData, DeckData deck)
