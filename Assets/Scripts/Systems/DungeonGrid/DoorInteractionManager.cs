@@ -312,6 +312,50 @@ namespace DungeonArchitect.Systems
                 return;
             }
 
+            if (room.roomId == "room_005")
+            {
+                ShowChestPuzzlePopup();
+                return;
+            }
+
+            GameManager.Instance.ChangeState(GameState.Exploring);
+        }
+
+        private void ShowChestPuzzlePopup(int forcePuzzleIndex = -1)
+        {
+            GameManager.Instance.ChangeState(GameState.Event);
+
+            var cam = mainCamera != null ? mainCamera : Camera.main;
+            var popupWorldPos = cam.transform.position + Vector3.forward * 11f;
+
+            var go = new GameObject("ChestPuzzlePopup");
+            var popup = go.AddComponent<ChestPuzzlePopupUI>();
+            popup.Initialize(popupWorldPos, cam, OnChestPuzzleResolved, forcePuzzleIndex);
+            currentPopup = go;
+        }
+
+        private void OnChestPuzzleResolved(bool success)
+        {
+            DismissPopup();
+
+            var resources = GameManager.Instance.Resources;
+            if (success)
+            {
+                resources.AddGold(8);
+                resources.AddXP(25);
+                resources.AddGems(1);
+            }
+            else
+            {
+                resources.TakeDamage(5);
+            }
+
+            if (resources.CurrentHP <= 0)
+            {
+                ShowGameOverPopup("El santuario te ha castigado");
+                return;
+            }
+
             GameManager.Instance.ChangeState(GameState.Exploring);
         }
 

@@ -54,11 +54,13 @@ namespace DungeonArchitect.Systems
             new[] { "Que tiene cabeza, tiene cola, pero no tiene cuerpo?\n\n¿Que es?", "Una moneda", "Un cometa", "Un alfiler" },
         };
 
-        public void Initialize(Vector3 worldPos, Camera cam, System.Action<bool> callback)
+        public void Initialize(Vector3 worldPos, Camera cam, System.Action<bool> callback, int forceIndex = -1)
         {
             onResolved = callback;
 
-            int riddleIndex = Random.Range(0, riddles.Length);
+            int riddleIndex = forceIndex >= 0 && forceIndex < riddles.Length
+                ? forceIndex
+                : Random.Range(0, riddles.Length);
             var riddle = riddles[riddleIndex];
 
             int[] shuffled = { 0, 1, 2 };
