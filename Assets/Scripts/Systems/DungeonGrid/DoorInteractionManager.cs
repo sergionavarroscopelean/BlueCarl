@@ -84,6 +84,19 @@ namespace DungeonArchitect.Systems
                         CreateDoorIconsForRoom(pos, room);
                 }
             }
+
+            if (GetTotalAvailableDoors() == 0
+                && GameManager.Instance.CurrentState == GameState.Exploring
+                && GameManager.Instance.RoomsPlacedThisFloor > 0)
+                ShowGameOverPopup("No quedan puertas disponibles");
+        }
+
+        private int GetTotalAvailableDoors()
+        {
+            int count = 0;
+            foreach (var kvp in roomDoorIcons)
+                count += kvp.Value.Count;
+            return count;
         }
 
         private void CreateDoorIconsForRoom(Vector2Int roomPos, RoomInstance room)
@@ -183,6 +196,7 @@ namespace DungeonArchitect.Systems
         {
             DismissPopup();
             SetAllDoorIconsVisible(false);
+            SetCurrentRoomBorderVisible(false);
 
             var worldPos = gridManager.GridToWorld(fromRoomPos);
             var roomVisual = gridManager.GetRoomAt(fromRoomPos)?.Visual;
@@ -195,23 +209,65 @@ namespace DungeonArchitect.Systems
                 currentPopup = Instantiate(draftPopupPrefab);
                 var popup = currentPopup.GetComponent<DraftPopupUI>();
                 if (popup != null)
-                    popup.Initialize(rooms, popupWorldPos, mainCamera, OnRoomChosenFromPopup);
+                    popup.Initialize(rooms, popupWorldPos, mainCamera, OnOfferChosen);
             }
             else
             {
                 var go = new GameObject("DraftPopup");
                 var popup = go.AddComponent<DraftPopupUI>();
-                popup.Initialize(rooms, popupWorldPos, mainCamera, OnRoomChosenFromPopup);
+                popup.Initialize(rooms, popupWorldPos, mainCamera, OnOfferChosen);
                 currentPopup = go;
             }
         }
 
-        private void OnRoomChosenFromPopup(RoomData room)
+        private void OnOfferChosen(RoomOffer offer)
         {
             DismissPopup();
 
+            var room = offer.room;
+            var resources = GameManager.Instance.Resources;
+
+            switch (offer.costType)
+            {
+                case RoomCostType.Key:
+                    if (!resources.SpendKey())
+                        { GameManager.Instance.ChangeState(GameState.Exploring); return; }
+                    break;
+                case RoomCostType.Gems:
+                    if (!resources.SpendGems(offer.costAmount))
+                        { GameManager.Instance.ChangeState(GameState.Exploring); return; }
+                    break;
+            }
+
             var draftCopy = new List<RoomData>(draftManager.CurrentDraft);
             var adjacentPos = GetAdjacentPosition(selectedRoomPos, selectedDoor);
+
+            var playerPos = gridManager.PlayerPosition;
+            int distance = gridManager.GetPathDistance(playerPos, selectedRoomPos);
+            int timeCost = (distance >= 0 ? distance : 0) + 1;
+            resources.SpendTime(timeCost);
+
+            if (resources.CurrentTime <= 0)
+            {
+                ShowGameOverPopup("Te has quedado sin pasos");
+                return;
+            }
+
+            int combatDamage = DraftPopupUI.RollDamage(room);
+            if (combatDamage > 0)
+                resources.TakeDamage(combatDamage);
+
+            if (offer.goldReward > 0) resources.AddGold(offer.goldReward);
+            if (offer.gemReward > 0) resources.AddGems(offer.gemReward);
+            if (offer.keyReward > 0) resources.AddKeys(offer.keyReward);
+
+            if (resources.CurrentHP <= 0)
+            {
+                ShowGameOverPopup("Has muerto en combate");
+                return;
+            }
+
+            ClearCurrentRoomHighlight();
 
             gridManager.PlaceRoom(room, adjacentPos);
             gridManager.MovePlayerTo(adjacentPos);
@@ -270,6 +326,20 @@ namespace DungeonArchitect.Systems
             GameManager.Instance.OnStairFound();
         }
 
+        private void ShowGameOverPopup(string reason)
+        {
+            ClearAllDoorIcons();
+            GameManager.Instance.ChangeState(GameState.GameOver);
+
+            var cam = mainCamera != null ? mainCamera : Camera.main;
+            var popupWorldPos = cam.transform.position + Vector3.forward * 11f;
+
+            var go = new GameObject("GameOverPopup");
+            var popup = go.AddComponent<GameOverPopupUI>();
+            popup.Initialize(reason, GameManager.Instance.CurrentFloor, GameManager.Instance.RoomsPlacedThisFloor, popupWorldPos, cam);
+            currentPopup = go;
+        }
+
         public void DismissPopup()
         {
             if (currentPopup != null)
@@ -277,6 +347,7 @@ namespace DungeonArchitect.Systems
                 Destroy(currentPopup);
                 currentPopup = null;
                 SetAllDoorIconsVisible(true);
+                SetCurrentRoomBorderVisible(true);
             }
         }
 
@@ -288,6 +359,36 @@ namespace DungeonArchitect.Systems
                 {
                     if (icon != null)
                         icon.SetActive(visible);
+                }
+            }
+        }
+
+        private void SetCurrentRoomBorderVisible(bool visible)
+        {
+            for (int x = 0; x < gridManager.GridWidth; x++)
+            {
+                for (int y = 0; y < gridManager.GridHeight; y++)
+                {
+                    var room = gridManager.GetRoomAt(new Vector2Int(x, y));
+                    if (room?.Visual == null) continue;
+                    var visual = room.Visual.GetComponent<RoomVisual>();
+                    if (visual != null)
+                        visual.SetBorderVisible(visible);
+                }
+            }
+        }
+
+        private void ClearCurrentRoomHighlight()
+        {
+            for (int x = 0; x < gridManager.GridWidth; x++)
+            {
+                for (int y = 0; y < gridManager.GridHeight; y++)
+                {
+                    var room = gridManager.GetRoomAt(new Vector2Int(x, y));
+                    if (room?.Visual == null) continue;
+                    var visual = room.Visual.GetComponent<RoomVisual>();
+                    if (visual != null)
+                        visual.SetAsCurrentRoom(false);
                 }
             }
         }

@@ -17,6 +17,8 @@ namespace DungeonArchitect.Systems
 
         private RoomInstance roomInstance;
         private bool isRevealed;
+        private bool isCurrent;
+        private GameObject borderHighlight;
 
         public RoomInstance RoomInstance => roomInstance;
 
@@ -48,19 +50,75 @@ namespace DungeonArchitect.Systems
             isRevealed = revealed;
             if (fogOverlay != null)
                 fogOverlay.SetActive(!revealed);
-            spriteRenderer.color = revealed ? Color.white : new Color(0.3f, 0.3f, 0.3f, 0.8f);
+            UpdateColor();
         }
 
-        public void SetHighlighted(bool highlighted)
+        public void SetAsCurrentRoom(bool current)
         {
-            if (highlightBorder != null)
-                highlightBorder.SetActive(highlighted);
-        }
-
-        public void SetAsCurrentRoom(bool isCurrent)
-        {
+            isCurrent = current;
             SetRevealed(true);
-            SetHighlighted(false);
+
+            if (current)
+                ShowBorder();
+            else
+                HideBorder();
+        }
+
+        private void UpdateColor()
+        {
+            if (!isRevealed)
+            {
+                spriteRenderer.color = new Color(0.3f, 0.3f, 0.3f, 0.8f);
+                return;
+            }
+            spriteRenderer.color = Color.white;
+        }
+
+        private void ShowBorder()
+        {
+            if (borderHighlight == null)
+            {
+                borderHighlight = new GameObject("CurrentBorder");
+                borderHighlight.transform.SetParent(transform, false);
+
+                var bounds = spriteRenderer.sprite != null ? spriteRenderer.sprite.bounds : new Bounds(Vector3.zero, Vector3.one);
+                borderHighlight.transform.localPosition = (Vector3)bounds.center + Vector3.back * 0.01f;
+
+                var lr = borderHighlight.AddComponent<LineRenderer>();
+                lr.useWorldSpace = false;
+                lr.loop = true;
+                lr.startWidth = 0.04f;
+                lr.endWidth = 0.04f;
+                lr.material = new Material(Shader.Find("Sprites/Default"));
+                lr.startColor = Color.white;
+                lr.endColor = Color.white;
+                lr.sortingOrder = 9;
+
+                float hx = bounds.extents.x;
+                float hy = bounds.extents.y;
+                lr.positionCount = 4;
+                lr.SetPositions(new Vector3[]
+                {
+                    new Vector3(-hx, -hy, 0),
+                    new Vector3(hx, -hy, 0),
+                    new Vector3(hx, hy, 0),
+                    new Vector3(-hx, hy, 0)
+                });
+            }
+
+            borderHighlight.SetActive(true);
+        }
+
+        private void HideBorder()
+        {
+            if (borderHighlight != null)
+                borderHighlight.SetActive(false);
+        }
+
+        public void SetBorderVisible(bool visible)
+        {
+            if (borderHighlight != null && isCurrent)
+                borderHighlight.SetActive(visible);
         }
 
         private void SetupDoorIndicators(RoomData data)

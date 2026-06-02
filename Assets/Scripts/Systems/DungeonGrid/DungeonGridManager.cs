@@ -134,6 +134,52 @@ namespace DungeonArchitect.Systems
             return adjacent;
         }
 
+        public int GetPathDistance(Vector2Int from, Vector2Int to)
+        {
+            if (from == to) return 0;
+
+            var visited = new HashSet<Vector2Int>();
+            var queue = new Queue<(Vector2Int pos, int dist)>();
+            queue.Enqueue((from, 0));
+            visited.Add(from);
+
+            var dirMap = new (Vector2Int offset, Direction fromDir, Direction toDir)[]
+            {
+                (Vector2Int.up, Direction.North, Direction.South),
+                (Vector2Int.down, Direction.South, Direction.North),
+                (Vector2Int.right, Direction.East, Direction.West),
+                (Vector2Int.left, Direction.West, Direction.East)
+            };
+
+            while (queue.Count > 0)
+            {
+                var (current, dist) = queue.Dequeue();
+                var currentRoom = grid[current.x, current.y];
+                if (currentRoom == null) continue;
+
+                foreach (var (offset, fromDir, toDir) in dirMap)
+                {
+                    var neighbor = current + offset;
+                    if (!IsInBounds(neighbor)) continue;
+                    if (visited.Contains(neighbor)) continue;
+
+                    var neighborRoom = grid[neighbor.x, neighbor.y];
+                    if (neighborRoom == null) continue;
+
+                    if (!currentRoom.Data.HasDoor(fromDir)) continue;
+                    if (!neighborRoom.Data.HasDoor(toDir)) continue;
+
+                    if (neighbor == to)
+                        return dist + 1;
+
+                    visited.Add(neighbor);
+                    queue.Enqueue((neighbor, dist + 1));
+                }
+            }
+
+            return -1;
+        }
+
         public Vector3 GridToWorld(Vector2Int gridPos)
         {
             float offsetX = -(gridWidth * cellWidth) / 2f;

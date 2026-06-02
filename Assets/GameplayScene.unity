@@ -967,6 +967,7 @@ GameObject:
   - component: {fileID: 2001803838}
   - component: {fileID: 2001803860}
   - component: {fileID: 2001803870}
+  - component: {fileID: 2001803871}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1217,6 +1218,18 @@ MonoBehaviour:
   doorIconColor: {r: 0.2, g: 0.9, b: 0.4, a: 1}
   doorIconSize: 0.2
   draftPopupPrefab: {fileID: 0}
+--- !u!114 &2001803871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2001803837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7b13ab2904b4c6488de04cde5937fe4, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: DungeonArchitect::DungeonArchitect.UI.RuntimeHUD
 --- !u!4 &2001803851
 Transform:
   m_ObjectHideFlags: 0
