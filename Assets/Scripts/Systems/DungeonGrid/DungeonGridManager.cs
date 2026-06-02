@@ -20,8 +20,7 @@ namespace DungeonArchitect.Systems
         [SerializeField] private RoomSpriteMapper spriteMapper;
 
         [Header("Corridors")]
-        [SerializeField] private Color corridorColor = new Color(0.35f, 0.3f, 0.25f, 1f);
-        [SerializeField] private float corridorWidth = 0.15f;
+        [SerializeField] private float corridorWidth = 0.35f;
 
         [Header("Debug")]
         [SerializeField] private bool autoStartOnPlay = false;
@@ -284,20 +283,22 @@ namespace DungeonArchitect.Systems
             var midpoint = (fromWorld + toWorld) / 2f;
 
             bool horizontal = worldDir == Direction.East || worldDir == Direction.West;
-            float length = horizontal ? cellWidth : cellHeight;
-            float spriteHalf = horizontal ? cellWidth * 0.5f : cellHeight * 0.5f;
 
             var go = new GameObject($"Corridor_{fromPos}_{worldDir}");
             go.transform.SetParent(gridParent, false);
-            go.transform.position = new Vector3(midpoint.x, midpoint.y, 0.1f);
+            go.transform.position = new Vector3(midpoint.x, midpoint.y, 0.05f);
 
             var sr = go.AddComponent<SpriteRenderer>();
             sr.sprite = GetCorridorSprite();
-            sr.color = corridorColor;
             sr.sortingOrder = 1;
 
-            float scaleX = horizontal ? (length - spriteHalf) : corridorWidth;
-            float scaleY = horizontal ? corridorWidth : (length - spriteHalf);
+            float halfSprite = 0.675f;
+            float gap = (horizontal ? cellWidth : cellHeight) - halfSprite * 2f;
+            if (gap < 0.05f) gap = 0.05f;
+            float length = gap + halfSprite * 0.3f;
+            float width = corridorWidth;
+            float scaleX = horizontal ? length : width;
+            float scaleY = horizontal ? width : length;
             go.transform.localScale = new Vector3(scaleX, scaleY, 1f);
         }
 
@@ -319,14 +320,45 @@ namespace DungeonArchitect.Systems
         {
             if (cachedCorridorSprite != null) return cachedCorridorSprite;
 
-            int size = 8;
+            int size = 32;
             var tex = new Texture2D(size, size, TextureFormat.RGBA32, false);
-            tex.filterMode = FilterMode.Point;
-            for (int y = 0; y < size; y++)
-                for (int x = 0; x < size; x++)
-                    tex.SetPixel(x, y, Color.white);
-            tex.Apply();
+            tex.filterMode = FilterMode.Bilinear;
 
+            Color stoneBase = new Color(0.38f, 0.34f, 0.28f);
+            Color stoneDark = new Color(0.28f, 0.24f, 0.2f);
+            Color mortarColor = new Color(0.15f, 0.12f, 0.1f);
+            Color borderColor = new Color(0.45f, 0.4f, 0.32f);
+
+            int border = 2;
+
+            for (int y = 0; y < size; y++)
+            {
+                for (int x = 0; x < size; x++)
+                {
+                    if (x < border || x >= size - border || y < border || y >= size - border)
+                    {
+                        tex.SetPixel(x, y, borderColor);
+                        continue;
+                    }
+
+                    bool isMortarH = (y % 8 == 0);
+                    bool isMortarV = (x % 6 == 0) && ((y / 8) % 2 == 0);
+                    bool isMortarV2 = ((x + 3) % 6 == 0) && ((y / 8) % 2 == 1);
+
+                    if (isMortarH || isMortarV || isMortarV2)
+                    {
+                        tex.SetPixel(x, y, mortarColor);
+                    }
+                    else
+                    {
+                        float noise = ((x * 13 + y * 7) % 11) / 11f;
+                        Color col = Color.Lerp(stoneDark, stoneBase, 0.4f + noise * 0.4f);
+                        tex.SetPixel(x, y, col);
+                    }
+                }
+            }
+
+            tex.Apply();
             cachedCorridorSprite = Sprite.Create(tex, new Rect(0, 0, size, size), new Vector2(0.5f, 0.5f), size);
             return cachedCorridorSprite;
         }
