@@ -7,22 +7,25 @@ namespace DungeonArchitect.Core
     {
         [Header("Follow Settings")]
         [SerializeField] private DungeonGridManager gridManager;
-        [SerializeField] private float followSpeed = 5f;
-        [SerializeField] private float zoomSpeed = 2f;
+        [SerializeField] private float followSpeed = 3f;
 
         [Header("Zoom")]
-        [SerializeField] private float minZoom = 3f;
+        [SerializeField] private float zoomSpeed = 2f;
+        [SerializeField] private float minZoom = 1.5f;
         [SerializeField] private float maxZoom = 12f;
-        [SerializeField] private float defaultZoom = 7f;
+        [SerializeField] private float defaultZoom = 3f;
+        [SerializeField] private float roomFocusZoom = 2f;
 
         [Header("Pan")]
-        [SerializeField] private bool allowPan = true;
-        [SerializeField] private float panSpeed = 10f;
+        [SerializeField] private float panSpeed = 1f;
 
         private Camera cam;
         private Vector3 targetPosition;
         private float targetZoom;
-        private Vector3 dragOrigin;
+        private bool isFollowing;
+        private float followTimer;
+
+        private Vector3 dragStart;
         private bool isDragging;
 
         private void Awake()
@@ -30,6 +33,7 @@ namespace DungeonArchitect.Core
             cam = GetComponent<Camera>();
             if (cam == null) cam = Camera.main;
             targetZoom = defaultZoom;
+            targetPosition = transform.position;
         }
 
         private void Start()
@@ -38,11 +42,25 @@ namespace DungeonArchitect.Core
                 gridManager.OnPlayerMoved += OnPlayerMoved;
         }
 
-        public void SnapTo(Vector3 worldPos)
+        private void OnDestroy()
         {
-            worldPos.z = transform.position.z;
-            transform.position = worldPos;
+            if (gridManager != null)
+                gridManager.OnPlayerMoved -= OnPlayerMoved;
+        }
+
+        public void FocusOnPosition(Vector3 worldPos)
+        {
             targetPosition = worldPos;
+            targetPosition.z = transform.position.z;
+            targetZoom = roomFocusZoom;
+            isFollowing = true;
+            followTimer = 1.5f;
+        }
+
+        private void OnPlayerMoved(Vector2Int gridPos)
+        {
+            var worldPos = gridManager.GridToWorld(gridPos);
+            FocusOnPosition(worldPos);
         }
 
         private void Update()
@@ -50,12 +68,13 @@ namespace DungeonArchitect.Core
             HandleZoom();
             HandlePan();
             ApplyCamera();
-        }
 
-        private void OnPlayerMoved(Vector2Int gridPos)
-        {
-            targetPosition = gridManager.GridToWorld(gridPos);
-            targetPosition.z = transform.position.z;
+            if (isFollowing)
+            {
+                followTimer -= Time.deltaTime;
+                if (followTimer <= 0f)
+                    isFollowing = false;
+            }
         }
 
         private void HandleZoom()
@@ -65,34 +84,40 @@ namespace DungeonArchitect.Core
             {
                 targetZoom -= scroll * zoomSpeed;
                 targetZoom = Mathf.Clamp(targetZoom, minZoom, maxZoom);
+                isFollowing = false;
             }
         }
 
         private void HandlePan()
         {
-            if (!allowPan) return;
-
-            if (Input.GetMouseButtonDown(2))
+            if (Input.GetMouseButtonDown(2) || Input.GetMouseButtonDown(1))
             {
                 isDragging = true;
-                dragOrigin = cam.ScreenToWorldPoint(Input.mousePosition);
+                dragStart = cam.ScreenToWorldPoint(Input.mousePosition);
+                isFollowing = false;
             }
 
-            if (Input.GetMouseButton(2) && isDragging)
+            if ((Input.GetMouseButton(2) || Input.GetMouseButton(1)) && isDragging)
             {
-                var diff = dragOrigin - cam.ScreenToWorldPoint(Input.mousePosition);
+                var current = cam.ScreenToWorldPoint(Input.mousePosition);
+                var diff = dragStart - current;
                 targetPosition += diff;
+                transform.position += diff;
+                dragStart = cam.ScreenToWorldPoint(Input.mousePosition);
             }
 
-            if (Input.GetMouseButtonUp(2))
+            if (Input.GetMouseButtonUp(2) || Input.GetMouseButtonUp(1))
                 isDragging = false;
         }
 
         private void ApplyCamera()
         {
-            var pos = Vector3.Lerp(transform.position, targetPosition, followSpeed * Time.deltaTime);
-            pos.z = transform.position.z;
-            transform.position = pos;
+            if (!isDragging && isFollowing)
+            {
+                var pos = Vector3.Lerp(transform.position, targetPosition, followSpeed * Time.deltaTime);
+                pos.z = transform.position.z;
+                transform.position = pos;
+            }
 
             if (cam.orthographic)
                 cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, targetZoom, zoomSpeed * Time.deltaTime);
@@ -103,6 +128,8 @@ namespace DungeonArchitect.Core
             targetPosition = Vector3.zero;
             targetPosition.z = transform.position.z;
             targetZoom = defaultZoom;
+            isFollowing = true;
+            followTimer = 2f;
         }
     }
 }

@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using TMPro;
 using System.Collections.Generic;
 using DungeonArchitect.Data;
+using DungeonArchitect.Core;
 using DungeonArchitect.Utils;
 
 namespace DungeonArchitect.Systems
@@ -38,8 +39,50 @@ namespace DungeonArchitect.Systems
             foreach (var room in rooms)
                 offers.Add(GenerateOffer(room));
 
+            EnsureAtLeastOneFree();
+            EnsureThreeOffers(rooms);
+
             CreatePopupCanvas(worldPos, cam);
             CreateOfferCards();
+        }
+
+        private void EnsureAtLeastOneFree()
+        {
+            bool hasFree = false;
+            foreach (var o in offers)
+                if (o.costType == RoomCostType.Free) { hasFree = true; break; }
+
+            if (!hasFree && offers.Count > 0)
+            {
+                var first = offers[0];
+                first.costType = RoomCostType.Free;
+                first.costAmount = 0;
+                offers[0] = first;
+            }
+        }
+
+        private void EnsureThreeOffers(IReadOnlyList<RoomData> rooms)
+        {
+            var usedIds = new HashSet<string>();
+            foreach (var o in offers)
+                usedIds.Add(o.room.roomId);
+
+            int attempts = 0;
+            while (offers.Count < 3 && attempts < 30)
+            {
+                attempts++;
+                var room = rooms[Random.Range(0, rooms.Count)];
+                if (usedIds.Contains(room.roomId)) continue;
+
+                usedIds.Add(room.roomId);
+                var extra = GenerateOffer(room);
+                if (offers.Count == 0)
+                {
+                    extra.costType = RoomCostType.Free;
+                    extra.costAmount = 0;
+                }
+                offers.Add(extra);
+            }
         }
 
         private void CreatePopupCanvas(Vector3 worldPos, Camera cam)
@@ -47,15 +90,12 @@ namespace DungeonArchitect.Systems
             var canvasGO = new GameObject("PopupCanvas");
             canvasGO.transform.SetParent(transform);
             canvas = canvasGO.AddComponent<Canvas>();
-            canvas.renderMode = RenderMode.WorldSpace;
-            canvas.worldCamera = cam;
+            canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+            canvas.sortingOrder = 90;
 
-            var rt = canvasGO.GetComponent<RectTransform>();
-            rt.position = worldPos + Vector3.back * 0.1f;
-            rt.sizeDelta = new Vector2(620, 280);
-            rt.localScale = Vector3.one * 0.01f;
-
-            canvasGO.AddComponent<CanvasScaler>();
+            var scaler = canvasGO.AddComponent<CanvasScaler>();
+            scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
+            scaler.referenceResolution = new Vector2(1920, 1080);
             canvasGO.AddComponent<GraphicRaycaster>();
 
             var bgGO = new GameObject("Background");
@@ -67,22 +107,32 @@ namespace DungeonArchitect.Systems
             bgRT.offsetMax = Vector2.zero;
             bgGO.AddComponent<CanvasRenderer>();
             var bgImg = bgGO.AddComponent<Image>();
-            bgImg.color = new Color(0.08f, 0.08f, 0.15f, 0.95f);
+            bgImg.color = new Color(0.02f, 0.02f, 0.05f, 0.7f);
+            bgImg.raycastTarget = true;
         }
 
         private void CreateOfferCards()
         {
-            var canvasRT = canvas.GetComponent<RectTransform>();
-            float cardWidth = 180f;
-            float cardHeight = 280f;
-            float spacing = 15f;
+            var containerGO = new GameObject("CardContainer");
+            containerGO.transform.SetParent(canvas.transform, false);
+            var containerRT = containerGO.AddComponent<RectTransform>();
+            containerRT.anchorMin = new Vector2(0.5f, 0.5f);
+            containerRT.anchorMax = new Vector2(0.5f, 0.5f);
+            containerRT.pivot = new Vector2(0.5f, 0.5f);
+            containerRT.anchoredPosition = Vector2.zero;
+
+            float cardWidth = 280f;
+            float cardHeight = 420f;
+            float spacing = 20f;
             float totalWidth = offers.Count * cardWidth + (offers.Count - 1) * spacing;
+            containerRT.sizeDelta = new Vector2(totalWidth, cardHeight);
+
             float startX = -totalWidth / 2f + cardWidth / 2f;
 
             for (int i = 0; i < offers.Count; i++)
             {
                 var offer = offers[i];
-                var cardGO = CreateCard(offer, canvasRT.transform);
+                var cardGO = CreateCard(offer, containerRT);
                 var cardRT = cardGO.GetComponent<RectTransform>();
                 cardRT.anchoredPosition = new Vector2(startX + i * (cardWidth + spacing), 0);
                 cardRT.sizeDelta = new Vector2(cardWidth, cardHeight);
@@ -108,6 +158,12 @@ namespace DungeonArchitect.Systems
             colors.highlightedColor = new Color(1f, 1f, 1f, 1f);
             colors.pressedColor = new Color(0.8f, 0.8f, 0.8f, 1f);
             btn.colors = colors;
+
+            bool canAfford = CanAffordOffer(offer);
+            btn.interactable = canAfford;
+
+            if (!canAfford)
+                img.color = new Color(0.15f, 0.15f, 0.15f, 0.9f);
 
             var capturedOffer = offer;
             btn.onClick.AddListener(() => OnCardClick(capturedOffer));
@@ -137,7 +193,7 @@ namespace DungeonArchitect.Systems
             nameGO.AddComponent<CanvasRenderer>();
             var nameTMP = nameGO.AddComponent<TextMeshProUGUI>();
             nameTMP.text = room.roomName;
-            nameTMP.fontSize = 12;
+            nameTMP.fontSize = 18;
             nameTMP.color = Color.white;
             nameTMP.alignment = TextAlignmentOptions.Center;
             nameTMP.enableWordWrapping = true;
@@ -151,7 +207,7 @@ namespace DungeonArchitect.Systems
             typeGO.AddComponent<CanvasRenderer>();
             var typeTMP = typeGO.AddComponent<TextMeshProUGUI>();
             typeTMP.text = room.roomType.ToString();
-            typeTMP.fontSize = 10;
+            typeTMP.fontSize = 14;
             typeTMP.color = new Color(0.8f, 0.8f, 0.8f);
             typeTMP.alignment = TextAlignmentOptions.Center;
 
@@ -164,7 +220,7 @@ namespace DungeonArchitect.Systems
             doorsGO.AddComponent<CanvasRenderer>();
             var doorsTMP = doorsGO.AddComponent<TextMeshProUGUI>();
             doorsTMP.text = "Salidas: " + GetDoorsLabel(room);
-            doorsTMP.fontSize = 9;
+            doorsTMP.fontSize = 14;
             doorsTMP.color = new Color(0.9f, 0.9f, 0.5f);
             doorsTMP.alignment = TextAlignmentOptions.Center;
 
@@ -176,7 +232,7 @@ namespace DungeonArchitect.Systems
             costRT.offsetMin = costRT.offsetMax = Vector2.zero;
             costGO.AddComponent<CanvasRenderer>();
             var costTMP = costGO.AddComponent<TextMeshProUGUI>();
-            costTMP.fontSize = 9;
+            costTMP.fontSize = 14;
             costTMP.alignment = TextAlignmentOptions.Center;
 
             string costLabel = offer.costType switch
@@ -198,7 +254,7 @@ namespace DungeonArchitect.Systems
             infoRT.offsetMin = infoRT.offsetMax = Vector2.zero;
             infoGO.AddComponent<CanvasRenderer>();
             var infoTMP = infoGO.AddComponent<TextMeshProUGUI>();
-            infoTMP.fontSize = 9;
+            infoTMP.fontSize = 13;
             infoTMP.alignment = TextAlignmentOptions.Center;
 
             GetDamageRange(room, out int minDmg, out int maxDmg);
@@ -226,6 +282,19 @@ namespace DungeonArchitect.Systems
         private void OnCardClick(RoomOffer offer)
         {
             onRoomChosen?.Invoke(offer);
+        }
+
+        private static bool CanAffordOffer(RoomOffer offer)
+        {
+            if (offer.costType == RoomCostType.Free) return true;
+
+            var resources = GameManager.Instance.Resources;
+            return offer.costType switch
+            {
+                RoomCostType.Key => resources.Keys >= 1,
+                RoomCostType.Gems => resources.Gems >= offer.costAmount,
+                _ => true
+            };
         }
 
         private static RoomOffer GenerateOffer(RoomData room)

@@ -197,6 +197,7 @@ namespace DungeonArchitect.Systems
             DismissPopup();
             SetAllDoorIconsVisible(false);
             SetCurrentRoomBorderVisible(false);
+            SetAllCollectablesVisible(false);
 
             var worldPos = gridManager.GridToWorld(fromRoomPos);
             var roomVisual = gridManager.GetRoomAt(fromRoomPos)?.Visual;
@@ -257,10 +258,6 @@ namespace DungeonArchitect.Systems
             if (combatDamage > 0)
                 resources.TakeDamage(combatDamage);
 
-            if (offer.goldReward > 0) resources.AddGold(offer.goldReward);
-            if (offer.gemReward > 0) resources.AddGems(offer.gemReward);
-            if (offer.keyReward > 0) resources.AddKeys(offer.keyReward);
-
             if (resources.CurrentHP <= 0)
             {
                 ShowGameOverPopup("Has muerto en combate");
@@ -279,6 +276,9 @@ namespace DungeonArchitect.Systems
                 var visual = instance.Visual?.GetComponent<RoomVisual>();
                 if (visual != null)
                     visual.SetAsCurrentRoom(true);
+
+                if (instance.Visual != null)
+                    CollectableSpawner.SpawnCollectables(offer, instance.Visual);
             }
 
             var deckManager = GameManager.Instance.Deck;
@@ -348,6 +348,7 @@ namespace DungeonArchitect.Systems
                 currentPopup = null;
                 SetAllDoorIconsVisible(true);
                 SetCurrentRoomBorderVisible(true);
+                SetAllCollectablesVisible(true);
             }
         }
 
@@ -361,6 +362,13 @@ namespace DungeonArchitect.Systems
                         icon.SetActive(visible);
                 }
             }
+        }
+
+        private void SetAllCollectablesVisible(bool visible)
+        {
+            var collectables = Object.FindObjectsOfType<RoomCollectable>(true);
+            foreach (var c in collectables)
+                c.gameObject.SetActive(visible);
         }
 
         private void SetCurrentRoomBorderVisible(bool visible)

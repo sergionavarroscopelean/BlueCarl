@@ -12,16 +12,12 @@ namespace DungeonArchitect.Systems
             var canvasGO = new GameObject("GameOverCanvas");
             canvasGO.transform.SetParent(transform);
             var canvas = canvasGO.AddComponent<Canvas>();
-            canvas.renderMode = RenderMode.WorldSpace;
-            canvas.worldCamera = cam;
+            canvas.renderMode = RenderMode.ScreenSpaceOverlay;
             canvas.sortingOrder = 100;
 
-            var rt = canvasGO.GetComponent<RectTransform>();
-            rt.position = worldPos;
-            rt.sizeDelta = new Vector2(420, 320);
-            rt.localScale = Vector3.one * 0.012f;
-
-            canvasGO.AddComponent<CanvasScaler>();
+            var scaler = canvasGO.AddComponent<CanvasScaler>();
+            scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
+            scaler.referenceResolution = new Vector2(1920, 1080);
             canvasGO.AddComponent<GraphicRaycaster>();
 
             var bgGO = new GameObject("Background");
@@ -43,7 +39,7 @@ namespace DungeonArchitect.Systems
             titleGO.AddComponent<CanvasRenderer>();
             var titleTMP = titleGO.AddComponent<TextMeshProUGUI>();
             titleTMP.text = "GAME OVER";
-            titleTMP.fontSize = 32;
+            titleTMP.fontSize = 52;
             titleTMP.fontStyle = FontStyles.Bold;
             titleTMP.color = new Color(0.9f, 0.2f, 0.2f);
             titleTMP.alignment = TextAlignmentOptions.Center;
@@ -57,7 +53,7 @@ namespace DungeonArchitect.Systems
             reasonGO.AddComponent<CanvasRenderer>();
             var reasonTMP = reasonGO.AddComponent<TextMeshProUGUI>();
             reasonTMP.text = reason;
-            reasonTMP.fontSize = 18;
+            reasonTMP.fontSize = 24;
             reasonTMP.color = new Color(1f, 0.7f, 0.7f);
             reasonTMP.alignment = TextAlignmentOptions.Center;
 
@@ -70,7 +66,7 @@ namespace DungeonArchitect.Systems
             statsGO.AddComponent<CanvasRenderer>();
             var statsTMP = statsGO.AddComponent<TextMeshProUGUI>();
             statsTMP.text = $"Piso alcanzado: {floor}\nHabitaciones exploradas: {roomsPlaced}";
-            statsTMP.fontSize = 14;
+            statsTMP.fontSize = 20;
             statsTMP.color = Color.white;
             statsTMP.alignment = TextAlignmentOptions.Center;
 
@@ -97,7 +93,7 @@ namespace DungeonArchitect.Systems
             btnTextGO.AddComponent<CanvasRenderer>();
             var btnTMP = btnTextGO.AddComponent<TextMeshProUGUI>();
             btnTMP.text = "REINTENTAR";
-            btnTMP.fontSize = 18;
+            btnTMP.fontSize = 24;
             btnTMP.fontStyle = FontStyles.Bold;
             btnTMP.color = Color.white;
             btnTMP.alignment = TextAlignmentOptions.Center;

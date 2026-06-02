@@ -19,16 +19,13 @@ namespace DungeonArchitect.Systems
             var canvasGO = new GameObject("FloorCompleteCanvas");
             canvasGO.transform.SetParent(transform);
             var canvas = canvasGO.AddComponent<Canvas>();
-            canvas.renderMode = RenderMode.WorldSpace;
-            canvas.worldCamera = cam;
+            canvas.renderMode = RenderMode.ScreenSpaceOverlay;
             canvas.sortingOrder = 100;
 
-            var rt = canvasGO.GetComponent<RectTransform>();
-            rt.position = worldPos;
-            rt.sizeDelta = new Vector2(400, 300);
-            rt.localScale = Vector3.one * 0.012f;
+            var scaler = canvasGO.AddComponent<CanvasScaler>();
+            scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
+            scaler.referenceResolution = new Vector2(1920, 1080);
 
-            canvasGO.AddComponent<CanvasScaler>();
             canvasGO.AddComponent<GraphicRaycaster>();
 
             var bgGO = new GameObject("Background");
@@ -50,7 +47,7 @@ namespace DungeonArchitect.Systems
             titleGO.AddComponent<CanvasRenderer>();
             var titleTMP = titleGO.AddComponent<TextMeshProUGUI>();
             titleTMP.text = $"PISO {floor} COMPLETADO";
-            titleTMP.fontSize = 28;
+            titleTMP.fontSize = 48;
             titleTMP.fontStyle = FontStyles.Bold;
             titleTMP.color = new Color(1f, 0.85f, 0.2f);
             titleTMP.alignment = TextAlignmentOptions.Center;
@@ -64,7 +61,7 @@ namespace DungeonArchitect.Systems
             infoGO.AddComponent<CanvasRenderer>();
             var infoTMP = infoGO.AddComponent<TextMeshProUGUI>();
             infoTMP.text = $"Habitaciones exploradas: {roomsPlaced}\nDescendiendo al piso {floor + 1}...";
-            infoTMP.fontSize = 16;
+            infoTMP.fontSize = 24;
             infoTMP.color = Color.white;
             infoTMP.alignment = TextAlignmentOptions.Center;
 
