@@ -42,11 +42,6 @@ namespace DungeonArchitect.Systems
 
         private void Update()
         {
-            if (currentPopup != null && Input.GetMouseButtonDown(1))
-            {
-                DismissPopup();
-                GameManager.Instance.ChangeState(GameState.Exploring);
-            }
         }
 
         private void OnDestroy()
@@ -200,6 +195,7 @@ namespace DungeonArchitect.Systems
             SetAllDoorIconsVisible(false);
             SetCurrentRoomBorderVisible(false);
             SetAllCollectablesVisible(false);
+            LockCamera(true);
 
             var worldPos = gridManager.GridToWorld(fromRoomPos);
             var roomVisual = gridManager.GetRoomAt(fromRoomPos)?.Visual;
@@ -461,6 +457,7 @@ namespace DungeonArchitect.Systems
                 SetAllDoorIconsVisible(true);
                 SetCurrentRoomBorderVisible(true);
                 SetAllCollectablesVisible(true);
+                LockCamera(false);
             }
         }
 
@@ -562,6 +559,16 @@ namespace DungeonArchitect.Systems
                 }
             }
             roomDoorIcons.Clear();
+        }
+
+        private void LockCamera(bool locked)
+        {
+            var cam = mainCamera != null ? mainCamera : Camera.main;
+            if (cam != null)
+            {
+                var cc = cam.GetComponent<CameraController>();
+                if (cc != null) cc.LockInput(locked);
+            }
         }
 
         private Direction GetOppositeDirection(Direction dir)

@@ -27,6 +27,7 @@ namespace DungeonArchitect.Core
 
         private Vector3 dragStart;
         private bool isDragging;
+        private bool inputLocked;
 
         private void Awake()
         {
@@ -63,10 +64,15 @@ namespace DungeonArchitect.Core
             FocusOnPosition(worldPos);
         }
 
+        public void LockInput(bool locked) { inputLocked = locked; }
+
         private void Update()
         {
-            HandleZoom();
-            HandlePan();
+            if (!inputLocked)
+            {
+                HandleZoom();
+                HandlePan();
+            }
             ApplyCamera();
 
             if (isFollowing)
