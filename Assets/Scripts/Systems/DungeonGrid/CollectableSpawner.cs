@@ -24,26 +24,26 @@ namespace DungeonArchitect.Systems
             for (int i = 0; i < offer.goldReward; i++)
             {
                 var pos = positions[idx % positions.Count];
-                SpawnOne(CollectableType.Gold, 1, roomVisual.transform, center + pos);
+                SpawnOne(CollectableType.Gold, 1, roomVisual.transform, center + pos, idx);
                 idx++;
             }
 
             for (int i = 0; i < offer.gemReward; i++)
             {
                 var pos = positions[idx % positions.Count];
-                SpawnOne(CollectableType.Gem, 1, roomVisual.transform, center + pos);
+                SpawnOne(CollectableType.Gem, 1, roomVisual.transform, center + pos, idx);
                 idx++;
             }
 
             for (int i = 0; i < offer.keyReward; i++)
             {
                 var pos = positions[idx % positions.Count];
-                SpawnOne(CollectableType.Key, 1, roomVisual.transform, center + pos);
+                SpawnOne(CollectableType.Key, 1, roomVisual.transform, center + pos, idx);
                 idx++;
             }
         }
 
-        private static void SpawnOne(CollectableType type, int amount, Transform parent, Vector3 localPos)
+        private static void SpawnOne(CollectableType type, int amount, Transform parent, Vector3 localPos, int index)
         {
             var go = new GameObject($"Collectable_{type}");
             go.transform.SetParent(parent, false);
@@ -52,6 +52,7 @@ namespace DungeonArchitect.Systems
 
             var collectable = go.AddComponent<RoomCollectable>();
             collectable.Initialize(type, amount);
+            collectable.StartAutoCollect(1f + index * 0.3f);
         }
 
         private static List<Vector3> GeneratePositions(RoomOffer offer, float halfX, float halfY)
