@@ -306,6 +306,49 @@ namespace DungeonArchitect.Systems
                 return;
             }
 
+            if (room.roomId == "room_053")
+            {
+                ShowRiddlePopup();
+                return;
+            }
+
+            GameManager.Instance.ChangeState(GameState.Exploring);
+        }
+
+        private void ShowRiddlePopup()
+        {
+            GameManager.Instance.ChangeState(GameState.Event);
+
+            var cam = mainCamera != null ? mainCamera : Camera.main;
+            var popupWorldPos = cam.transform.position + Vector3.forward * 11f;
+
+            var go = new GameObject("RiddlePopup");
+            var popup = go.AddComponent<RiddlePopupUI>();
+            popup.Initialize(popupWorldPos, cam, OnRiddleResolved);
+            currentPopup = go;
+        }
+
+        private void OnRiddleResolved(bool success)
+        {
+            DismissPopup();
+
+            var resources = GameManager.Instance.Resources;
+            if (success)
+            {
+                resources.AddGold(5);
+                resources.AddXP(10);
+            }
+            else
+            {
+                resources.TakeDamage(3);
+            }
+
+            if (resources.CurrentHP <= 0)
+            {
+                ShowGameOverPopup("La estatua te ha castigado");
+                return;
+            }
+
             GameManager.Instance.ChangeState(GameState.Exploring);
         }
 
