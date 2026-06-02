@@ -190,6 +190,7 @@ namespace DungeonArchitect.Systems
             iconRT.localRotation = Quaternion.Euler(0, 0, rotAngle);
 
             AddDoorCorridors(iconGO.transform, room, rotAngle);
+            AddEntryArrow(iconGO.transform);
 
             var nameGO = new GameObject("Name");
             nameGO.transform.SetParent(cardGO.transform, false);
@@ -422,35 +423,122 @@ namespace DungeonArchitect.Systems
             return room.cardSprite;
         }
 
+        private void AddEntryArrow(Transform imageParent)
+        {
+            var arrowGO = new GameObject("EntryArrow");
+            arrowGO.transform.SetParent(imageParent, false);
+            var arrowRT = arrowGO.AddComponent<RectTransform>();
+            arrowRT.anchorMin = new Vector2(0.42f, 0.02f);
+            arrowRT.anchorMax = new Vector2(0.58f, 0.13f);
+            arrowRT.offsetMin = arrowRT.offsetMax = Vector2.zero;
+            arrowGO.AddComponent<CanvasRenderer>();
+            var arrowImg = arrowGO.AddComponent<Image>();
+            arrowImg.sprite = GetArrowSprite();
+            arrowImg.color = Color.white;
+            arrowImg.raycastTarget = false;
+        }
+
+        private static Sprite arrowSprite;
+        private static Sprite GetArrowSprite()
+        {
+            if (arrowSprite != null) return arrowSprite;
+
+            int size = 32;
+            var tex = new Texture2D(size, size, TextureFormat.RGBA32, false);
+            tex.filterMode = FilterMode.Bilinear;
+
+            for (int y = 0; y < size; y++)
+                for (int x = 0; x < size; x++)
+                    tex.SetPixel(x, y, Color.clear);
+
+            int cx = size / 2;
+            for (int y = 0; y < size; y++)
+            {
+                int halfWidth = (size - y) * cx / size;
+                for (int x = cx - halfWidth; x <= cx + halfWidth; x++)
+                {
+                    if (x >= 0 && x < size)
+                        tex.SetPixel(x, y, Color.white);
+                }
+            }
+
+            tex.Apply();
+            arrowSprite = Sprite.Create(tex, new Rect(0, 0, size, size), new Vector2(0.5f, 0.5f), size);
+            return arrowSprite;
+        }
+
+        private void AddExitArrow(Transform imageParent, Direction door)
+        {
+            var arrowGO = new GameObject("ExitArrow");
+            arrowGO.transform.SetParent(imageParent, false);
+            var arrowRT = arrowGO.AddComponent<RectTransform>();
+
+            float aw = 0.08f;
+            float ah = 0.11f;
+
+            switch (door)
+            {
+                case Direction.North:
+                    arrowRT.anchorMin = new Vector2(0.5f - aw, 0.87f);
+                    arrowRT.anchorMax = new Vector2(0.5f + aw, 0.87f + ah);
+                    break;
+                case Direction.East:
+                    arrowRT.anchorMin = new Vector2(0.87f, 0.5f - aw);
+                    arrowRT.anchorMax = new Vector2(0.87f + ah, 0.5f + aw);
+                    break;
+                case Direction.West:
+                    arrowRT.anchorMin = new Vector2(0.02f, 0.5f - aw);
+                    arrowRT.anchorMax = new Vector2(0.02f + ah, 0.5f + aw);
+                    break;
+            }
+
+            arrowRT.offsetMin = arrowRT.offsetMax = Vector2.zero;
+
+            float rotation = door switch
+            {
+                Direction.North => 0f,
+                Direction.East => -90f,
+                Direction.West => 90f,
+                _ => 0f
+            };
+            arrowRT.localRotation = Quaternion.Euler(0, 0, rotation);
+
+            arrowGO.AddComponent<CanvasRenderer>();
+            var arrowImg = arrowGO.AddComponent<Image>();
+            arrowImg.sprite = GetArrowSprite();
+            arrowImg.color = new Color(1f, 1f, 1f, 0.9f);
+            arrowImg.raycastTarget = false;
+        }
+
         private void AddDoorCorridors(Transform imageParent, RoomData room, float imageRotation)
         {
             foreach (var door in room.doors)
             {
+
                 var corridorGO = new GameObject($"Corridor_{door}");
                 corridorGO.transform.SetParent(imageParent, false);
                 var corridorRT = corridorGO.AddComponent<RectTransform>();
 
-                float pos = 0.5f;
-                float corridorW = 0.25f;
-                float corridorH = 0.12f;
+                float corridorW = 0.18f;
+                float corridorStart = 0.85f;
 
                 switch (door)
                 {
                     case Direction.North:
-                        corridorRT.anchorMin = new Vector2(0.5f - corridorW / 2f, 1f - 0.01f);
-                        corridorRT.anchorMax = new Vector2(0.5f + corridorW / 2f, 1f + corridorH);
+                        corridorRT.anchorMin = new Vector2(0.5f - corridorW / 2f, corridorStart);
+                        corridorRT.anchorMax = new Vector2(0.5f + corridorW / 2f, 1f);
                         break;
                     case Direction.South:
-                        corridorRT.anchorMin = new Vector2(0.5f - corridorW / 2f, -corridorH);
-                        corridorRT.anchorMax = new Vector2(0.5f + corridorW / 2f, 0.01f);
+                        corridorRT.anchorMin = new Vector2(0.5f - corridorW / 2f, 0f);
+                        corridorRT.anchorMax = new Vector2(0.5f + corridorW / 2f, 1f - corridorStart);
                         break;
                     case Direction.East:
-                        corridorRT.anchorMin = new Vector2(1f - 0.01f, 0.5f - corridorW / 2f);
-                        corridorRT.anchorMax = new Vector2(1f + corridorH, 0.5f + corridorW / 2f);
+                        corridorRT.anchorMin = new Vector2(corridorStart, 0.5f - corridorW / 2f);
+                        corridorRT.anchorMax = new Vector2(1f, 0.5f + corridorW / 2f);
                         break;
                     case Direction.West:
-                        corridorRT.anchorMin = new Vector2(-corridorH, 0.5f - corridorW / 2f);
-                        corridorRT.anchorMax = new Vector2(0.01f, 0.5f + corridorW / 2f);
+                        corridorRT.anchorMin = new Vector2(0f, 0.5f - corridorW / 2f);
+                        corridorRT.anchorMax = new Vector2(1f - corridorStart, 0.5f + corridorW / 2f);
                         break;
                 }
 
@@ -459,6 +547,9 @@ namespace DungeonArchitect.Systems
                 var cImg = corridorGO.AddComponent<Image>();
                 cImg.sprite = GetCorridorUISprite();
                 cImg.raycastTarget = false;
+
+                if (door != Direction.South)
+                    AddExitArrow(imageParent, door);
             }
         }
 
