@@ -19,7 +19,7 @@ MonoBehaviour:
   shape: 1
   gemCost: 0
   timeCost: 4
-  doors: 0000000003000000
+  doors: 0100000003000000
   goldReward: 65
   xpReward: 35
   keyReward: 0

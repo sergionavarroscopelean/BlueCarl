@@ -107,15 +107,16 @@ namespace DungeonArchitect.Systems
             var icons = new List<GameObject>();
             var directions = new[] { Direction.North, Direction.South, Direction.East, Direction.West };
 
-            foreach (var dir in directions)
+            foreach (var dataDir in directions)
             {
-                if (!room.Data.HasDoor(dir)) continue;
+                if (!room.Data.HasDoor(dataDir)) continue;
 
-                var adjacentPos = GetAdjacentPosition(roomPos, dir);
+                var worldDir = room.RotateToWorld(dataDir);
+                var adjacentPos = GetAdjacentPosition(roomPos, worldDir);
                 if (!IsInBounds(adjacentPos)) continue;
                 if (gridManager.GetRoomAt(adjacentPos) != null) continue;
 
-                var icon = SpawnDoorIcon(roomPos, room, dir);
+                var icon = SpawnDoorIcon(roomPos, room, dataDir, worldDir);
                 if (icon != null)
                     icons.Add(icon);
             }
@@ -123,7 +124,7 @@ namespace DungeonArchitect.Systems
             roomDoorIcons[roomPos] = icons;
         }
 
-        private GameObject SpawnDoorIcon(Vector2Int roomPos, RoomInstance room, Direction dir)
+        private GameObject SpawnDoorIcon(Vector2Int roomPos, RoomInstance room, Direction localDir, Direction worldDir)
         {
             if (room.Visual == null) return null;
 
@@ -141,13 +142,14 @@ namespace DungeonArchitect.Systems
                 halfY = parentSR.sprite.bounds.extents.y;
             }
 
-            float offsetX = dir == Direction.East ? halfX : dir == Direction.West ? -halfX : 0f;
-            float offsetY = dir == Direction.North ? halfY : dir == Direction.South ? -halfY : 0f;
+            float offsetX = localDir == Direction.East ? halfX : localDir == Direction.West ? -halfX : 0f;
+            float offsetY = localDir == Direction.North ? halfY : localDir == Direction.South ? -halfY : 0f;
 
-            var go = new GameObject($"DoorIcon_{dir}");
+            var go = new GameObject($"DoorIcon_{worldDir}");
             go.transform.SetParent(parentTransform, false);
             go.transform.localPosition = spriteCenter + new Vector3(offsetX, offsetY, -0.05f);
             go.transform.localScale = Vector3.one * doorIconSize;
+            go.transform.rotation = Quaternion.identity;
 
             var sr = go.AddComponent<SpriteRenderer>();
             sr.sprite = doorIconSprite != null ? doorIconSprite : GetCircleSprite();
@@ -158,7 +160,7 @@ namespace DungeonArchitect.Systems
             col.size = new Vector2(1.2f, 1.2f);
 
             var clickable = go.AddComponent<DoorIconClickable>();
-            clickable.Initialize(dir, this, roomPos);
+            clickable.Initialize(worldDir, this, roomPos);
 
             return go;
         }
@@ -266,13 +268,15 @@ namespace DungeonArchitect.Systems
 
             ClearCurrentRoomHighlight();
 
-            gridManager.PlaceRoom(room, adjacentPos);
+            gridManager.PlaceRoom(room, adjacentPos, selectedDoor);
+            gridManager.SpawnCorridor(selectedRoomPos, selectedDoor);
             gridManager.MovePlayerTo(adjacentPos);
 
             var instance = gridManager.GetRoomAt(adjacentPos);
             if (instance != null)
             {
                 instance.Explore();
+
                 var visual = instance.Visual?.GetComponent<RoomVisual>();
                 if (visual != null)
                     visual.SetAsCurrentRoom(true);

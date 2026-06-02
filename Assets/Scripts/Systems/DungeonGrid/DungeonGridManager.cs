@@ -11,13 +11,17 @@ namespace DungeonArchitect.Systems
         [SerializeField] private int gridWidth = 9;
         [SerializeField] private int gridHeight = 9;
         [SerializeField] private float cellWidth = 1.35f;
-        [SerializeField] private float cellHeight = 1.15f;
+        [SerializeField] private float cellHeight = 1.35f;
 
         [Header("Visuals")]
         [SerializeField] private Transform gridParent;
         [SerializeField] private GameObject roomPrefab;
         [SerializeField] private GameObject validPlacementIndicator;
         [SerializeField] private RoomSpriteMapper spriteMapper;
+
+        [Header("Corridors")]
+        [SerializeField] private Color corridorColor = new Color(0.35f, 0.3f, 0.25f, 1f);
+        [SerializeField] private float corridorWidth = 0.15f;
 
         [Header("Debug")]
         [SerializeField] private bool autoStartOnPlay = false;
@@ -84,7 +88,12 @@ namespace DungeonArchitect.Systems
 
         public void PlaceRoom(RoomData roomData, Vector2Int position)
         {
-            var instance = new RoomInstance(roomData, position);
+            PlaceRoom(roomData, position, null);
+        }
+
+        public void PlaceRoom(RoomData roomData, Vector2Int position, Direction? entryDirection)
+        {
+            var instance = new RoomInstance(roomData, position, entryDirection);
             grid[position.x, position.y] = instance;
 
             SpawnRoomVisual(instance);
@@ -166,8 +175,10 @@ namespace DungeonArchitect.Systems
                     var neighborRoom = grid[neighbor.x, neighbor.y];
                     if (neighborRoom == null) continue;
 
-                    if (!currentRoom.Data.HasDoor(fromDir)) continue;
-                    if (!neighborRoom.Data.HasDoor(toDir)) continue;
+                    bool currentHasDoor = HasWorldDoor(currentRoom, fromDir);
+                    bool neighborHasDoor = HasWorldDoor(neighborRoom, toDir);
+
+                    if (!currentHasDoor || !neighborHasDoor) continue;
 
                     if (neighbor == to)
                         return dist + 1;
@@ -178,6 +189,17 @@ namespace DungeonArchitect.Systems
             }
 
             return -1;
+        }
+
+        public bool HasWorldDoor(RoomInstance room, Direction worldDir)
+        {
+            var directions = new[] { Direction.North, Direction.South, Direction.East, Direction.West };
+            foreach (var dataDir in directions)
+            {
+                if (!room.Data.HasDoor(dataDir)) continue;
+                if (room.RotateToWorld(dataDir) == worldDir) return true;
+            }
+            return false;
         }
 
         public Vector3 GridToWorld(Vector2Int gridPos)
@@ -203,35 +225,7 @@ namespace DungeonArchitect.Systems
 
         private bool DoorsAlign(RoomData room, Vector2Int position)
         {
-            var directions = new (Vector2Int offset, Direction fromDir, Direction toDir)[]
-            {
-                (Vector2Int.up, Direction.North, Direction.South),
-                (Vector2Int.down, Direction.South, Direction.North),
-                (Vector2Int.right, Direction.East, Direction.West),
-                (Vector2Int.left, Direction.West, Direction.East)
-            };
-
-            bool hasAtLeastOneConnection = false;
-
-            foreach (var (offset, fromDir, toDir) in directions)
-            {
-                var neighborPos = position + offset;
-                if (!IsInBounds(neighborPos)) continue;
-
-                var neighbor = grid[neighborPos.x, neighborPos.y];
-                if (neighbor == null) continue;
-
-                bool roomHasDoor = room.HasDoor(fromDir);
-                bool neighborHasDoor = neighbor.Data.HasDoor(toDir);
-
-                if (roomHasDoor && neighborHasDoor)
-                    hasAtLeastOneConnection = true;
-
-                if (roomHasDoor != neighborHasDoor)
-                    return false;
-            }
-
-            return hasAtLeastOneConnection;
+            return true;
         }
 
         private void UpdateValidPlacements()
@@ -256,13 +250,85 @@ namespace DungeonArchitect.Systems
             if (roomPrefab == null || gridParent == null) return;
 
             var worldPos = GridToWorld(instance.GridPosition);
-            var go = Instantiate(roomPrefab, worldPos, Quaternion.identity, gridParent);
+            var rotation = GetEntryRotation(instance.EntryDirection);
+            var go = Instantiate(roomPrefab, worldPos, rotation, gridParent);
             go.name = $"Room_{instance.Data.roomName}_{instance.GridPosition}";
             instance.SetVisual(go);
 
             var visual = go.GetComponent<RoomVisual>();
             if (visual != null)
                 visual.Initialize(instance, spriteMapper);
+        }
+
+        private static Quaternion GetEntryRotation(Direction? entryDirection)
+        {
+            if (!entryDirection.HasValue) return Quaternion.identity;
+            float angle = entryDirection.Value switch
+            {
+                Direction.North => 0f,
+                Direction.South => 180f,
+                Direction.East => -90f,
+                Direction.West => 90f,
+                _ => 0f
+            };
+            return Quaternion.Euler(0f, 0f, angle);
+        }
+
+        public void SpawnCorridor(Vector2Int fromPos, Direction worldDir)
+        {
+            if (gridParent == null) return;
+
+            var toPos = fromPos + DirectionToOffset(worldDir);
+            var fromWorld = GridToWorld(fromPos);
+            var toWorld = GridToWorld(toPos);
+            var midpoint = (fromWorld + toWorld) / 2f;
+
+            bool horizontal = worldDir == Direction.East || worldDir == Direction.West;
+            float length = horizontal ? cellWidth : cellHeight;
+            float spriteHalf = horizontal ? cellWidth * 0.5f : cellHeight * 0.5f;
+
+            var go = new GameObject($"Corridor_{fromPos}_{worldDir}");
+            go.transform.SetParent(gridParent, false);
+            go.transform.position = new Vector3(midpoint.x, midpoint.y, 0.1f);
+
+            var sr = go.AddComponent<SpriteRenderer>();
+            sr.sprite = GetCorridorSprite();
+            sr.color = corridorColor;
+            sr.sortingOrder = 1;
+
+            float scaleX = horizontal ? (length - spriteHalf) : corridorWidth;
+            float scaleY = horizontal ? corridorWidth : (length - spriteHalf);
+            go.transform.localScale = new Vector3(scaleX, scaleY, 1f);
+        }
+
+        private static Vector2Int DirectionToOffset(Direction dir)
+        {
+            return dir switch
+            {
+                Direction.North => Vector2Int.up,
+                Direction.South => Vector2Int.down,
+                Direction.East => Vector2Int.right,
+                Direction.West => Vector2Int.left,
+                _ => Vector2Int.zero
+            };
+        }
+
+        private static Sprite cachedCorridorSprite;
+
+        private static Sprite GetCorridorSprite()
+        {
+            if (cachedCorridorSprite != null) return cachedCorridorSprite;
+
+            int size = 8;
+            var tex = new Texture2D(size, size, TextureFormat.RGBA32, false);
+            tex.filterMode = FilterMode.Point;
+            for (int y = 0; y < size; y++)
+                for (int x = 0; x < size; x++)
+                    tex.SetPixel(x, y, Color.white);
+            tex.Apply();
+
+            cachedCorridorSprite = Sprite.Create(tex, new Rect(0, 0, size, size), new Vector2(0.5f, 0.5f), size);
+            return cachedCorridorSprite;
         }
 
         private void ClearGrid()
@@ -280,13 +346,41 @@ namespace DungeonArchitect.Systems
         public bool IsExplored { get; private set; }
         public bool IsRevealed { get; private set; }
         public GameObject Visual { get; private set; }
+        public Direction? EntryDirection { get; private set; }
 
-        public RoomInstance(RoomData data, Vector2Int position)
+        public RoomInstance(RoomData data, Vector2Int position, Direction? entryDirection = null)
         {
             Data = data;
             GridPosition = position;
             IsExplored = false;
             IsRevealed = false;
+            EntryDirection = entryDirection;
+        }
+
+        public Direction RotateToWorld(Direction dataDir)
+        {
+            if (!EntryDirection.HasValue) return dataDir;
+            int rotationSteps = EntryDirection.Value switch
+            {
+                Direction.North => 0,
+                Direction.East => 1,
+                Direction.South => 2,
+                Direction.West => 3,
+                _ => 0
+            };
+            int dirIndex = (int)dataDir;
+            for (int i = 0; i < rotationSteps; i++)
+            {
+                dirIndex = dirIndex switch
+                {
+                    0 => 2, // North -> East
+                    1 => 3, // South -> West
+                    2 => 1, // East -> South
+                    3 => 0, // West -> North
+                    _ => dirIndex
+                };
+            }
+            return (Direction)dirIndex;
         }
 
         public void Explore()
