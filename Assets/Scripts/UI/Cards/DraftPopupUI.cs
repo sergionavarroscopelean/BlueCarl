@@ -101,8 +101,8 @@ namespace DungeonArchitect.Systems
             var bgGO = new GameObject("Background");
             bgGO.transform.SetParent(canvasGO.transform, false);
             var bgRT = bgGO.AddComponent<RectTransform>();
-            bgRT.anchorMin = Vector2.zero;
-            bgRT.anchorMax = Vector2.one;
+            bgRT.anchorMin = new Vector2(0f, 0f);
+            bgRT.anchorMax = new Vector2(1f, 0.94f);
             bgRT.offsetMin = Vector2.zero;
             bgRT.offsetMax = Vector2.zero;
             bgGO.AddComponent<CanvasRenderer>();

@@ -16,8 +16,8 @@ MonoBehaviour:
   className: Guerrero
   characterClass: 0
   portrait: {fileID: 0}
-  startingHP: 120
-  startingTime: 45
+  startingHP: 30
+  startingTime: 20
   startingGold: 0
   startingKeys: 0
   startingGems: 0

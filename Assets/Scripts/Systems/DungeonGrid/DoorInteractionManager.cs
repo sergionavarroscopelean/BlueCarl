@@ -279,6 +279,9 @@ namespace DungeonArchitect.Systems
 
                 if (instance.Visual != null)
                     CollectableSpawner.SpawnCollectables(offer, instance.Visual);
+
+                if (room.roomType == RoomType.Rest)
+                    SpawnHealEffect(instance.Visual, 5);
             }
 
             var deckManager = GameManager.Instance.Deck;
@@ -324,6 +327,66 @@ namespace DungeonArchitect.Systems
         {
             DismissPopup();
             GameManager.Instance.OnStairFound();
+        }
+
+        private void SpawnHealEffect(GameObject roomVisual, int amount)
+        {
+            GameManager.Instance.Resources.RestoreHP(amount);
+
+            for (int i = 0; i < 3; i++)
+            {
+                var go = new GameObject($"HealHeart_{i}");
+                go.transform.SetParent(roomVisual.transform, false);
+
+                var sr = roomVisual.GetComponent<SpriteRenderer>();
+                Vector3 center = sr != null && sr.sprite != null ? (Vector3)sr.sprite.bounds.center : Vector3.zero;
+                float rx = Random.Range(-0.3f, 0.3f);
+                float ry = Random.Range(-0.3f, 0.3f);
+                go.transform.localPosition = center + new Vector3(rx, ry, -0.1f);
+                go.transform.localScale = Vector3.one * 0.15f;
+
+                var heartSR = go.AddComponent<SpriteRenderer>();
+                heartSR.sprite = GetHeartSprite();
+                heartSR.color = new Color(1f, 0.3f, 0.4f);
+                heartSR.sortingOrder = 12;
+
+                var flyer = go.AddComponent<HealHeartFlyer>();
+                flyer.Initialize(i * 0.15f);
+            }
+        }
+
+        private static Sprite heartSprite;
+        private static Sprite GetHeartSprite()
+        {
+            if (heartSprite != null) return heartSprite;
+
+            int size = 32;
+            var tex = new Texture2D(size, size, TextureFormat.RGBA32, false);
+            tex.filterMode = FilterMode.Bilinear;
+            for (int y = 0; y < size; y++)
+                for (int x = 0; x < size; x++)
+                    tex.SetPixel(x, y, Color.clear);
+
+            int cx = size / 2;
+            int r = size / 5;
+            for (int y = 0; y < size; y++)
+            {
+                for (int x = 0; x < size; x++)
+                {
+                    int lx = cx - r, rx2 = cx + r;
+                    int top = size * 3 / 4;
+                    bool inLeftCircle = (x - lx) * (x - lx) + (y - top) * (y - top) <= r * r;
+                    bool inRightCircle = (x - rx2) * (x - rx2) + (y - top) * (y - top) <= r * r;
+                    bool inTriangle = y < top && y >= size / 4 &&
+                        x >= cx - (top - y) * (cx) / (top - size / 4) &&
+                        x <= cx + (top - y) * (cx) / (top - size / 4);
+                    if (inLeftCircle || inRightCircle || inTriangle)
+                        tex.SetPixel(x, y, Color.white);
+                }
+            }
+            tex.Apply();
+            heartSprite = Sprite.Create(tex, new Rect(0, 0, size, size), new Vector2(0.5f, 0.5f), size);
+            return heartSprite;
         }
 
         private void ShowGameOverPopup(string reason)

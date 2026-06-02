@@ -1144,7 +1144,7 @@ MonoBehaviour:
   gridWidth: 9
   gridHeight: 9
   cellWidth: 1.35
-  cellHeight: 1.15
+  cellHeight: 1.35
   gridParent: {fileID: 448593338}
   roomPrefab: {fileID: 1000000, guid: daa793684e1c8463cbcf09999e20fcd5, type: 3}
   validPlacementIndicator: {fileID: 0}

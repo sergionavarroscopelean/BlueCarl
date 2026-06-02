@@ -51,7 +51,7 @@ namespace DungeonArchitect.UI
             canvasGO.transform.SetParent(transform);
             hudCanvas = canvasGO.AddComponent<Canvas>();
             hudCanvas.renderMode = RenderMode.ScreenSpaceOverlay;
-            hudCanvas.sortingOrder = 50;
+            hudCanvas.sortingOrder = 95;
 
             var scaler = canvasGO.AddComponent<CanvasScaler>();
             scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
