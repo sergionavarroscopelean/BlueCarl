@@ -65,6 +65,8 @@ namespace DungeonArchitect.Systems
 
         private void EnsureThreeOffers(IReadOnlyList<RoomData> rooms)
         {
+            if (rooms == null || rooms.Count == 0) return;
+
             var usedIds = new HashSet<string>();
             foreach (var o in offers)
                 usedIds.Add(o.room.roomId);
@@ -310,12 +312,14 @@ namespace DungeonArchitect.Systems
                 if (Random.value < 0.4f)
                 {
                     offer.costType = RoomCostType.Key;
-                    offer.costAmount = 1;
+                    offer.costAmount = Mathf.Max(0, 1 - PlayerBuffs.EntryCostReduction);
+                    if (offer.costAmount == 0) offer.costType = RoomCostType.Free;
                 }
                 else
                 {
                     offer.costType = RoomCostType.Gems;
-                    offer.costAmount = 1 + (int)room.rarity + Random.Range(0, 2);
+                    offer.costAmount = Mathf.Max(0, 1 + (int)room.rarity + Random.Range(0, 2) - PlayerBuffs.EntryCostReduction);
+                    if (offer.costAmount == 0) offer.costType = RoomCostType.Free;
                 }
             }
             else
@@ -405,7 +409,9 @@ namespace DungeonArchitect.Systems
         {
             GetDamageRange(room, out int min, out int max);
             if (max <= 0) return 0;
-            return Random.Range(min, max + 1);
+            int damage = Random.Range(min, max + 1);
+            damage = Mathf.Max(0, damage - PlayerBuffs.DamageReduction);
+            return damage;
         }
 
         private Sprite GetRoomSprite(RoomData room)

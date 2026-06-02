@@ -248,7 +248,7 @@ namespace DungeonArchitect.Systems
             int timeCost = (distance >= 0 ? distance : 0) + 1;
             resources.SpendTime(timeCost);
 
-            if (resources.CurrentTime <= 0)
+            if (resources.CurrentTime <= 0 && room.roomType != RoomType.Stair)
             {
                 ShowGameOverPopup("Te has quedado sin pasos");
                 return;
@@ -295,6 +295,12 @@ namespace DungeonArchitect.Systems
             draftManager.ClearDraft();
 
             GameManager.Instance.OnRoomPlaced();
+
+            if (room.roomType == RoomType.Shop)
+            {
+                ShowShopPopup();
+                return;
+            }
 
             if (room.roomType == RoomType.Stair)
             {
@@ -476,6 +482,21 @@ namespace DungeonArchitect.Systems
             tex.Apply();
             heartSprite = Sprite.Create(tex, new Rect(0, 0, size, size), new Vector2(0.5f, 0.5f), size);
             return heartSprite;
+        }
+
+        private void ShowShopPopup()
+        {
+            LockCamera(true);
+            var go = new GameObject("ShopPopup");
+            var shop = go.AddComponent<ShopPopupUI>();
+            shop.Initialize(OnShopClosed);
+            currentPopup = go;
+        }
+
+        private void OnShopClosed()
+        {
+            DismissPopup();
+            GameManager.Instance.ChangeState(GameState.Exploring);
         }
 
         private void ShowGameOverPopup(string reason)

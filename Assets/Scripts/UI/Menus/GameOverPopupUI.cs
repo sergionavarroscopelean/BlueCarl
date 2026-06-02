@@ -101,6 +101,8 @@ namespace DungeonArchitect.Systems
 
         private void OnRetryClicked()
         {
+            PlayerBuffs.Reset();
+
             if (Core.GameManager.Instance != null)
                 Destroy(Core.GameManager.Instance.gameObject);
 
