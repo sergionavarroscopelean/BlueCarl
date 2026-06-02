@@ -27,10 +27,12 @@ namespace DungeonArchitect.Systems
         private List<GameObject> cardObjects = new List<GameObject>();
         private List<RoomOffer> offers = new List<RoomOffer>();
         private RoomSpriteMapper spriteMapper;
+        private Direction entryDirection;
 
-        public void Initialize(IReadOnlyList<RoomData> rooms, Vector3 worldPos, Camera cam, System.Action<RoomOffer> callback)
+        public void Initialize(IReadOnlyList<RoomData> rooms, Vector3 worldPos, Camera cam, System.Action<RoomOffer> callback, Direction entry = Direction.South)
         {
             onRoomChosen = callback;
+            entryDirection = entry;
             spriteMapper = UnityEngine.Resources.FindObjectsOfTypeAll<RoomSpriteMapper>().Length > 0
                 ? UnityEngine.Resources.FindObjectsOfTypeAll<RoomSpriteMapper>()[0]
                 : null;
@@ -171,8 +173,8 @@ namespace DungeonArchitect.Systems
             var iconGO = new GameObject("RoomImage");
             iconGO.transform.SetParent(cardGO.transform, false);
             var iconRT = iconGO.AddComponent<RectTransform>();
-            iconRT.anchorMin = new Vector2(0.1f, 0.45f);
-            iconRT.anchorMax = new Vector2(0.9f, 0.95f);
+            iconRT.anchorMin = new Vector2(0.05f, 0.35f);
+            iconRT.anchorMax = new Vector2(0.95f, 0.95f);
             iconRT.offsetMin = iconRT.offsetMax = Vector2.zero;
             iconGO.AddComponent<CanvasRenderer>();
             var iconImg = iconGO.AddComponent<Image>();
@@ -184,11 +186,16 @@ namespace DungeonArchitect.Systems
             else
                 iconImg.color = new Color(0.2f, 0.2f, 0.3f, 0.5f);
 
+            float rotAngle = GetRotationAngle(entryDirection);
+            iconRT.localRotation = Quaternion.Euler(0, 0, rotAngle);
+
+            AddDoorCorridors(iconGO.transform, room, rotAngle);
+
             var nameGO = new GameObject("Name");
             nameGO.transform.SetParent(cardGO.transform, false);
             var nameRT = nameGO.AddComponent<RectTransform>();
-            nameRT.anchorMin = new Vector2(0.05f, 0.32f);
-            nameRT.anchorMax = new Vector2(0.95f, 0.46f);
+            nameRT.anchorMin = new Vector2(0.05f, 0.22f);
+            nameRT.anchorMax = new Vector2(0.95f, 0.36f);
             nameRT.offsetMin = nameRT.offsetMax = Vector2.zero;
             nameGO.AddComponent<CanvasRenderer>();
             var nameTMP = nameGO.AddComponent<TextMeshProUGUI>();
@@ -201,8 +208,8 @@ namespace DungeonArchitect.Systems
             var typeGO = new GameObject("Type");
             typeGO.transform.SetParent(cardGO.transform, false);
             var typeRT = typeGO.AddComponent<RectTransform>();
-            typeRT.anchorMin = new Vector2(0.05f, 0.22f);
-            typeRT.anchorMax = new Vector2(0.95f, 0.33f);
+            typeRT.anchorMin = new Vector2(0.05f, 0.14f);
+            typeRT.anchorMax = new Vector2(0.95f, 0.23f);
             typeRT.offsetMin = typeRT.offsetMax = Vector2.zero;
             typeGO.AddComponent<CanvasRenderer>();
             var typeTMP = typeGO.AddComponent<TextMeshProUGUI>();
@@ -210,19 +217,6 @@ namespace DungeonArchitect.Systems
             typeTMP.fontSize = 14;
             typeTMP.color = new Color(0.8f, 0.8f, 0.8f);
             typeTMP.alignment = TextAlignmentOptions.Center;
-
-            var doorsGO = new GameObject("Doors");
-            doorsGO.transform.SetParent(cardGO.transform, false);
-            var doorsRT = doorsGO.AddComponent<RectTransform>();
-            doorsRT.anchorMin = new Vector2(0.05f, 0.15f);
-            doorsRT.anchorMax = new Vector2(0.95f, 0.23f);
-            doorsRT.offsetMin = doorsRT.offsetMax = Vector2.zero;
-            doorsGO.AddComponent<CanvasRenderer>();
-            var doorsTMP = doorsGO.AddComponent<TextMeshProUGUI>();
-            doorsTMP.text = "Salidas: " + GetDoorsLabel(room);
-            doorsTMP.fontSize = 14;
-            doorsTMP.color = new Color(0.9f, 0.9f, 0.5f);
-            doorsTMP.alignment = TextAlignmentOptions.Center;
 
             var costGO = new GameObject("Cost");
             costGO.transform.SetParent(cardGO.transform, false);
@@ -428,21 +422,95 @@ namespace DungeonArchitect.Systems
             return room.cardSprite;
         }
 
-        private string GetDoorsLabel(RoomData room)
+        private void AddDoorCorridors(Transform imageParent, RoomData room, float imageRotation)
         {
-            var sb = new System.Text.StringBuilder();
-            foreach (var d in room.doors)
+            foreach (var door in room.doors)
             {
-                sb.Append(d switch
+                var corridorGO = new GameObject($"Corridor_{door}");
+                corridorGO.transform.SetParent(imageParent, false);
+                var corridorRT = corridorGO.AddComponent<RectTransform>();
+
+                float pos = 0.5f;
+                float corridorW = 0.25f;
+                float corridorH = 0.12f;
+
+                switch (door)
                 {
-                    Direction.North => "N ",
-                    Direction.South => "S ",
-                    Direction.East => "E ",
-                    Direction.West => "W ",
-                    _ => ""
-                });
+                    case Direction.North:
+                        corridorRT.anchorMin = new Vector2(0.5f - corridorW / 2f, 1f - 0.01f);
+                        corridorRT.anchorMax = new Vector2(0.5f + corridorW / 2f, 1f + corridorH);
+                        break;
+                    case Direction.South:
+                        corridorRT.anchorMin = new Vector2(0.5f - corridorW / 2f, -corridorH);
+                        corridorRT.anchorMax = new Vector2(0.5f + corridorW / 2f, 0.01f);
+                        break;
+                    case Direction.East:
+                        corridorRT.anchorMin = new Vector2(1f - 0.01f, 0.5f - corridorW / 2f);
+                        corridorRT.anchorMax = new Vector2(1f + corridorH, 0.5f + corridorW / 2f);
+                        break;
+                    case Direction.West:
+                        corridorRT.anchorMin = new Vector2(-corridorH, 0.5f - corridorW / 2f);
+                        corridorRT.anchorMax = new Vector2(0.01f, 0.5f + corridorW / 2f);
+                        break;
+                }
+
+                corridorRT.offsetMin = corridorRT.offsetMax = Vector2.zero;
+                corridorGO.AddComponent<CanvasRenderer>();
+                var cImg = corridorGO.AddComponent<Image>();
+                cImg.sprite = GetCorridorUISprite();
+                cImg.raycastTarget = false;
             }
-            return sb.ToString().TrimEnd();
+        }
+
+        private static Sprite corridorUISprite;
+        private static Sprite GetCorridorUISprite()
+        {
+            if (corridorUISprite != null) return corridorUISprite;
+
+            int size = 16;
+            var tex = new Texture2D(size, size, TextureFormat.RGBA32, false);
+            tex.filterMode = FilterMode.Bilinear;
+
+            Color stoneBase = new Color(0.38f, 0.34f, 0.28f);
+            Color stoneDark = new Color(0.28f, 0.24f, 0.2f);
+            Color mortar = new Color(0.15f, 0.12f, 0.1f);
+            Color border = new Color(0.45f, 0.4f, 0.32f);
+
+            for (int y = 0; y < size; y++)
+            {
+                for (int x = 0; x < size; x++)
+                {
+                    if (x == 0 || x == size - 1 || y == 0 || y == size - 1)
+                    {
+                        tex.SetPixel(x, y, border);
+                    }
+                    else if (y % 4 == 0 || (x % 4 == 0 && (y / 4) % 2 == 0) || ((x + 2) % 4 == 0 && (y / 4) % 2 == 1))
+                    {
+                        tex.SetPixel(x, y, mortar);
+                    }
+                    else
+                    {
+                        float n = ((x * 13 + y * 7) % 11) / 11f;
+                        tex.SetPixel(x, y, Color.Lerp(stoneDark, stoneBase, 0.4f + n * 0.4f));
+                    }
+                }
+            }
+
+            tex.Apply();
+            corridorUISprite = Sprite.Create(tex, new Rect(0, 0, size, size), new Vector2(0.5f, 0.5f), size);
+            return corridorUISprite;
+        }
+
+        private static float GetRotationAngle(Direction entry)
+        {
+            return entry switch
+            {
+                Direction.South => 0f,
+                Direction.West => -90f,
+                Direction.North => 180f,
+                Direction.East => 90f,
+                _ => 0f
+            };
         }
 
         private Color GetTypeColor(RoomType type)

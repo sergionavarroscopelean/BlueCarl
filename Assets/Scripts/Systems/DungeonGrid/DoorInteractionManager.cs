@@ -207,18 +207,20 @@ namespace DungeonArchitect.Systems
             var offset = GetDirectionOffset(dir) * (spriteHalf + 1.5f);
             var popupWorldPos = worldPos + (Vector3)offset;
 
+            Direction entryDir = GetOppositeDirection(dir);
+
             if (draftPopupPrefab != null)
             {
                 currentPopup = Instantiate(draftPopupPrefab);
                 var popup = currentPopup.GetComponent<DraftPopupUI>();
                 if (popup != null)
-                    popup.Initialize(rooms, popupWorldPos, mainCamera, OnOfferChosen);
+                    popup.Initialize(rooms, popupWorldPos, mainCamera, OnOfferChosen, entryDir);
             }
             else
             {
                 var go = new GameObject("DraftPopup");
                 var popup = go.AddComponent<DraftPopupUI>();
-                popup.Initialize(rooms, popupWorldPos, mainCamera, OnOfferChosen);
+                popup.Initialize(rooms, popupWorldPos, mainCamera, OnOfferChosen, entryDir);
                 currentPopup = go;
             }
         }
@@ -560,6 +562,18 @@ namespace DungeonArchitect.Systems
                 }
             }
             roomDoorIcons.Clear();
+        }
+
+        private Direction GetOppositeDirection(Direction dir)
+        {
+            return dir switch
+            {
+                Direction.North => Direction.South,
+                Direction.South => Direction.North,
+                Direction.East => Direction.West,
+                Direction.West => Direction.East,
+                _ => dir
+            };
         }
 
         private Vector2Int GetAdjacentPosition(Vector2Int pos, Direction dir)
