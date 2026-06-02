@@ -46,12 +46,13 @@ namespace DungeonArchitect.EditorTools
             int sw = (int)spriteRect.width;
             int sh = (int)spriteRect.height;
 
-            int arrowSize = Mathf.Max(sw, sh) / 6;
+            int arrowW = sw / 4;
+            int arrowH = sh / 4;
 
-            PatchArea(tex, sx + sw / 2 - arrowSize / 2, sy + sh - arrowSize - 2, arrowSize, arrowSize, sx, sy, sw, sh);
-            PatchArea(tex, sx + sw / 2 - arrowSize / 2, sy + 2, arrowSize, arrowSize, sx, sy, sw, sh);
-            PatchArea(tex, sx + 2, sy + sh / 2 - arrowSize / 2, arrowSize, arrowSize, sx, sy, sw, sh);
-            PatchArea(tex, sx + sw - arrowSize - 2, sy + sh / 2 - arrowSize / 2, arrowSize, arrowSize, sx, sy, sw, sh);
+            PatchArea(tex, sx + sw / 2 - arrowW / 2, sy + sh - arrowH - 1, arrowW, arrowH, sx, sy, sw, sh);
+            PatchArea(tex, sx + sw / 2 - arrowW / 2, sy + 1, arrowW, arrowH, sx, sy, sw, sh);
+            PatchArea(tex, sx + 1, sy + sh / 2 - arrowH / 2, arrowW, arrowH, sx, sy, sw, sh);
+            PatchArea(tex, sx + sw - arrowW - 1, sy + sh / 2 - arrowH / 2, arrowW, arrowH, sx, sy, sw, sh);
         }
 
         private static void PatchArea(Texture2D tex, int px, int py, int pw, int ph, int sx, int sy, int sw, int sh)
@@ -64,7 +65,7 @@ namespace DungeonArchitect.EditorTools
                 {
                     if (x < 0 || y < 0) continue;
                     Color pixel = tex.GetPixel(x, y);
-                    if (pixel.grayscale > 0.7f && pixel.a > 0.5f)
+                    if (pixel.grayscale > 0.45f && pixel.a > 0.5f)
                     {
                         tex.SetPixel(x, y, avgColor);
                     }
@@ -76,7 +77,7 @@ namespace DungeonArchitect.EditorTools
         {
             float r = 0, g = 0, b = 0;
             int count = 0;
-            int margin = 3;
+            int margin = 5;
 
             for (int y = py - margin; y < py + ph + margin; y++)
             {
@@ -87,14 +88,14 @@ namespace DungeonArchitect.EditorTools
 
                     Color c = tex.GetPixel(x, y);
                     if (c.a < 0.5f) continue;
-                    if (c.grayscale > 0.7f) continue;
+                    if (c.grayscale > 0.45f) continue;
 
                     r += c.r; g += c.g; b += c.b;
                     count++;
                 }
             }
 
-            if (count == 0) return new Color(0.15f, 0.13f, 0.1f);
+            if (count == 0) return new Color(0.12f, 0.1f, 0.08f);
             return new Color(r / count, g / count, b / count);
         }
     }
