@@ -314,12 +314,106 @@ namespace DungeonArchitect.Systems
                 return;
             }
 
-            if (room.roomId == "room_005")
+            if (room.roomId == "room_003")
             {
                 ShowChestPuzzlePopup();
                 return;
             }
 
+            if (room.roomId == "room_005")
+            {
+                ShowEventPopup<PortalArcanoPopupUI>("PortalArcanoPopup", OnPortalResolved);
+                return;
+            }
+
+            if (room.roomId == "room_054")
+            {
+                ShowEventPopup<PrisionAntiguaPopupUI>("PrisionAntiguaPopup", OnGenericEventResolved);
+                return;
+            }
+
+            if (room.roomId == "room_056")
+            {
+                ShowEventPopup<PozoDeseosPopupUI>("PozoDeseosPopup", OnGenericEventResolved);
+                return;
+            }
+
+            if (room.roomId == "room_057")
+            {
+                ShowEventPopup<SalaSacrificiosPopupUI>("SalaSacrificiosPopup", OnSacrificeResolved);
+                return;
+            }
+
+            if (room.roomId == "room_058")
+            {
+                ShowEventPopup<ObservatorioArcanoPopupUI>("ObservatorioArcanoPopup", OnGenericEventResolved);
+                return;
+            }
+
+            if (room.roomId == "room_059")
+            {
+                ShowEventPopup<SalaOraculoPopupUI>("SalaOraculoPopup", OnGenericEventResolved);
+                return;
+            }
+
+            if (room.roomId == "room_060")
+            {
+                ShowEventPopup<EncrucijadaRunasPopupUI>("EncrucijadaRunasPopup", OnGenericEventResolved);
+                return;
+            }
+
+            GameManager.Instance.ChangeState(GameState.Exploring);
+        }
+
+        private void ShowEventPopup<T>(string name, System.Action<bool> callback) where T : MonoBehaviour
+        {
+            GameManager.Instance.ChangeState(GameState.Event);
+
+            var cam = mainCamera != null ? mainCamera : Camera.main;
+            var worldPos = cam.transform.position + Vector3.forward * 11f;
+
+            var go = new GameObject(name);
+            var popup = go.AddComponent<T>();
+            var initMethod = typeof(T).GetMethod("Initialize");
+            if (initMethod != null)
+                initMethod.Invoke(popup, new object[] { worldPos, cam, callback });
+            currentPopup = go;
+        }
+
+        private void OnPortalResolved(bool success)
+        {
+            DismissPopup();
+            var resources = GameManager.Instance.Resources;
+            if (success)
+            {
+                resources.AddGold(6);
+                resources.AddXP(15);
+            }
+            else
+            {
+                resources.TakeDamage(4);
+            }
+
+            if (resources.CurrentHP <= 0) { ShowGameOverPopup("El portal te ha consumido"); return; }
+            GameManager.Instance.ChangeState(GameState.Exploring);
+        }
+
+        private void OnGenericEventResolved(bool success)
+        {
+            DismissPopup();
+            var resources = GameManager.Instance.Resources;
+            if (!success)
+            {
+                if (resources.CurrentHP <= 0) { ShowGameOverPopup("No has sobrevivido"); return; }
+            }
+            GameManager.Instance.ChangeState(GameState.Exploring);
+        }
+
+        private void OnSacrificeResolved(bool accepted)
+        {
+            DismissPopup();
+            var resources = GameManager.Instance.Resources;
+            if (resources.CurrentHP <= 0) { ShowGameOverPopup("El sacrificio fue demasiado"); return; }
             GameManager.Instance.ChangeState(GameState.Exploring);
         }
 
